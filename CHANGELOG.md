@@ -1,5 +1,13 @@
 # What’s new
 
+## 0.3.3 — 2026-10-24
+
+- Clickable main-table headings with ascending/descending indicators, numeric resolution/depth/UDIM sorting and natural filename/path ordering. Missing metadata stays last.
+- Independent source/output resolution, format and depth filters, combined with type and Search. Resolution supports exact dimensions and longest-edge presets.
+- Visible/total counts and Clear filters; late background headers and changed output rules update matches automatically.
+- View filters preserve conversion inclusion and stable file identities. Selected-file operations still target the correct source after sorting/filtering.
+- Export visible CSV follows the filtered rows and their current sort order.
+
 ## 0.3.2 — 2026-10-24
 
 - Main-table source/output dimensions, actual source container and per-sample depth, and planned output container/depth.

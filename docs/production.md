@@ -40,7 +40,21 @@ Changing output formats, type assignments, limits or profiles immediately recalc
 
 With both Keep settings, source/output metadata match the byte copy. With a resize rule and **Keep original format**, the pipeline re-encodes supported inputs; packed PNG/TIFF inputs can expand to their decoded native depth (for example PNG 1-bit → PNG 8-bit). The output column reflects this. Mixed-depth or unsupported retained encodings request an explicit format. For multi-page TIFF/multipart EXR, source columns explicitly describe the first image; ordinary copying keeps every image, while image encoding is marked unsupported for those inputs.
 
-**Scan files** refreshes cached headers, even when paths/size/timestamps have not changed. Scan again after editing source files externally. Horizontal scrolling reaches full output paths/status, while selecting a row also shows its complete filename and source → output summary below the table. Background header updates preserve selection and scroll position. Search includes metadata, and **Export preview CSV…** includes all six metadata fields; exporting while inspection is pending keeps the visible Reading/Unknown state rather than inventing values.
+**Scan files** refreshes cached headers, even when paths/size/timestamps have not changed. Scan again after editing source files externally. Horizontal scrolling reaches full output paths/status, while selecting a row also shows its complete filename and source → output summary below the table. Background header updates preserve selection and scroll position. Search includes metadata, and **Export visible CSV…** includes all six metadata fields; exporting while inspection is pending keeps the visible Reading/Unknown state rather than inventing values.
+
+## Sorting and filtering the main table
+
+Click any column heading to sort ascending; click it again for descending. The active heading shows **▲ / ▼**. Resolution sorts by pixel count, then width/height; UDIM and sample depth sort numerically. Filenames and output paths use case-insensitive natural ordering (map2 before map10). Equal values keep scan order. Unknown, pending, skipped and unsupported metadata remain at the end in both directions. The inclusion column sorts by its checkmark; it never changes inclusion.
+
+The filter bar has independent **Source** and **Output** selectors for resolution, format and depth. Combine them with **All map types** and Search; every active condition must match. For example, select Output **PNG**, **8-bit uint** to find low-depth planned results, or Source **EXR**, **32-bit float** to inspect high-precision inputs. Each list is populated from the whole scanned set, independently of the other filters.
+
+Resolution choices include exact dimensions and longest-edge choices such as **4K edge** (4096 pixels). The edge filter includes 4096 × 4096, 4096 × 2048 and 2048 × 4096, but excludes 8192 × 4096. Exact dimensions distinguish landscape/portrait. **Unknown**, pending or dash choices appear when those states exist. Active filters update as headers arrive or output/type/profile rules change. A selected value is retained when it no longer exists, giving zero matches rather than silently clearing the filter.
+
+The preview summary shows **visible/total shown**, alongside the total planned conversion count. **Clear filters** resets all six selectors, map type and Search; it keeps the chosen sort order. Selection and horizontal/vertical scroll are retained for rows that remain visible. Hidden selections are cleared so context-menu operations apply to visible selected files.
+
+**These are view filters. Start conversion still processes every included file in the plan, even when no rows match the view.** Use Include / exclude or right-click **Convert selected files…** to restrict processing. Sorting/filtering never rewrites the source list, map rules, filenames or inclusion flags. View filters/sorting are independent of conversion profiles and comparison sessions.
+
+**Export visible CSV…** exports only currently visible rows, in their displayed sort order, with source/output metadata and status. Clear filters first to export the entire preview. The final conversion manifest and mapping CSV continue to describe the actual batch, independently of the view.
 
 ## Right-click per-file settings in Production Workflows
 
