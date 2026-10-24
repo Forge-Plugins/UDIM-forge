@@ -1,6 +1,14 @@
 # What’s new
 
-## 0.1.0-preview — UDIM Forge
+## 0.1.0 — 2026-10-24
+
+First public Windows x64 portable release. Download UDIM_Forge_v0.1.0_Windows_x64_Portable.zip and SHA256SUMS.txt from [GitHub Releases](https://github.com/Forge-Plugins/UDIM-forge/releases/tag/v0.1.0).
+
+- Help & Support → Check for updates… checks the latest stable release in the background, shows release notes and opens the correct portable download in your browser.
+- Manual checks only; network errors/rate limits/missing releases are explicit. No automatic installation, restart or texture uploads.
+- A versioned portable package and SHA-256 checksum are attached to the release. Git stores documentation/changelog and support templates; the application source and EXE are not committed.
+
+## Original preview functionality
 
 - New application name and Windows executable: UDIM Forge.
 - Help & Support menu with embedded offline documentation, Quick start, user guide, naming/OCIO references, troubleshooting and contact links.
@@ -17,4 +25,4 @@
 - Copy-only batch texture operations, ORM/RMA channel packing and UDIM resizing with normal-map normalization.
 - Display-only OCIO with global, set/folder/type/extension input assignments and session-local policies.
 
-See the [user guide](user-guide.md) for supported behavior and limitations.
+See the [user guide](user-guide.md) and [update instructions](updates.md) for supported behavior, limitations and installation steps.

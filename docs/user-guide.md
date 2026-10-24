@@ -8,6 +8,8 @@ The rename preserves settings, profiles, caches and saved sessions. The settings
 
 [Quick start](quick-start.md) · [OCIO guide](ocio.md) · [Naming reference](naming.md) · [Troubleshooting](troubleshooting.md) · [Support](support.md)
 
+Download Windows x64 portable releases from https://github.com/Forge-Plugins/UDIM-forge/releases/latest. Use **Help & Support → Check for updates…** for a manual background check and portable download. See [update instructions](updates.md).
+
 ## Quick start
 
 1. Choose your source folder. Enable **Include subfolders** if needed.

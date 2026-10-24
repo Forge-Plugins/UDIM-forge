@@ -2,7 +2,13 @@
 
 A Windows desktop toolkit for UDIM texture sets: organize names and folders, inspect native pixels, compare A/B/C/D versions, validate assets and export processed copies.
 
-This repository hosts documentation and the public issue tracker. Application source and binaries are distributed separately; the documentation does not imply that a downloadable release is already published here.
+This Git repository contains documentation, changelog and issue templates. Application source and EXE files are not committed to Git. Portable binaries are attached to **GitHub Releases**.
+
+## Download
+
+[Download UDIM Forge 0.1.0 — Windows x64 portable](https://github.com/Forge-Plugins/UDIM-forge/releases/download/v0.1.0/UDIM_Forge_v0.1.0_Windows_x64_Portable.zip) · [Latest release](https://github.com/Forge-Plugins/UDIM-forge/releases/latest) · [Changelog](CHANGELOG.md)
+
+Extract the ZIP and run **UDIM Forge.exe**. No Python installation is required. GitHub’s automatic source archives contain documentation only. The release includes SHA256SUMS.txt. Inside the app, use **Help & Support → Check for updates…** to check the stable channel and open the portable download.
 
 ## Documentation
 
@@ -13,7 +19,8 @@ This repository hosts documentation and the public issue tracker. Application so
 - [Troubleshooting](docs/troubleshooting.md) — previews, large files, cache, colors and recovery.
 - [External references](docs/references.md) — official format and pipeline documentation.
 - [Contact / support](docs/support.md) — reporting problems and copying diagnostics.
-- [What’s new](docs/changelog.md) — current preview functionality.
+- [Downloads and updates](docs/updates.md) — portable installation and manual update checks.
+- [Changelog](CHANGELOG.md) — released changes and included workflows.
 
 The application includes these guides offline in **Help & Support**. Its UI and documentation are in English.
 
