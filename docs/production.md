@@ -4,9 +4,11 @@ UDIM Forge 0.2.0 adds one persistent queue for preparing whole texture sets. Ope
 
 ## Which Start button?
 
-**Start conversion** in the main window performs filename and folder-layout conversion. It copies the original file bytes; selecting a Mari naming convention does not encode an EXR as PNG.
+**Start conversion** in the main window applies UDIM naming, folder layout and the selected **Output image format / bit depth** in one operation. Choose EXR, PNG or TIFF (or JPEG), compression and Alpha directly beneath the naming controls. The preview shows final extensions and collisions before starting. **Keep original format** copies bytes unchanged and disables compression/Alpha controls. Image-encoding settings persist in normal settings and saved profiles; legacy profiles default to Keep original format.
 
-To change the actual image format, open **Convert image format…**, choose **Output format / bit depth**, then **Preview export plan**. Review the target filenames and press **Start format conversion**. Whole-set recipes and the other operations use **Start queued workflow**. A Start button is enabled after a valid plan has been prepared. Changing settings requires a new preview.
+Encoding exports new files using a neutral pixel recipe, with no OCIO bake or implicit normal-vector normalization. Float EXR preserves signed/HDR heights; integer formats clamp to 0–1. Reports contain source/output sizes and hashes, encoding settings and clipping counts. SHA verification for encoded files verifies the written output hash; it is not a source/output byte-equality test. Errors or cancellation discard the current batch staging directory. The context-menu Convert selected files action uses these same main-window settings.
+
+The separate format/queue tool remains available: open **Convert image format…**, choose **Output format / bit depth**, then **Preview export plan**. Review the target filenames and press **Start format conversion**. Whole-set recipes and the other operations use **Start queued workflow**. A Start button is enabled after a valid plan has been prepared. Changing settings requires a new preview.
 
 ## True image formats, depth and Alpha
 

@@ -1,5 +1,13 @@
 # What’s new
 
+## 0.2.1 — 2026-10-24
+
+- Main-window Output image format / bit depth, compression and Alpha controls. One Start conversion applies UDIM naming, folder layout and real EXR/PNG/TIFF/JPEG encoding together.
+- Preview extensions and collision detection reflect the selected encoding, including selected-file conversion.
+- Encoding settings persist in profiles/settings; legacy profiles preserve original-format copying.
+- Neutral bounded-memory encoding protects source files. Reports distinguish source/output hashes and record clipping; failed/cancelled batches are discarded.
+
+
 ## 0.2.0 — 2026-10-24
 
 - Visible Convert image format command and Start format conversion button; the main filename-copy action is now Start conversion. Fixed main-table horizontal scrolling.

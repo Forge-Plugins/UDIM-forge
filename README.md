@@ -6,7 +6,7 @@ This Git repository contains documentation, changelog and issue templates. Appli
 
 ## Download
 
-[Download UDIM Forge 0.2.0 — Windows x64 portable](https://github.com/Forge-Plugins/UDIM-forge/releases/download/v0.2.0/UDIM_Forge_v0.2.0_Windows_x64_Portable.zip) · [Latest release](https://github.com/Forge-Plugins/UDIM-forge/releases/latest) · [Changelog](CHANGELOG.md)
+[Download UDIM Forge 0.2.1 — Windows x64 portable](https://github.com/Forge-Plugins/UDIM-forge/releases/download/v0.2.1/UDIM_Forge_v0.2.1_Windows_x64_Portable.zip) · [Latest release](https://github.com/Forge-Plugins/UDIM-forge/releases/latest) · [Changelog](CHANGELOG.md)
 
 Extract the ZIP and run **UDIM Forge.exe**. No Python installation is required. GitHub’s automatic source archives contain documentation only. The release includes SHA256SUMS.txt. Inside the app, use **Help & Support → Check for updates…** to check the stable channel and open the portable download.
 
@@ -27,9 +27,13 @@ The application includes these guides offline in **Help & Support**. Its UI and 
 
 ![UDIM Forge offline Help and Support](docs/images/help-center.png)
 
-## New in 0.2.0
+## New in 0.2.1
 
-**Start conversion** handles names/folder layouts. For true EXR/PNG/TIFF/JPEG encoding use **Convert image format… → Preview export plan → Start format conversion**, with bit depth, compression and Alpha controls. The main file table now scrolls horizontally.
+Select **Output image format / bit depth** directly in the main window, then **Start conversion** to apply UDIM naming, folder layout and actual EXR/PNG/TIFF/JPEG encoding in one operation. Compression and Alpha are beside the format selector. Preview shows final extensions and collisions; settings save in profiles. **Keep original format** retains byte-identical copying.
+
+## Added in 0.2.0
+
+**Start conversion** handles naming/layout and the main-window image encoding selection. For true EXR/PNG/TIFF/JPEG encoding use **Convert image format… → Preview export plan → Start format conversion**, with bit depth, compression and Alpha controls. The main file table now scrolls horizontally.
 
 - Persistent processing queue with resume, dependencies, parallel workers and a hard queue memory cap.
 - Per-map recipes for whole sets; shared displacement transforms with inverse sidecars.
