@@ -1,0 +1,44 @@
+name: Bug report
+description: Report a reproducible problem in UDIM Forge.
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: "Search existing issues first. Paste diagnostics from Help & Support → Copy diagnostics. Issues are public; use a small synthetic sample instead of confidential textures."
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Version and diagnostics
+      description: App version, Windows version and decoder versions. If the app cannot start, enter the executable/package version and your Windows version.
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: "1. Open…\n2. Select…\n3. Click…"
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior and error text
+    validations:
+      required: true
+  - type: textarea
+    id: textures
+    attributes:
+      label: Texture and workflow details
+      description: File format, resolution, bit depth, channels/compression; naming mode or OCIO config/input/display/view when relevant. Redact private paths.
+  - type: textarea
+    id: sample
+    attributes:
+      label: Screenshots or minimal sample
+      description: Optional, only material you can share publicly. Review paths and texture content before attaching.

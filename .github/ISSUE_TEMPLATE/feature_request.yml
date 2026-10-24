@@ -1,0 +1,23 @@
+name: Feature request
+description: Suggest a practical texture-set workflow improvement.
+title: "[Feature]: "
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Workflow or problem
+      description: What are you trying to achieve, and what is difficult today?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+      description: Describe the desired controls, inputs and result.
+    validations:
+      required: true
+  - type: textarea
+    id: alternative
+    attributes:
+      label: Current workaround and examples
+      description: Optional. Include texture formats, scale and a concrete example without confidential assets.
