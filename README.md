@@ -17,6 +17,8 @@ This repository hosts documentation and the public issue tracker. Application so
 
 The application includes these guides offline in **Help & Support**. Its UI and documentation are in English.
 
+![UDIM Forge offline Help and Support](docs/images/help-center.png)
+
 ## Main workflows
 
 - Mudbox UV/UDIM naming conversion and whole-set channel renaming, with new output copies.
