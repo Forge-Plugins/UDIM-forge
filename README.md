@@ -6,7 +6,7 @@ This Git repository contains documentation, changelog and issue templates. Appli
 
 ## Download
 
-[Download UDIM Forge 0.3.3 — Windows x64 portable](https://github.com/Forge-Plugins/UDIM-forge/releases/download/v0.3.3/UDIM_Forge_v0.3.3_Windows_x64_Portable.zip) · [Latest release](https://github.com/Forge-Plugins/UDIM-forge/releases/latest) · [Changelog](CHANGELOG.md)
+[Download UDIM Forge 0.3.4 — Windows x64 portable](https://github.com/Forge-Plugins/UDIM-forge/releases/download/v0.3.4/UDIM_Forge_v0.3.4_Windows_x64_Portable.zip) · [Latest release](https://github.com/Forge-Plugins/UDIM-forge/releases/latest) · [Changelog](CHANGELOG.md)
 
 Extract the ZIP and run **UDIM Forge.exe**. No Python installation is required. GitHub’s automatic source archives contain documentation only. The release includes SHA256SUMS.txt. Inside the app, use **Help & Support → Check for updates…** to check the stable channel and open the portable download.
 
@@ -27,7 +27,13 @@ The application includes these guides offline in **Help & Support**. Its UI and 
 
 ![UDIM Forge offline Help and Support](docs/images/help-center.png)
 
-## New in 0.3.3
+## New in 0.3.4
+
+- Distinct muted section colors, slim accent edges and coordinated inputs separate main-window folders, conversion, preview, status and cache.
+- Clearer selected/hover tabs and readable dropdown arrows, with primary actions and warning colors preserved.
+- Presentation-only changes; processing rules and saved profiles remain compatible.
+
+## Added in 0.3.3
 
 - Click headings to sort main-table rows; numeric sizes/depths/UDIM and natural filename ordering.
 - Combine source/output resolution, format and depth filters with type/Search; exact dimensions or longest-edge presets.

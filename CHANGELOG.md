@@ -1,5 +1,12 @@
 # What’s new
 
+## 0.3.4 — 2026-10-24
+
+- Main-window folder, conversion and preview sections now use distinct muted blue, warm charcoal and teal backgrounds with matching controls.
+- Thin colored edge accents, outlines and clearer headings separate the dense panels; output/status and cache have their own subtle tones.
+- Workflow/viewer tabs have stronger selected/hover contrast; dropdown arrows and keyboard focus remain visible in the main sections.
+- Primary actions, warnings, file processing, profiles and view-filter behavior are unchanged.
+
 ## 0.3.3 — 2026-10-24
 
 - Clickable main-table headings with ascending/descending indicators, numeric resolution/depth/UDIM sorting and natural filename/path ordering. Missing metadata stays last.

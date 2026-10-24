@@ -389,3 +389,7 @@ Managed previews apply only to **Color / Albedo / BaseColor / Diffuse / Emissive
 
 Built processors are cached with configuration identity and a reload generation. **Reload config / LUTs**, then **Apply**, refreshes config/LUT resources and managed display frames. Native decoded source buffers and analysis caches are reused. Wipe uses pre-rendered managed A/B layers and does not run OCIO on each slider movement. A missing/broken config produces an explicit preview error, rather than silently displaying an unintended transform; Raw and known data-map inspection remain available. Invalid Apply selections retain the preceding settings.
 
+
+## Main-window section colors
+
+Muted section colors help separate the main controls: blue for source/output folders, warm charcoal for conversion settings, teal for preview/filter tools, and a separate violet status/export strip. A blue-gray cache strip stays visible at the bottom. Thin colored edges and section headings reinforce those boundaries; primary actions remain orange and table warning/error colors keep their existing meaning. Active tabs in workflow and viewer dialogs use a lighter background and warm border. These are presentation changes; processing settings and profile data are unaffected.
