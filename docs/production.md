@@ -10,6 +10,20 @@ Encoding exports new files using a neutral pixel recipe, with no OCIO bake or im
 
 The separate format/queue tool remains available: open **Convert image format…**, choose **Output format / bit depth**, then **Preview export plan**. Review the target filenames and press **Start format conversion**. Whole-set recipes and the other operations use **Start queued workflow**. A Start button is enabled after a valid plan has been prepared. Changing settings requires a new preview.
 
+## Formats by map type in the main window
+
+Enable **Use formats by map type** beneath the main output format. Set Displacement, Normal and Color directly in the three inline selectors. The preset selects Displacement → EXR float32, Normal → PNG16, Color → PNG8. **All map types…** adds rules for AO, Roughness, Metallic and custom classifications. **Use global format** removes a type override; **Keep original format** explicitly copies that type without re-encoding. Color/Albedo/BaseColor aliases share the same rule. Apply type updates the effective format along with the naming preview.
+
+One **Start conversion** runs the complete mixed-format set. Save as a profile to keep both rules and their enabled state. Older profiles leave overrides disabled. Use Automatic compression for mixed EXR/PNG/TIFF outputs; incompatible explicit codecs are reported in preview. Native float displacement and ordinary Normal samples are not graded or OCIO-baked by this operation.
+
+## Right-click per-file settings in Production Workflows
+
+Ctrl/Shift-select preview rows, right-click, then choose **Change image format / bit depth…**, **Change resolution** (Keep, 16K/8K/4K/2K/1K or Custom/filter), or **TX storage / compression / threads…**. Edits apply only to selected rows. Dependent sources and packing paths follow extension changes; collisions are rejected. A Copy job needs an explicit image output format before resizing. Reports, statistics and packed-channel nodes are protected from unsupported direct image edits.
+
+After enqueueing, pause the queue before editing unfinished Queued/Error/Blocked/Cancelled jobs. SQLite saves these changes, and edited failures return to Queued; **Resume queue** starts them when ready. Running and Done jobs are protected. The exported forge-workflow.json is the initial enqueue snapshot; later per-job edits live in the durable queue. Changed settings invalidate previous prepared-output reuse. Input inspection and Open output are also available in this menu.
+
+TX resolution edits resize before building mipmaps. Integer storage is retained when Keep is selected; normal-map resampling uses normal renormalization when the job was classified as Normal. A TX task can also be changed into an EXR/PNG/TIFF image export through the format command.
+
 ## True image formats, depth and Alpha
 
 Available outputs include PNG uint8/uint16, TIFF uint8/uint16/float32, JPEG uint8, and EXR half16/float32. Half has a finite magnitude limit of 65504; exceeding it aborts that output rather than creating infinity. Integer outputs normalize unsigned source samples and clamp processed values to 0–1. Use EXR float32 for signed or high-range displacement. This is actual decoding/encoding, not an extension rename.
@@ -24,9 +38,9 @@ Use **Add folder / set…** repeatedly, **Use main file list**, or **Use selecte
 
 **Workers** controls 1–4 simultaneous processes. **Queue memory cap** limits their combined committed memory, including native subprocesses. It excludes the interactive application/viewers. Allow at least 512 MiB per worker; large native operations may need more. Exceeding the cap fails a job safely; raise the budget and retry. This is a hard safety limit, not a guarantee that every decoder can process every image within that budget.
 
-**Pause queue** stops unfinished work and retains completed files. **Resume queue** restarts remaining files; it does not resume halfway through a scanline. **Retry failed** retries errors and blocked dependencies. Closing the workflow window leaves the queue running; closing the application pauses it. On the next launch, reopen Production workflows and Resume. No work automatically restarts on launch.
+**Cancel current work** stops plan preparation and pauses the active queue, including native maketx subprocesses. It retains completed outputs and leaves unfinished jobs queued. **Pause queue** has the same queue-stopping behavior without cancelling preparation. **Resume queue** restarts remaining files; it does not resume halfway through a scanline. **Retry failed** retries errors and blocked dependencies. Closing the workflow window leaves the queue running; closing the application pauses it. On the next launch, reopen Production workflows and Resume. No work automatically restarts on launch.
 
-The SQLite queue is stored at `%APPDATA%\UDIM Studio\production-queue.sqlite3`; owned intermediates and completion markers are in `queue-work` beside it. One application instance owns that queue at a time. Completed output and source SHA-256 hashes are verified before reuse. An output committed just before an interruption can be adopted from its owned marker; unrelated existing files are never overwritten. Changed inputs need a fresh plan. Do not edit/delete the queue database while jobs are running.
+The SQLite queue is stored at `%APPDATA%\UDIM Studio\production-queue.sqlite3`; control records, scratch intermediates and completion markers are in `queue-work` beside it. Final-output staging is created beside the destination as `.udim-job-<id>`, on the output drive, so publishing never requires a cross-drive rename. Interrupted owned staging is checked or replaced on retry and excluded from recursive scans. One application instance owns that queue at a time. Completed output and source SHA-256 hashes are verified before reuse. An output committed just before an interruption can be adopted from its owned marker; unrelated existing files are never overwritten. Changed inputs need a fresh plan. Do not edit/delete the queue database while jobs are running.
 
 Each batch also saves `forge-workflow.json` with reviewed jobs and parameters. These manifests and queue records contain local paths. They are local records, not part of diagnostic exports.
 
@@ -71,6 +85,6 @@ In **HTML A/B report**, choose reference/candidate folders and the native differ
 
 ## Tiled rendering textures
 
-Choose **TX mipmaps** for bundled OpenImageIO `maketx`: 64×64 tiled textures, mipmaps, selected filter/wrap and Keep/half/float/uint16/uint8 storage. This exports `.tx` copies without a separate tool installation. NaN/Inf abort export. Large native processing shares the queue memory cap. PSD/PSB input first prepares its saved composite as float EXR; Keep therefore retains that intermediate float storage. Choose explicit storage when required.
+Choose **TX mipmaps** for bundled OpenImageIO `maketx`: 64×64 tiled textures, mipmaps, selected filter/wrap and Keep/half/float/uint16/uint8 storage. This exports `.tx` copies without a separate tool installation. NaN/Inf abort export. Large native processing shares the queue memory cap. **CPU threads per file** offers Auto or explicit counts; Auto resolves up to four threads shared across the planned workers. ZIP/LZW/None compression is selectable; None can write faster at the cost of larger files. Thread allocation and file staging were improved without changing the chosen mipmap filter. More threads are not always faster. PSD/PSB input first prepares its saved composite as float EXR; Keep therefore retains that intermediate float storage. Choose explicit storage when required.
 
 For details see [OpenImageIO maketx](https://openimageio.readthedocs.io/en/main/maketx.html), [OCIO](ocio.md), [support and diagnostics](support.md), and [quick start](quick-start.md).

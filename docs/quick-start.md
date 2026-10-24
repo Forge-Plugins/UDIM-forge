@@ -13,6 +13,8 @@ UDIM Forge is a Windows desktop tool for organizing, inspecting, comparing and p
 
 For example, one-based body_color_u1_v1.exr becomes body_color.1001.exr. The equivalent zero-based source is body_color_u0_v0.exr. Filename conversion copies pixel data unchanged; it does not bake color transforms or displacement gain.
 
+Enable **Use formats by map type** for a mixed set: Displacement EXR float32, Normal PNG16, Color PNG8. The inline preset and All map types editor configure these rules; save a profile to reuse them.
+
 ## Inspect a texture
 
 To change actual image encoding, use **Convert image format…**, choose **Output format / bit depth** (EXR/PNG/TIFF/JPEG), then **Preview export plan → Start format conversion**. You can also choose Output image format / bit depth directly in the main window and press Start conversion to combine naming and encoding in one pass. See [production workflows](production.md) for compression, Alpha, durable queues, recipes and displacement processing.

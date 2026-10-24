@@ -1,6 +1,6 @@
 # Contact / support
 
-UDIM Forge 0.2.1 is developed under Forge-Plugins. The GitHub repository is the public documentation, changelog and support hub. Portable downloads are attached to GitHub Releases; application source is not published in Git.
+UDIM Forge 0.3.0 is developed under Forge-Plugins. The GitHub repository is the public documentation, changelog and support hub. Portable downloads are attached to GitHub Releases; application source is not published in Git.
 
 - [Report a problem](https://github.com/Forge-Plugins/UDIM-forge/issues/new?template=bug_report.yml)
 - [Request a feature](https://github.com/Forge-Plugins/UDIM-forge/issues/new?template=feature_request.yml)
@@ -36,3 +36,7 @@ Application branding is now UDIM Forge. Existing settings, profiles, cache owner
 - [Quick start](quick-start.md)
 - [Troubleshooting](troubleshooting.md)
 - [What’s new](changelog.md)
+
+## Earlier WinError 17 conversion failures
+
+Versions before 0.3.0 could prepare files in queue-work on C: and fail when renaming them to a different output drive. The fixed queue writes final staging on the destination drive. After updating, **Retry failed** requeues failures and resumes unfinished work. Existing prepared outputs are reused only after source/output hashes and settings match; other files are recalculated. Queue history and verified completed outputs are preserved. The updated Cancel current work button pauses processing, including native TX, rather than cancelling only plan preparation.

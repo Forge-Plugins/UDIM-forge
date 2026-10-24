@@ -1,5 +1,15 @@
 # What’s new
 
+## 0.3.0 — 2026-10-24
+
+- Main-window formats by map type, inline Displacement/Normal/Color selectors, mixed-set preset and custom-type editor; rules and enabled state persist in profiles.
+- Fixed WinError 17 when publishing queue outputs to another drive. Final staging now lives on the output drive; verified prepared outputs from earlier failures can be recovered without re-encoding.
+- Cancel current work stops preparation and active queue/native maketx processes; pending work remains resumable.
+- TX Auto uses a measured four-thread budget, with manual CPU/compression controls and optional per-job resizing.
+- Right-click multi-selection edits image encoding, Alpha, compression, resolution/filter and TX settings in preview or paused unfinished jobs. Dependent paths are rebased; finished results are protected.
+- Corrected misleading TX details and excluded owned output staging from recursive scans.
+
+
 ## 0.2.1 — 2026-10-24
 
 - Main-window Output image format / bit depth, compression and Alpha controls. One Start conversion applies UDIM naming, folder layout and real EXR/PNG/TIFF/JPEG encoding together.

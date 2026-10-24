@@ -6,7 +6,7 @@ This Git repository contains documentation, changelog and issue templates. Appli
 
 ## Download
 
-[Download UDIM Forge 0.2.1 — Windows x64 portable](https://github.com/Forge-Plugins/UDIM-forge/releases/download/v0.2.1/UDIM_Forge_v0.2.1_Windows_x64_Portable.zip) · [Latest release](https://github.com/Forge-Plugins/UDIM-forge/releases/latest) · [Changelog](CHANGELOG.md)
+[Download UDIM Forge 0.3.0 — Windows x64 portable](https://github.com/Forge-Plugins/UDIM-forge/releases/download/v0.3.0/UDIM_Forge_v0.3.0_Windows_x64_Portable.zip) · [Latest release](https://github.com/Forge-Plugins/UDIM-forge/releases/latest) · [Changelog](CHANGELOG.md)
 
 Extract the ZIP and run **UDIM Forge.exe**. No Python installation is required. GitHub’s automatic source archives contain documentation only. The release includes SHA256SUMS.txt. Inside the app, use **Help & Support → Check for updates…** to check the stable channel and open the portable download.
 
@@ -27,7 +27,13 @@ The application includes these guides offline in **Help & Support**. Its UI and 
 
 ![UDIM Forge offline Help and Support](docs/images/help-center.png)
 
-## New in 0.2.1
+## New in 0.3.0
+
+- Main-window per-map formats: Displacement EXR float32, Normal PNG16 and Color PNG8 in one Start conversion; profile persistence and custom types.
+- Fixed cross-drive publishing (WinError 17), recoverable prepared outputs and a working Cancel current work action for queue/native TX tasks.
+- TX CPU/compression tuning and right-click multi-selection format/resolution edits in preview and paused unfinished jobs.
+
+## Added in 0.2.1
 
 Select **Output image format / bit depth** directly in the main window, then **Start conversion** to apply UDIM naming, folder layout and actual EXR/PNG/TIFF/JPEG encoding in one operation. Compression and Alpha are beside the format selector. Preview shows final extensions and collisions; settings save in profiles. **Keep original format** retains byte-identical copying.
 
