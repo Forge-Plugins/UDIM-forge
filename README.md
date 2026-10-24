@@ -6,7 +6,7 @@ This Git repository contains documentation, changelog and issue templates. Appli
 
 ## Download
 
-[Download UDIM Forge 0.4.0 — Windows x64 portable](https://github.com/Forge-Plugins/UDIM-forge/releases/download/v0.4.0/UDIM_Forge_v0.4.0_Windows_x64_Portable.zip) · [Latest release](https://github.com/Forge-Plugins/UDIM-forge/releases/latest) · [Changelog](CHANGELOG.md)
+[Download UDIM Forge 0.4.1 — Windows x64 portable](https://github.com/Forge-Plugins/UDIM-forge/releases/download/v0.4.1/UDIM_Forge_v0.4.1_Windows_x64_Portable.zip) · [Latest release](https://github.com/Forge-Plugins/UDIM-forge/releases/latest) · [Changelog](CHANGELOG.md)
 
 Extract the ZIP and run **UDIM Forge.exe**. No Python installation is required. GitHub’s automatic source archives contain documentation only. The release includes SHA256SUMS.txt. Inside the app, use **Help & Support → Check for updates…** to check the stable channel and open the portable download.
 
@@ -27,7 +27,13 @@ The application includes these guides offline in **Help & Support**. Its UI and 
 
 ![UDIM Forge offline Help and Support](docs/images/help-center.png)
 
-## New in 0.4.0
+## New in 0.4.1
+
+- Persistent custom packing presets with R/G/B/Alpha routing, source channels, Alpha enable state, format/depth, packed map name and missing-map policy.
+- Select to apply, Load, Save as and Delete directly in the packing window; source/output folders remain independent.
+- Protected ORM/RMA built-ins and atomic validated preset storage. [Guide](docs/user-guide.md#custom-packing-presets).
+
+## Added in 0.4.0
 
 - A larger preview table and compact main workspace with Output, By map type and Advanced settings tabs.
 - Collapsible metadata filters and grouped Compare/Tools/Selection menus.

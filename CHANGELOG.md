@@ -1,5 +1,13 @@
 # What’s new
 
+## 0.4.1 — 2026-10-24
+
+- Named custom packing presets in Pack ORM / RMA: select to apply, Load, Save as and Delete.
+- Presets retain R/G/B/Alpha map routing, source-sample selectors, constants, Alpha enable state, output format with bit depth, packed map name and missing-map policy.
+- Presets persist between launches and apply to new UDIM sets without changing source/output folders or tile selections.
+- ORM/RMA built-ins remain available and protected; replacing a custom preset asks for confirmation. Invalid files are reported and preserved.
+- Atomic preset writes retain the previous file if saving fails. Loading applies the settings together before refreshing the selected preview.
+
 ## 0.4.0 — 2026-10-24
 
 - Reorganized the main window into compact Folders, Conversion and Preview steps, with a larger file table and fewer duplicate actions.

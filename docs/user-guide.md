@@ -355,6 +355,12 @@ Supported outputs include PNG8/16, TIFF integer/float and EXR half/float. Option
 
 
 
+### Custom packing presets
+
+In **Pack ORM / RMA…**, use **Packing preset → Save as…** after choosing your routing and output settings. Enter a custom name. The preset saves all R/G/B/Alpha source maps and sample selectors, constants, whether Alpha is enabled, output format and bit depth, **Packed map name** and **Fill missing maps**. Selecting a saved preset applies it immediately; **Load** reapplies the saved values after edits. The selected tile preview refreshes with the restored routing. **Delete…** removes the saved preset and keeps the current settings. Saving an existing custom name asks before replacing it. ORM and RMA remain protected built-ins.
+
+Presets persist across application restarts in `%APPDATA%\UDIM Studio\packing-presets.json`. They exclude source/output paths and tile selection, so the same preset works on another set. An inactive Alpha assignment is remembered too. A preset with Alpha enabled cannot use JPEG. Preset files are validated and saved atomically; a corrupt/unsupported file is reported and is not silently replaced.
+
 ## Resize UDIM sets
 
 Open **Tools → Resize UDIM sets…** or use the main file-list context menu. Use the main scan, scan a separate folder recursively with the correct source naming mode, or filter the file list by map type. **All listed files** processes the current map-type scope; **Selected files only** processes the Ctrl/Shift selection. This operation resizes pixels independently for each file; it does not require all map types to have matching original dimensions.
