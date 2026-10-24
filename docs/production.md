@@ -136,3 +136,7 @@ For details see [OpenImageIO maketx](https://openimageio.readthedocs.io/en/main/
 Open **Filters** above the preview for source/output resolution, format and depth filters; an active count remains visible when collapsed. **Selection** groups row actions and the Rename files with Apply type toggle. **Compare** and **Tools** group version comparison, production workflows, grading, resizing, OCIO, validation and cache tools. **Start conversion** remains at the bottom.
 
 Use the visible **Pack ORM / RMA…** button in the main header to open channel packing. The tool is also available in Tools and the file-list context menu.
+
+## Inspect UDIM boundaries
+
+Use **Tools → UDIM boundary validator…** or **UDIM boundaries…** in the set validator. Choose a map type, stored channel and threshold in native units, then **Analyze boundaries**. Inspect the A/B border strips, highlighted differences, largest-difference marker and exact pixel counts; **Export CSV / JSON…** includes all connections. This compares stored neighboring image borders and cannot infer mesh/UV continuity or tangent frames. See [boundary validation](boundaries.md) for units, orientation, streaming limits and interpretation.

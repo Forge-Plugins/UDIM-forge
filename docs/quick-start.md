@@ -59,3 +59,7 @@ Click a table heading to toggle ascending/descending order. Open **Filters** and
 Click **Pack ORM / RMA…** in the main header. Use **ORM** for R=AO, G=Roughness, B=Metallic, or **RMA** for R=Roughness, G=Metallic, B=AO. In **CHANNEL ROUTING**, choose the source map and sample for every output channel; scalar maps use R. Constants 0/1 are available. Enable **Include Alpha in output (RGBA)** when needed. Review the routing summary, select a paired UDIM tile, inspect RGB or individual channels, choose PNG/TIFF/EXR and **Export packed copies**. Missing/duplicate inputs are shown in the pairing table. See [packing details](user-guide.md#orm--rma-channel-packing).
 
 Choose **Packing preset → Save as…** to reuse this setup: routing, source channels, Alpha, format/depth, map name and missing-map policy. Select the saved name for the next set; presets remain available after restarting. Source/output folders are kept independent.
+
+## Inspect UDIM boundaries
+
+Use **Tools → UDIM boundary validator…** or **UDIM boundaries…** in the set validator. Choose a map type, stored channel and threshold in native units, then **Analyze boundaries**. Inspect the A/B border strips, highlighted differences, largest-difference marker and exact pixel counts; **Export CSV / JSON…** includes all connections. This compares stored neighboring image borders and cannot infer mesh/UV continuity or tangent frames. See [boundary validation](boundaries.md) for units, orientation, streaming limits and interpretation.

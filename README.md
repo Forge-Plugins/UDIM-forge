@@ -6,7 +6,7 @@ This Git repository contains documentation, changelog and issue templates. Appli
 
 ## Download
 
-[Download UDIM Forge 0.4.1 — Windows x64 portable](https://github.com/Forge-Plugins/UDIM-forge/releases/download/v0.4.1/UDIM_Forge_v0.4.1_Windows_x64_Portable.zip) · [Latest release](https://github.com/Forge-Plugins/UDIM-forge/releases/latest) · [Changelog](CHANGELOG.md)
+[Download UDIM Forge 0.5.0 — Windows x64 portable](https://github.com/Forge-Plugins/UDIM-forge/releases/download/v0.5.0/UDIM_Forge_v0.5.0_Windows_x64_Portable.zip) · [Latest release](https://github.com/Forge-Plugins/UDIM-forge/releases/latest) · [Changelog](CHANGELOG.md)
 
 Extract the ZIP and run **UDIM Forge.exe**. No Python installation is required. GitHub’s automatic source archives contain documentation only. The release includes SHA256SUMS.txt. Inside the app, use **Help & Support → Check for updates…** to check the stable channel and open the portable download.
 
@@ -15,6 +15,7 @@ Extract the ZIP and run **UDIM Forge.exe**. No Python installation is required. 
 - [Production workflows](docs/production.md) — image formats, queues, recipes, displacement, HTML and .tx.
 - [Quick start](docs/quick-start.md) — first conversion, inspection and comparison.
 - [User guide](docs/user-guide.md) — complete workflows, controls and limitations.
+- [UDIM boundary validator](docs/boundaries.md) — native border statistics, previews and CSV/JSON reports.
 - [OCIO and input assignments](docs/ocio.md) — color spaces per set/type and session-local policies.
 - [Naming reference](docs/naming.md) — UDIM, UV coordinates, templates and channel naming.
 - [Troubleshooting](docs/troubleshooting.md) — previews, large files, cache, colors and recovery.
@@ -27,7 +28,14 @@ The application includes these guides offline in **Help & Support**. Its UI and 
 
 ![UDIM Forge offline Help and Support](docs/images/help-center.png)
 
-## New in 0.4.1
+## New in 0.5.0
+
+- Native U/V boundary checks for observed neighboring UDIMs, grouped by set and map type.
+- Threshold statistics, pixel counts/percentages, A/B border strips, peak markers, native hover values and CSV/JSON reports.
+- Bounded background reads, cancel with completed results retained, and explicit invalid/incompatible/stale states.
+- Image-space warnings; no automatic repairs or assumptions about UV topology. [Guide](docs/boundaries.md).
+
+## Added in 0.4.1
 
 - Persistent custom packing presets with R/G/B/Alpha routing, source channels, Alpha enable state, format/depth, packed map name and missing-map policy.
 - Select to apply, Load, Save as and Delete directly in the packing window; source/output folders remain independent.

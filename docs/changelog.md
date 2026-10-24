@@ -1,5 +1,15 @@
 # What’s new
 
+## 0.5.0 — 2026-10-25
+
+- Added Tools → UDIM boundary validator and a shortcut from the set validator.
+- Native U/V border checks between observed neighboring tiles, grouped by set and map type, with correct image-Y/UV-V orientation and no horizontal row wrap.
+- Per-channel or all non-alpha analysis, native-unit thresholds, maximum/mean/RMS differences, exact affected-pixel counts/percentages and a problems-only filter.
+- A/B border strips, peak-preserving difference bins, threshold/invalid highlights, native hover values, peak marker and original-map viewer shortcuts.
+- Explicit duplicate, incompatible, unsupported, nonfinite, stale and unfinished results; no guessed pairs, resampling or automatic repairs.
+- Background bounded edge reads, cancellation preserving completed connections and full CSV/JSON reports with source-change checks.
+- Added a 16K tiled float32 TIFF benchmark and regression checks for orientation, counts, Alpha, cancellation, changed files and report safety. Numerical boundaries remain inspection warnings: unrelated UV islands and tangent-space normals may differ intentionally.
+
 ## 0.4.1 — 2026-10-24
 
 - Named custom packing presets in Pack ORM / RMA: select to apply, Load, Save as and Delete.
