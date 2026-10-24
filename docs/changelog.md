@@ -1,5 +1,15 @@
 # What’s new
 
+## 0.4.0 — 2026-10-24
+
+- Reorganized the main window into compact Folders, Conversion and Preview steps, with a larger file table and fewer duplicate actions.
+- Output, By map type and Advanced tabs keep common settings visible and expand to fit the selected controls. Metadata filters open from Filters, with an active-filter count.
+- Grouped Compare, Tools and Selection actions; preserved naming, format, resolution, profile and queue behavior.
+- Added a direct Pack ORM / RMA button in the main header and prominent color-coded R/G/B/Alpha routing cards.
+- Each packed destination chooses AO, Roughness, Metallic or constant 0/1, plus the source sample R/G/B/Alpha/Luminance. A live routing summary shows exactly what will be written.
+- Optional fourth Alpha output, RGB/single-channel previews, and RGBA PNG/TIFF/EXR export with independent unassociated RGB values and mapping recorded in the manifest. JPEG with Alpha is explicitly rejected.
+- Changing packing settings refreshes the selected preview. Original files remain unchanged.
+
 ## 0.3.4 — 2026-10-24
 
 - Main-window folder, conversion and preview sections now use distinct muted blue, warm charcoal and teal backgrounds with matching controls.

@@ -6,7 +6,7 @@ This Git repository contains documentation, changelog and issue templates. Appli
 
 ## Download
 
-[Download UDIM Forge 0.3.4 — Windows x64 portable](https://github.com/Forge-Plugins/UDIM-forge/releases/download/v0.3.4/UDIM_Forge_v0.3.4_Windows_x64_Portable.zip) · [Latest release](https://github.com/Forge-Plugins/UDIM-forge/releases/latest) · [Changelog](CHANGELOG.md)
+[Download UDIM Forge 0.4.0 — Windows x64 portable](https://github.com/Forge-Plugins/UDIM-forge/releases/download/v0.4.0/UDIM_Forge_v0.4.0_Windows_x64_Portable.zip) · [Latest release](https://github.com/Forge-Plugins/UDIM-forge/releases/latest) · [Changelog](CHANGELOG.md)
 
 Extract the ZIP and run **UDIM Forge.exe**. No Python installation is required. GitHub’s automatic source archives contain documentation only. The release includes SHA256SUMS.txt. Inside the app, use **Help & Support → Check for updates…** to check the stable channel and open the portable download.
 
@@ -27,7 +27,14 @@ The application includes these guides offline in **Help & Support**. Its UI and 
 
 ![UDIM Forge offline Help and Support](docs/images/help-center.png)
 
-## New in 0.3.4
+## New in 0.4.0
+
+- A larger preview table and compact main workspace with Output, By map type and Advanced settings tabs.
+- Collapsible metadata filters and grouped Compare/Tools/Selection menus.
+- A visible **Pack ORM / RMA…** button, explicit R/G/B/Alpha source routing, live summaries and channel previews.
+- Optional RGBA PNG/TIFF/EXR packing with preserved independent channel values. [Quick start](docs/quick-start.md#pack-orm--rma-channels).
+
+## Added in 0.3.4
 
 - Distinct muted section colors, slim accent edges and coordinated inputs separate main-window folders, conversion, preview, status and cache.
 - Clearer selected/hover tabs and readable dropdown arrows, with primary actions and warning colors preserved.

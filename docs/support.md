@@ -1,6 +1,6 @@
 # Contact / support
 
-UDIM Forge 0.3.4 is developed under Forge-Plugins. The GitHub repository is the public documentation, changelog and support hub. Portable downloads are attached to GitHub Releases; application source is not published in Git.
+UDIM Forge 0.4.0 is developed under Forge-Plugins. The GitHub repository is the public documentation, changelog and support hub. Portable downloads are attached to GitHub Releases; application source is not published in Git.
 
 - [Report a problem](https://github.com/Forge-Plugins/UDIM-forge/issues/new?template=bug_report.yml)
 - [Request a feature](https://github.com/Forge-Plugins/UDIM-forge/issues/new?template=feature_request.yml)

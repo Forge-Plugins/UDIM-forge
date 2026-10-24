@@ -1,6 +1,6 @@
 # Format conversion and production workflows
 
-UDIM Forge 0.2.0 adds one persistent queue for preparing whole texture sets. Open **Convert image format…** beside the main texture tools, or **Texture tools → Production workflows / persistent queue…**. Right-click selected main-table rows to convert only those images. All processing exports new files; original textures remain unchanged.
+UDIM Forge 0.2.0 adds one persistent queue for preparing whole texture sets. Open **Tools → Convert image format…** or **Tools → Production workflows / task queue…** in the main header. Right-click selected main-table rows to convert only those images. All processing exports new files; original textures remain unchanged.
 
 ## Which Start button?
 
@@ -128,3 +128,11 @@ In **HTML A/B report**, choose reference/candidate folders and the native differ
 Choose **TX mipmaps** for bundled OpenImageIO `maketx`: 64×64 tiled textures, mipmaps, selected filter/wrap and Keep/half/float/uint16/uint8 storage. This exports `.tx` copies without a separate tool installation. NaN/Inf abort export. Large native processing shares the queue memory cap. **CPU threads per file** offers Auto or explicit counts; Auto resolves up to four threads shared across the planned workers. ZIP/LZW/None compression is selectable; None can write faster at the cost of larger files. Thread allocation and file staging were improved without changing the chosen mipmap filter. More threads are not always faster. PSD/PSB input first prepares its saved composite as float EXR; Keep therefore retains that intermediate float storage. Choose explicit storage when required.
 
 For details see [OpenImageIO maketx](https://openimageio.readthedocs.io/en/main/maketx.html), [OCIO](ocio.md), [support and diagnostics](support.md), and [quick start](quick-start.md).
+
+## Main workspace (0.4.0)
+
+**Folders** contains the source/output locations and Scan files. **Conversion → Output** contains UDIM naming, the global image format/depth and folder layout. **By map type** groups per-map formats and resolutions; **Advanced** holds source naming, templates, compression, Alpha, verification and map detection rules. The tab height follows its controls, leaving more room for the preview table.
+
+Open **Filters** above the preview for source/output resolution, format and depth filters; an active count remains visible when collapsed. **Selection** groups row actions and the Rename files with Apply type toggle. **Compare** and **Tools** group version comparison, production workflows, grading, resizing, OCIO, validation and cache tools. **Start conversion** remains at the bottom.
+
+Use the visible **Pack ORM / RMA…** button in the main header to open channel packing. The tool is also available in Tools and the file-list context menu.

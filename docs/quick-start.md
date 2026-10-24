@@ -5,7 +5,7 @@ UDIM Forge is a Windows desktop tool for organizing, inspecting, comparing and p
 ## Convert Mudbox names to UDIM names
 
 1. Drop your source folder into the main window, or browse to it. Enable Include subfolders when needed.
-2. Choose the correct Source format. Auto detects common UDIM and UV names; explicitly choose UV 0-based if an incomplete set has no u0/v0 tile.
+2. Choose the correct source naming under **Conversion → Advanced**. Auto detects common UDIM and UV names; explicitly choose UV 0-based if an incomplete set has no u0/v0 tile.
 3. Choose the target naming format and folder layout. A common Mari / Toolbag pattern is {name}.{udim}{ext}.
 4. Click Scan files. Review map types, tile numbers, target names and collisions.
 5. Correct map types with Apply type or use Rename channel. Apply type can update the output channel token for the whole series.
@@ -29,11 +29,11 @@ Use Analyze all versions for a combined report. Set Max |Δ| to filter differenc
 
 ## Set up color viewing
 
-Open OCIO… and choose Configuration, Input space, Display and View. Input assignments can scope color spaces to folders, set names, map types or extensions. Use the actual encoding of your files. Normal, Displacement, masks and packed maps bypass OCIO.
+Open **Tools → OCIO display settings…** and choose Configuration, Input space, Display and View. Input assignments can scope color spaces to folders, set names, map types or extensions. Use the actual encoding of your files. Normal, Displacement, masks and packed maps bypass OCIO.
 
 ## Process a set
 
-Texture tools offers batch grading/map utilities, ORM/RMA packing and resizing with normal-map normalization. Review the settings and export copies to a new output location. These tools intentionally change exported pixels; the filename converter does not.
+The main-header **Tools** menu offers batch grading/map utilities, ORM/RMA packing and resizing with normal-map normalization. Review the settings and export copies to a new output location. These tools intentionally change exported pixels; the filename converter does not.
 
 ## Continue
 
@@ -46,10 +46,14 @@ Texture tools offers batch grading/map utilities, ORM/RMA packing and resizing w
 
 ## Different resolutions in one set
 
-In the main window enable **Use resolutions by map type**, then choose **8K / 4K / 2K preset** (Displacement / Normal / Color) or enter your own longest-edge limits. Choose per-map formats above, review the preview and press **Start conversion** once. Save these settings through **Profile → Save as…**. Smaller images are never enlarged; **Keep original resolution** leaves a type at its source dimensions. See [resolution rules](production.md#resolutions-by-map-type-in-the-main-window) for custom types, filters and format limits.
+In the main window open **By map type** and enable **Resolutions by map type**, then choose **8K / 4K / 2K preset** (Displacement / Normal / Color) or enter your own longest-edge limits. Choose per-map formats above, review the preview and press **Start conversion** once. Save these settings through **Profile → Save as…**. Smaller images are never enlarged; **Keep original resolution** leaves a type at its source dimensions. See [resolution rules](production.md#resolutions-by-map-type-in-the-main-window) for custom types, filters and format limits.
 
 Before **Start conversion**, check **Source size → Output size**, **Source format / depth** and **Output format / depth** in the main table. Values update when settings change. Headers load in the background; Unknown indicates an inspection warning, not an assumed size. The same fields are included in **Export visible CSV…**. See [preview columns](production.md#source-and-output-columns-before-start).
 
 ## Find mismatched settings
 
-Click a table heading to toggle ascending/descending order. Combine the **Source** and **Output** size/format/depth selectors above the table; use an exact dimension or **4K edge** to match any aspect ratio with that longest edge. For example, Output **PNG** + **8-bit uint** finds planned low-depth outputs. **Clear filters** restores all rows; **Export visible CSV…** follows the view/order. View filters do not exclude files from Start conversion. To process a subset, select the matched rows and right-click **Convert selected files…**. See [sorting/filtering](production.md#sorting-and-filtering-the-main-table).
+Click a table heading to toggle ascending/descending order. Open **Filters** and combine the **Source** and **Output** size/format/depth selectors above the table; use an exact dimension or **4K edge** to match any aspect ratio with that longest edge. For example, Output **PNG** + **8-bit uint** finds planned low-depth outputs. **Clear filters** restores all rows; **Export visible CSV…** follows the view/order. View filters do not exclude files from Start conversion. To process a subset, select the matched rows and right-click **Convert selected files…**. See [sorting/filtering](production.md#sorting-and-filtering-the-main-table).
+
+## Pack ORM / RMA channels
+
+Click **Pack ORM / RMA…** in the main header. Use **ORM** for R=AO, G=Roughness, B=Metallic, or **RMA** for R=Roughness, G=Metallic, B=AO. In **CHANNEL ROUTING**, choose the source map and sample for every output channel; scalar maps use R. Constants 0/1 are available. Enable **Include Alpha in output (RGBA)** when needed. Review the routing summary, select a paired UDIM tile, inspect RGB or individual channels, choose PNG/TIFF/EXR and **Export packed copies**. Missing/duplicate inputs are shown in the pairing table. See [packing details](user-guide.md#orm--rma-channel-packing).
