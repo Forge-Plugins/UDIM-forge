@@ -1,5 +1,13 @@
 # What’s new
 
+## 0.3.1 — 2026-10-24
+
+- Main-window resolution limits by map type, an 8K Displacement / 4K Normal / 2K Color preset, custom pixel sizes and filter selection.
+- One Start conversion combines UDIM naming, format/depth and reduce-only resizing, including selected-file conversion.
+- Aspect ratio and float displacement are preserved; resized Normal maps are renormalized. Disk-backed float32 intermediates avoid early quantization.
+- Profiles/settings retain resolution rules, enabled state and filter. All map types supports custom format/resolution rules; older profiles keep resizing disabled.
+- Output preview/reports include resolution settings and actual output dimensions. Taller default window gives the file list more space.
+
 ## 0.3.0 — 2026-10-24
 
 - Main-window formats by map type, inline Displacement/Normal/Color selectors, mixed-set preset and custom-type editor; rules and enabled state persist in profiles.
@@ -31,7 +39,7 @@
 - Persistent rotating error logs and reviewed, redacted diagnostic ZIP export.
 - Relink moved comparison projects and OCIO folder scopes/config paths; retain only content-verified analysis. Legacy results without hashes require accessible originals or reanalysis.
 
-See [production workflows](docs/production.md) and [support/relink instructions](docs/support.md).
+See [production workflows](production.md) and [support/relink instructions](support.md).
 
 ## 0.1.0 — 2026-10-24
 
@@ -58,4 +66,4 @@ First public Windows x64 portable release. Download UDIM_Forge_v0.1.0_Windows_x6
 - Copy-only batch texture operations, ORM/RMA channel packing and UDIM resizing with normal-map normalization.
 - Display-only OCIO with global, set/folder/type/extension input assignments and session-local policies.
 
-See the [user guide](docs/user-guide.md) and [update instructions](docs/updates.md) for supported behavior, limitations and installation steps.
+See the [user guide](user-guide.md) and [update instructions](updates.md) for supported behavior, limitations and installation steps.

@@ -1,5 +1,13 @@
 # What’s new
 
+## 0.3.1 — 2026-10-24
+
+- Main-window resolution limits by map type, an 8K Displacement / 4K Normal / 2K Color preset, custom pixel sizes and filter selection.
+- One Start conversion combines UDIM naming, format/depth and reduce-only resizing, including selected-file conversion.
+- Aspect ratio and float displacement are preserved; resized Normal maps are renormalized. Disk-backed float32 intermediates avoid early quantization.
+- Profiles/settings retain resolution rules, enabled state and filter. All map types supports custom format/resolution rules; older profiles keep resizing disabled.
+- Output preview/reports include resolution settings and actual output dimensions. Taller default window gives the file list more space.
+
 ## 0.3.0 — 2026-10-24
 
 - Main-window formats by map type, inline Displacement/Normal/Color selectors, mixed-set preset and custom-type editor; rules and enabled state persist in profiles.

@@ -43,3 +43,7 @@ Texture tools offers batch grading/map utilities, ORM/RMA packing and resizing w
 - [Naming reference](naming.md)
 - [Troubleshooting](troubleshooting.md)
 - [Contact / report a problem](support.md)
+
+## Different resolutions in one set
+
+In the main window enable **Use resolutions by map type**, then choose **8K / 4K / 2K preset** (Displacement / Normal / Color) or enter your own longest-edge limits. Choose per-map formats above, review the preview and press **Start conversion** once. Save these settings through **Profile → Save as…**. Smaller images are never enlarged; **Keep original resolution** leaves a type at its source dimensions. See [resolution rules](production.md#resolutions-by-map-type-in-the-main-window) for custom types, filters and format limits.
