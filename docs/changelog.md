@@ -1,5 +1,20 @@
 # What’s new
 
+## 0.2.0 — 2026-10-24
+
+- Visible Convert image format command and Start format conversion button; the main filename-copy action is now Start conversion. Fixed main-table horizontal scrolling.
+- PNG16, EXR half/float, compression and explicit Alpha policies, with protected source files.
+- Persistent multi-operation queue with dependency ordering, per-file recovery, SHA-256 verification, 1–4 workers and a hard combined worker memory cap.
+- Saved whole-set recipes with per-map grading/resize/output rules, normal-Y conversion, normal resampling, ORM/RMA dependencies and reviewed output manifests.
+- Shared displacement min/max, normalize/neutral/scale/offset operations and per-output transform/inverse sidecars.
+- Advisory uniform/clipping/normal-length/Alpha quality checks with source inspection; corrupt/NaN/Inf inputs are reported.
+- Self-contained visual HTML A/B reports and bundled tiled/mipmapped .tx export.
+- Explicit opt-in baked OCIO Display/View for Color exports, separate from ordinary display-only preview; data maps bypass it.
+- Persistent rotating error logs and reviewed, redacted diagnostic ZIP export.
+- Relink moved comparison projects and OCIO folder scopes/config paths; retain only content-verified analysis. Legacy results without hashes require accessible originals or reanalysis.
+
+See [production workflows](production.md) and [support/relink instructions](support.md).
+
 ## 0.1.0 — 2026-10-24
 
 First public Windows x64 portable release. Download UDIM_Forge_v0.1.0_Windows_x64_Portable.zip and SHA256SUMS.txt from [GitHub Releases](https://github.com/Forge-Plugins/UDIM-forge/releases/tag/v0.1.0).

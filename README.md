@@ -6,12 +6,13 @@ This Git repository contains documentation, changelog and issue templates. Appli
 
 ## Download
 
-[Download UDIM Forge 0.1.0 — Windows x64 portable](https://github.com/Forge-Plugins/UDIM-forge/releases/download/v0.1.0/UDIM_Forge_v0.1.0_Windows_x64_Portable.zip) · [Latest release](https://github.com/Forge-Plugins/UDIM-forge/releases/latest) · [Changelog](CHANGELOG.md)
+[Download UDIM Forge 0.2.0 — Windows x64 portable](https://github.com/Forge-Plugins/UDIM-forge/releases/download/v0.2.0/UDIM_Forge_v0.2.0_Windows_x64_Portable.zip) · [Latest release](https://github.com/Forge-Plugins/UDIM-forge/releases/latest) · [Changelog](CHANGELOG.md)
 
 Extract the ZIP and run **UDIM Forge.exe**. No Python installation is required. GitHub’s automatic source archives contain documentation only. The release includes SHA256SUMS.txt. Inside the app, use **Help & Support → Check for updates…** to check the stable channel and open the portable download.
 
 ## Documentation
 
+- [Production workflows](docs/production.md) — image formats, queues, recipes, displacement, HTML and .tx.
 - [Quick start](docs/quick-start.md) — first conversion, inspection and comparison.
 - [User guide](docs/user-guide.md) — complete workflows, controls and limitations.
 - [OCIO and input assignments](docs/ocio.md) — color spaces per set/type and session-local policies.
@@ -26,6 +27,18 @@ The application includes these guides offline in **Help & Support**. Its UI and 
 
 ![UDIM Forge offline Help and Support](docs/images/help-center.png)
 
+## New in 0.2.0
+
+**Start conversion** handles names/folder layouts. For true EXR/PNG/TIFF/JPEG encoding use **Convert image format… → Preview export plan → Start format conversion**, with bit depth, compression and Alpha controls. The main file table now scrolls horizontally.
+
+- Persistent processing queue with resume, dependencies, parallel workers and a hard queue memory cap.
+- Per-map recipes for whole sets; shared displacement transforms with inverse sidecars.
+- Quality findings, offline HTML A/B reports and tiled/mipmapped .tx export.
+- Explicit baked OCIO exports for Color, separate from ordinary preview.
+- Persistent error logs, reviewed/redacted diagnostic ZIPs and moved-project relinking with content-verified analysis.
+
+See the [production guide](docs/production.md), [relink/support instructions](docs/support.md) and [changelog](CHANGELOG.md).
+
 ## Main workflows
 
 - Mudbox UV/UDIM naming conversion and whole-set channel renaming, with new output copies.
@@ -38,6 +51,6 @@ The application includes these guides offline in **Help & Support**. Its UI and 
 
 ## Support
 
-[Report a problem](https://github.com/Forge-Plugins/UDIM-forge/issues/new?template=bug_report.yml) or [request a feature](https://github.com/Forge-Plugins/UDIM-forge/issues/new?template=feature_request.yml). Search [existing issues](https://github.com/Forge-Plugins/UDIM-forge/issues) first. Include **Help & Support → Copy diagnostics** and reproduction steps. Review attachments before posting publicly.
+[Report a problem](https://github.com/Forge-Plugins/UDIM-forge/issues/new?template=bug_report.yml) or [request a feature](https://github.com/Forge-Plugins/UDIM-forge/issues/new?template=feature_request.yml). Search [existing issues](https://github.com/Forge-Plugins/UDIM-forge/issues) first. Use **Help & Support → Export diagnostics…** to review/export logs, or Copy diagnostics for version basics. Include the reviewed diagnostics and reproduction steps. Review attachments before posting publicly.
 
 UDIM Forge was previously named UDIM Studio. Existing settings, profiles, reports, caches and comparison sessions remain compatible. Settings intentionally stay under `%APPDATA%\UDIM Studio`.

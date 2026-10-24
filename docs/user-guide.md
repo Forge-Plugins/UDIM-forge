@@ -1,5 +1,7 @@
 # UDIM Forge
 
+For the new **Start conversion**, **Convert image format…**, durable production queue, recipes, displacement tools, quality findings, HTML and .tx export, see [Production workflows](production.md). For moved-project relinking and reviewed error logs see [Support](support.md).
+
 A small, portable Windows application for converting **UV/UDIM texture filenames and folder layouts**. It works locally and does not upload textures. Run **UDIM Forge.exe** — no Python installation is needed.
 
 Use **Help & Support** for embedded offline documentation, contact and GitHub issue links.
@@ -16,7 +18,7 @@ Download Windows x64 portable releases from https://github.com/Forge-Plugins/UDI
 2. Select the source format, target format and folder layout.
 3. Click **Scan files** and review the proposed filenames and map types.
 4. Correct a map type for selected files or an entire series. Click ✓ to exclude a file. Use Ctrl or Shift for multiple selection.
-5. Click **Create copies**, then **Open output**.
+5. Click **Start conversion**, then **Open output**.
 
 Each conversion creates a new `UDIM_date_id` subfolder in the output location. Originals remain unchanged. Filename collisions block copying until you change the layout or exclude duplicates. Cancellation removes only the current operation's temporary copies.
 
@@ -183,7 +185,7 @@ The report lists dimensions, sample types, NaN/+Inf/-Inf counts and per-file rea
 - **Replace literal text** replaces a supplied case-insensitive substring, e.g. `body_weirdToken` → `body_Albedo` by replacing `weirdToken`. It requires that text to exist in every selected source/pending basename.
 - **Set full basename** assigns an exact basename, e.g. `Smaug_Albedo` or simply `Color`, to the selected series. Tile tokens and extensions are added by current formatting settings. Do not include them in this field.
 
-The dialog previews paths/collisions before **Apply to preview**. **Reset to source names** clears pending edits and restores filename-based classification. **Create copies** writes the renamed maps into a new result folder; Apply never renames originals in place. Reports preserve the effective output basename and gain so a copied set scans correctly on its next conversion. Pending edits are session-only until copies are created.
+The dialog previews paths/collisions before **Apply to preview**. **Reset to source names** clears pending edits and restores filename-based classification. **Start conversion** writes the renamed maps into a new result folder; Apply never renames originals in place. Reports preserve the effective output basename and gain so a copied set scans correctly on its next conversion. Pending edits are session-only until copies are created.
 
 ## Convert only selected files
 

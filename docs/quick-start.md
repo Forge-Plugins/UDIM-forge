@@ -9,11 +9,13 @@ UDIM Forge is a Windows desktop tool for organizing, inspecting, comparing and p
 3. Choose the target naming format and folder layout. A common Mari / Toolbag pattern is {name}.{udim}{ext}.
 4. Click Scan files. Review map types, tile numbers, target names and collisions.
 5. Correct map types with Apply type or use Rename channel. Apply type can update the output channel token for the whole series.
-6. Choose an output location and click Create copies. Each run creates its own output subfolder. Source texture files remain unchanged.
+6. Choose an output location and click Start conversion. Each run creates its own output subfolder. Source texture files remain unchanged.
 
 For example, one-based body_color_u1_v1.exr becomes body_color.1001.exr. The equivalent zero-based source is body_color_u0_v0.exr. Filename conversion copies pixel data unchanged; it does not bake color transforms or displacement gain.
 
 ## Inspect a texture
+
+To change actual image encoding, use **Convert image format…**, choose **Output format / bit depth** (EXR/PNG/TIFF/JPEG), then **Preview export plan → Start format conversion**. The main Start conversion button changes naming/layout only. See [production workflows](production.md) for compression, Alpha, durable queues, recipes and displacement processing.
 
 Double-click a row to open Image Viewer. Select RGB or an actual stored channel, adjust EXR exposure/gamma, and inspect native RGBA values under the cursor. Histogram, min/max and selected-area statistics use original pixel values. Raw 0–1 bypasses display color processing.
 
@@ -34,6 +36,7 @@ Texture tools offers batch grading/map utilities, ORM/RMA packing and resizing w
 ## Continue
 
 - [Full user guide](user-guide.md)
+- [Format conversion and production workflows](production.md)
 - [OCIO and input assignments](ocio.md)
 - [Naming reference](naming.md)
 - [Troubleshooting](troubleshooting.md)
