@@ -30,6 +30,18 @@ With resizing enabled and **Keep original format**, supported PNG, EXR, TIFF and
 
 The output manifest records each limit, filter, actual dimensions, normal normalization, effective encoding and source/output hashes. Displacement ranges are not remapped. Filters can smooth peaks or introduce ringing; Nearest and Box / area have different sampling tradeoffs from Lanczos.
 
+## Source and output columns before Start
+
+The main table shows **Source size**, **Output size**, **Source format**, **Source depth**, **Output format** and **Output depth** for every row. All six columns appear before the output filename. For example, a 16384 × 8192 TIFF float32 Displacement with the 8K/EXR32 rule shows **8192 × 4096**, **EXR**, **32-bit float** as its planned result. Dimensions are pixels; depth is per sample/channel, with float and unsigned/signed integer types distinguished. EXR dimensions describe the data window, not an optional larger display window.
+
+Headers are read in one background worker without decoding texture pixels or preparing PSD/PSB composites. **Reading…** and a pending-header count are shown until inspection completes; Start conversion waits for the planned files’ header reads. Failures show **Unknown** with a Header warning rather than guessed dimensions. Ordinary byte copying can still preserve a file whose header is unsupported; use **Validate sets…** to check integrity and conversion eligibility. Header inspection alone does not verify compressed pixels, NaN/Inf, PSD saved-composite compatibility or every codec constraint.
+
+Changing output formats, type assignments, limits or profiles immediately recalculates the planned columns using cached headers. Source dimensions/depth remain unchanged. **Keep original resolution** and reduce-only limits on smaller inputs show the original dimensions. Unlisted types inherit the global format and retain their size. Excluded/skipped rows retain source metadata and show a dash for output fields.
+
+With both Keep settings, source/output metadata match the byte copy. With a resize rule and **Keep original format**, the pipeline re-encodes supported inputs; packed PNG/TIFF inputs can expand to their decoded native depth (for example PNG 1-bit → PNG 8-bit). The output column reflects this. Mixed-depth or unsupported retained encodings request an explicit format. For multi-page TIFF/multipart EXR, source columns explicitly describe the first image; ordinary copying keeps every image, while image encoding is marked unsupported for those inputs.
+
+**Scan files** refreshes cached headers, even when paths/size/timestamps have not changed. Scan again after editing source files externally. Horizontal scrolling reaches full output paths/status, while selecting a row also shows its complete filename and source → output summary below the table. Background header updates preserve selection and scroll position. Search includes metadata, and **Export preview CSV…** includes all six metadata fields; exporting while inspection is pending keeps the visible Reading/Unknown state rather than inventing values.
+
 ## Right-click per-file settings in Production Workflows
 
 Ctrl/Shift-select preview rows, right-click, then choose **Change image format / bit depth…**, **Change resolution** (Keep, 16K/8K/4K/2K/1K or Custom/filter), or **TX storage / compression / threads…**. Edits apply only to selected rows. Dependent sources and packing paths follow extension changes; collisions are rejected. A Copy job needs an explicit image output format before resizing. Reports, statistics and packed-channel nodes are protected from unsupported direct image edits.

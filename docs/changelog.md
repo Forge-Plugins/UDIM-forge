@@ -1,5 +1,12 @@
 # What’s new
 
+## 0.3.2 — 2026-10-24
+
+- Main-table source/output dimensions, actual source container and per-sample depth, and planned output container/depth.
+- Predictions follow global/per-type formats, type assignments, aspect ratio, reduce-only limits and retained-encoding rules; no pixel decode is needed for inspection.
+- One background header reader with a small metadata cache, pending/unreadable states and rescan refresh. Metadata updates retain selection and table position.
+- Preview CSV and row details include metadata; Search matches the new fields. Multi-image inputs and unsupported retained formats are explicitly identified.
+
 ## 0.3.1 — 2026-10-24
 
 - Main-window resolution limits by map type, an 8K Displacement / 4K Normal / 2K Color preset, custom pixel sizes and filter selection.

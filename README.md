@@ -6,7 +6,7 @@ This Git repository contains documentation, changelog and issue templates. Appli
 
 ## Download
 
-[Download UDIM Forge 0.3.1 — Windows x64 portable](https://github.com/Forge-Plugins/UDIM-forge/releases/download/v0.3.1/UDIM_Forge_v0.3.1_Windows_x64_Portable.zip) · [Latest release](https://github.com/Forge-Plugins/UDIM-forge/releases/latest) · [Changelog](CHANGELOG.md)
+[Download UDIM Forge 0.3.2 — Windows x64 portable](https://github.com/Forge-Plugins/UDIM-forge/releases/download/v0.3.2/UDIM_Forge_v0.3.2_Windows_x64_Portable.zip) · [Latest release](https://github.com/Forge-Plugins/UDIM-forge/releases/latest) · [Changelog](CHANGELOG.md)
 
 Extract the ZIP and run **UDIM Forge.exe**. No Python installation is required. GitHub’s automatic source archives contain documentation only. The release includes SHA256SUMS.txt. Inside the app, use **Help & Support → Check for updates…** to check the stable channel and open the portable download.
 
@@ -27,7 +27,13 @@ The application includes these guides offline in **Help & Support**. Its UI and 
 
 ![UDIM Forge offline Help and Support](docs/images/help-center.png)
 
-## New in 0.3.1
+## New in 0.3.2
+
+- Source/output dimensions, image format and sample depth directly in the main table before Start conversion.
+- Background header inspection with cached metadata, immediate rule-driven predictions and clear unreadable-header states.
+- Metadata search, detailed row summaries and preview CSV fields. [Guide](docs/production.md#source-and-output-columns-before-start).
+
+## Added in 0.3.1
 
 - Main-window per-map resolution limits, an 8K Displacement / 4K Normal / 2K Color preset, custom pixel sizes and filter selection.
 - One Start conversion applies names, formats and resolutions. Aspect ratio is preserved without upscaling; resized normals are renormalized.

@@ -2,7 +2,7 @@
 
 ## Download the portable app
 
-Use [GitHub Releases](https://github.com/Forge-Plugins/UDIM-forge/releases/latest) and download the Windows x64 portable ZIP, for example UDIM_Forge_v0.3.1_Windows_x64_Portable.zip. Extract the whole archive to a writable folder and run UDIM Forge.exe. Python is not required.
+Use [GitHub Releases](https://github.com/Forge-Plugins/UDIM-forge/releases/latest) and download the Windows x64 portable ZIP, for example UDIM_Forge_v0.3.2_Windows_x64_Portable.zip. Extract the whole archive to a writable folder and run UDIM Forge.exe. Python is not required.
 
 The Git repository contains documentation, changelog and issue templates. The portable program is a Release asset, not a file committed to Git. GitHub's automatically generated source archives contain the documentation repository, not the application. Choose the named Portable.zip asset.
 
