@@ -1,5 +1,13 @@
 # What’s new
 
+## 0.8.0 — 2026-10-25
+
+- Real tessellated displacement in PBR sphere/plane previews with automatic set/UDIM map assignment, signed scale, neutral level and an enable switch.
+- Displaced surface normals, perspective-correct triangle visibility and changed silhouettes under Studio or custom HDRI lighting.
+- Native float height interpretation without OCIO/gamma or per-tile normalization; bounded geometry cache and background cancellation.
+- Explicit invalid-height, collapsed-sphere and preview-range errors.
+- Commercial builds remain local; GitHub hosts documentation and support only.
+
 ## 0.7.0 — 2026-10-25
 
 - Custom HDR/EXR equirectangular environment loading in the PBR viewport, with input-encoding selection and background preparation/progress.

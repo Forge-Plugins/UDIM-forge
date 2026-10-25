@@ -27,7 +27,12 @@ The application includes these guides offline in **Help & Support**. Its UI and 
 
 ![UDIM Forge offline Help and Support](docs/images/help-center.png)
 
-## New in 0.7.0
+## New in 0.8.0
+
+- Geometric displacement on the PBR sphere and plane: set/UDIM height assignment, signed Scale and Neutral controls.
+- Displaced silhouettes and surface normals with cached Studio/HDRI shading. [Guide](docs/pbr.md#geometric-displacement).
+
+## Added in 0.7.0
 
 - Local HDR/EXR environment lighting in PBR preview: rotation, intensity and optional panorama background.
 - Cached diffuse/GGX lighting, bounded HDR radiance preparation, progress/cancel and explicit image/input errors. [HDRI guide](docs/pbr.md#custom-hdri-lighting).
