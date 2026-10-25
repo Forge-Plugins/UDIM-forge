@@ -67,3 +67,5 @@ Use **Tools → UDIM boundary validator…** or **UDIM boundaries…** in the se
 ## Preview a PBR material
 
 Click **PBR preview…** in the main header, choose a texture set and UDIM, then Sphere or Plane. Map slots assign unique matches automatically. Separate masks take precedence, with ORM/RMA fallback. Inspect the resolved assignments, choose normal orientation and Albedo encoding, and drag to rotate. Light/exposure changes reuse cached proxies. See [PBR material preview](pbr.md) for channel layouts, color handling and renderer limits.
+
+In **PBR preview…**, click **Load HDRI…** for a local 2:1 HDR/EXR panorama. Adjust **HDRI rotation** and **Intensity ×**, toggle **HDRI background**, or switch back to **Studio lights**. Lighting caches are prepared once in the background. See [HDRI lighting](pbr.md#custom-hdri-lighting) for input encoding, limits and cancellation.

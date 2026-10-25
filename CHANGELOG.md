@@ -1,5 +1,14 @@
 # What’s new
 
+## 0.7.0 — 2026-10-25
+
+- Custom HDR/EXR equirectangular environment loading in the PBR viewport, with input-encoding selection and background preparation/progress.
+- HDRI rotation and linear intensity controls; optional panorama background; independent Studio/HDRI lighting modes.
+- Environment-driven diffuse irradiance and roughness-filtered GGX reflections with cached specular integration. HDR values above 1 are retained.
+- Bounded, solid-angle-weighted HDRI downsampling and reusable lighting caches; rotation/intensity/material changes do not decode the panorama again.
+- Clear/cancel, stale-source checks, explicit projection/channel/NaN/Inf errors and snapshot protection for environment files. The latest lighting choice is retained when a background load completes.
+- Commercial distribution remains local only. No public application releases or download links are published.
+
 ## 0.6.0 — 2026-10-25
 
 - PBR material preview: sphere/plane, texture-set and UDIM selection, automatic Albedo/Normal/Roughness/Metallic/AO/ORM/RMA assignment and explicit conflict/manual choices.

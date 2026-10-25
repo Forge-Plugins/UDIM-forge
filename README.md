@@ -27,7 +27,13 @@ The application includes these guides offline in **Help & Support**. Its UI and 
 
 ![UDIM Forge offline Help and Support](docs/images/help-center.png)
 
-## New in 0.6.0
+## New in 0.7.0
+
+- Local HDR/EXR environment lighting in PBR preview: rotation, intensity and optional panorama background.
+- Cached diffuse/GGX lighting, bounded HDR radiance preparation, progress/cancel and explicit image/input errors. [HDRI guide](docs/pbr.md#custom-hdri-lighting).
+- Commercial application binaries remain outside GitHub; this repository provides documentation/support only.
+
+## Added in 0.6.0
 
 - PBR sphere/plane material preview with automatic map assignment per set/UDIM, manual choices and ORM/RMA/custom layouts.
 - Cached texture proxies, lighting/exposure, orbit/zoom, normal-map controls and display snapshots. [Guide](docs/pbr.md).

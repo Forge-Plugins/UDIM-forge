@@ -33,7 +33,7 @@ Albedo and PBR scalar masks are clamped to 0–1 for shading. All adjustments af
 
 Drag to rotate, use the mouse wheel to zoom, and **Reset view** to restore the primitive view. **UV repeat** repeats the selected tile. **Light rotation**, **Exposure (EV)** and normal strength update the cached material without decoding source files again. The sidebar scrolls on smaller windows.
 
-The renderer uses GGX specular, Smith visibility, Schlick Fresnel and diffuse lighting from procedural studio lights, with an approximate ambient term. Output uses a neutral Reinhard tone map followed by sRGB encoding. It is a material-inspection preview, not a reference render, HDRI environment, shadow renderer or a renderer-specific shader match. It does not evaluate displacement, mesh deformation, opacity, emission, clearcoat or anisotropy.
+The renderer uses GGX specular, Smith visibility, Schlick Fresnel and either procedural studio lights or a loaded HDRI environment. Studio mode uses an approximate ambient term. Output uses a neutral Reinhard tone map followed by sRGB encoding. It is a material-inspection preview, not a reference render, shadow renderer or a renderer-specific shader match. It does not evaluate displacement, mesh deformation, opacity, emission, clearcoat or anisotropy.
 
 ## Large textures and snapshots
 
@@ -42,3 +42,23 @@ Each selected source is prepared as a proxy with a longest edge of at most 512 p
 Rendering runs outside the UI thread on bounded display buffers, at 256 pixels during dragging and 512 pixels when settled. Pending work is replaced by the latest request; closing cancels work before releasing buffers. Map changes reload proxies; lighting/orbit changes reuse them. Use **Reload main scan** after changing originals externally; there is no continuous source-file watcher in this window.
 
 **Save preview PNG…** saves the current display buffer, including the shaded material/background. It is a display image, not a texture export or linear render pass. A snapshot cannot overwrite any scanned original map.
+
+## Custom HDRI lighting
+
+Click **Load HDRI…** above the viewport and select a Radiance **.hdr** or OpenEXR **.exr** panorama. The file must be an equirectangular **2:1** image with RGB channels. Cubemap strips/cross layouts, multipart EXR and invalid/nonfinite RGB data are rejected. Only local files are used; no environment images are downloaded or uploaded.
+
+The **Studio lights / HDRI** selector changes the lighting source. HDRI mode uses the panorama for diffuse irradiance and roughness-filtered GGX reflections, replacing the studio lamps and their ambient term. **HDRI rotation** rotates the environment around the vertical world axis. **Intensity ×** scales its radiance linearly: 1 is unchanged, 2 doubles the light, 0 disables it. The slider covers 0–8 and typed values may extend to 32. This is independent of the existing global display **Exposure (EV)** control. **Studio light rotation** affects Studio mode only.
+
+Enable **HDRI background** to show the panorama behind the primitive; disable it to keep the neutral background while retaining HDRI illumination/reflections. Rotation and intensity affect the visible environment and its lighting consistently. Display snapshots include the selected background.
+
+### HDRI input encoding
+
+The default **Linear Rec.709** expects scene-linear RGB radiance, including values above 1. Select **ACEScg**, **sRGB** or **OCIO assignments** explicitly for differently encoded images. HDRI OCIO assignments use the environment file's path/extension and the global input policy, without inheriting the selected material-set name. Color conversion occurs before lighting preparation. Negative radiance after conversion is clamped to zero with a reported sample count; RGB NaN/Inf and values above the supported 1e30 limit are errors. Alpha does not illuminate the material.
+
+### Preparation and cache
+
+Preparation runs in the background and reports progress. It reads the original in bounded row bands, reducing it to at most **1024×512** with solid-angle-weighted averaging so small bright features contribute to the proxy instead of being dropped by point sampling. HDR radiance is preserved above 1. Diffuse irradiance, several roughness reflection levels and specular integration factors are then cached. The image-based lighting is a deterministic finite-sample approximation; the limited proxy/filter resolution can soften or undersample small intense lights and does not replace a production renderer.
+
+Rotation, intensity, background, camera and material-tile changes reuse the prepared environment. Input encoding changes prepare a new cache. The cache lives in this PBR window and is released when the window closes. Reselect **Load HDRI…** after editing or moving the original externally; this window does not continuously watch the file. Changed originals detected during preparation are rejected.
+
+**Clear / cancel** cancels pending environment preparation, releases the environment and returns to Studio lighting. Closing the window also cancels preparation. Selecting Studio while a new HDRI is being prepared keeps that choice when preparation completes. Original environment files and texture maps are never modified; a preview snapshot cannot replace a loaded environment source.
