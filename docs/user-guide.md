@@ -417,3 +417,13 @@ Use **Tools → UDIM boundary validator…** or **UDIM boundaries…** in the se
 ## Preview a PBR material
 
 Click **PBR preview…** in the main header, choose a texture set and UDIM, then Sphere or Plane. Map slots assign unique matches automatically. Separate masks take precedence, with ORM/RMA fallback. Inspect the resolved assignments, choose normal orientation and Albedo encoding, and drag to rotate. Light/exposure changes reuse cached proxies. See [PBR material preview](pbr.md) for channel layouts, color handling and renderer limits.
+
+## Undo and redo preview edits
+
+Use **Undo** / **Redo** beside **Selection**, or **Ctrl+Z** / **Ctrl+Y** (**Ctrl+Shift+Z**) while focus is in the main file workspace. Text-entry fields and other tool windows retain their own shortcuts. **Selection → Preview edit history…** lists applied and undone actions with file counts; its own Undo / Redo shortcuts also work there.
+
+History covers Apply type (including output channel names), Rename channel and Reset to source names, Assign texture set, and Include / exclude. An **Entire series** edit is one step for all affected tiles. Repeating an identical edit adds no step; making a new edit after Undo discards the redo branch. Conversion-format, resolution, OCIO and profile settings, recipe edits and exported image data are outside this preview history.
+
+Restoring an edit updates the conversion plan and output paths using current settings. Existing filters stay active: visible affected rows become selected, and the status reports any affected files hidden by filters. Undo / Redo is disabled during a main scan/conversion or when changed source settings require a rescan. It never removes or modifies completed exports or source files.
+
+History lasts for the current application run. A successful new scan, a loaded conversion profile or saved map-detection rules clears it. Changes made outside this history are detected before restoration to avoid overwriting newer metadata. Storage is limited to 100 actions and 16 MiB of metadata; old steps are evicted as needed. An individual oversized batch still applies but clears history with a visible status message. Image pixels are not copied into history.

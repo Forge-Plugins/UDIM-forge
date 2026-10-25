@@ -1,5 +1,15 @@
 # What’s new
 
+## 0.13.0 — 2026-10-25
+
+- Main-preview Undo / Redo covers map-type assignments and their output names, channel rename/reset, manual texture-set grouping and export inclusion. Entire-series edits form one atomic history step; no-op actions do not clutter history.
+- Visible Undo / Redo buttons sit beside Selection. Ctrl+Z undoes, Ctrl+Y or Ctrl+Shift+Z redoes in the main file workspace; text-entry controls and other tool windows retain their own keyboard behavior.
+- Selection → Preview edit history shows applied/undone actions and affected-file counts. History is bounded to 100 steps and 16 MiB of metadata, without image-pixel snapshots. A batch exceeding the budget applies normally and reports that history was cleared.
+- Undo/Redo respects active filters, selects affected visible rows and reports hidden files. It is disabled while scanning/converting or when the source scan is stale. New scans, loaded conversion profiles and saved map-detection rules clear history; conflicting external metadata edits are detected before any restoration.
+- Preview edits can be undone after export without changing completed outputs. History is local to the current application run and does not undo profile settings, image operations or filesystem writes.
+- The duplicate lower Compare sets button is replaced by Undo / Redo; set comparison remains in the main Compare menu. Rename Channel now consistently calls the export action Start conversion, and stale rename/reset dialogs cannot mutate textures from a replaced scan.
+- Acceptance checks cover actual keyboard events, filtered rows, batch scope, rename/reset, grouping, busy states, scan/profile boundaries, completed exports and unchanged source files.
+
 ## 0.12.0 — 2026-10-25
 
 - One application-wide Windows memory budget includes the GUI, portable launcher, production workers, EXR decoders, model importers and native subprocesses. Existing individual worker caps remain in effect.
