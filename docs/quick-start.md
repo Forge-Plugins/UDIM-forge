@@ -71,3 +71,5 @@ Click **PBR preview…** in the main header, choose a texture set and UDIM, then
 In **PBR preview…**, click **Load HDRI…** for a local 2:1 HDR/EXR panorama. Adjust **HDRI rotation** and **Intensity ×**, toggle **HDRI background**, or switch back to **Studio lights**. Lighting caches are prepared once in the background. See [HDRI lighting](pbr.md#custom-hdri-lighting) for input encoding, limits and cancellation.
 
 For geometric height preview, open **PBR preview…**, check the **Displacement** assignment and enable **Geometry displacement** above the viewport. Adjust **Scale** and **Neutral** (default 0.5); choose Sphere or Plane and rotate to inspect the changed surface. See the [displacement guide](pbr.md#geometric-displacement).
+
+For the whole UDIM set on a model, use **PBR preview… → Import OBJ / FBX…**. Model mode assigns channels/tiles from the selected set via UV0. Choose Subdivision, adjust displacement Scale/Neutral and load your HDRI. Missing UDIMs are magenta. See [model import](pbr.md#imported-obj--fbx-with-the-whole-udim-set).

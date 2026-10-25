@@ -1,5 +1,13 @@
 # What’s new
 
+## 0.9.0 — 2026-10-25
+
+- Static OBJ/FBX import with transformed geometry and UV0 in the PBR viewport.
+- Whole-set multi-UDIM routing for Color, Normal, masks, packed maps and native displacement; custom HDRI lighting remains cached.
+- Linear mesh subdivision, missing-tile diagnostics/magenta display, cancellable import, memory/time/geometry limits and bounded visibility caches.
+- Large-model rasterization rejects invisible/subpixel triangles before expanding shading data.
+- Release text and first-party code metadata are reviewed for product-only branding; required third-party legal notices remain intact.
+
 ## 0.8.0 — 2026-10-25
 
 - Real tessellated displacement in PBR sphere/plane previews with automatic set/UDIM map assignment, signed scale, neutral level and an enable switch.

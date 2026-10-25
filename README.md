@@ -27,7 +27,12 @@ The application includes these guides offline in **Help & Support**. Its UI and 
 
 ![UDIM Forge offline Help and Support](docs/images/help-center.png)
 
-## New in 0.8.0
+## New in 0.9.0
+
+- Import static OBJ/FBX models and preview the entire selected UDIM set on UV0, with geometric displacement and custom HDRI.
+- Subdivision, missing-tile display, cancellable import and bounded large-model processing. [Guide](docs/pbr.md#imported-obj--fbx-with-the-whole-udim-set).
+
+## Added in 0.8.0
 
 - Geometric displacement on the PBR sphere and plane: set/UDIM height assignment, signed Scale and Neutral controls.
 - Displaced silhouettes and surface normals with cached Studio/HDRI shading. [Guide](docs/pbr.md#geometric-displacement).
