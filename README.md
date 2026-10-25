@@ -138,4 +138,4 @@ UDIM Forge was previously named UDIM Studio. Existing settings, profiles, report
 
 ## Projects, recovery and automation
 
-See [Projects and crash recovery](docs/projects.md) and [CLI, benchmarks and beta acceptance](docs/automation.md). Version 0.14 adds workspace projects, resumable conversion, extended settings Undo/Redo, GPU preview and a per-user installer. Store integration remains unconfigured.
+See [Projects and crash recovery](docs/projects.md) and [CLI, benchmarks and beta acceptance](docs/automation.md). Version 0.14 adds workspace projects, resumable conversion, extended settings Undo/Redo, GPU preview and a per-user installer. Gumroad is selected; the product and Product ID are not created/configured yet.

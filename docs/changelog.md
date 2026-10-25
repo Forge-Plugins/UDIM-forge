@@ -1,5 +1,12 @@
 # What’s new
 
+## 0.14.1
+
+- Prepared Gumroad purchase verification and a License / Gumroad dialog; the product is not created and activation remains disabled pending its real Product ID.
+- Added explicit, bounded HTTPS verification, purchase-state checks and encrypted local key storage. No seller API token, automatic network check or device-use counter increment.
+- Added customer library access and a Gumroad setup guide. Paid files are not published or uploaded by this release. License enforcement remains disabled.
+
+
 ## 0.14.0
 
 - Added full `.udimforge` workspace projects, atomic save, bounded crash recovery, project relink, paused durable queues and revision-checked comparison results.
