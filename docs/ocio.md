@@ -47,3 +47,7 @@ Filename copying, grading/export math, packing and resizing do not bake this pre
 
 - [OpenColorIO processor and display documentation](https://opencolorio.readthedocs.io/en/latest/guides/developing/developing.html)
 - [Back to Quick start](quick-start.md)
+
+## External configurations in comparison sessions
+
+Built-in configurations may be restored automatically. An external session config must be an absolute `.ocio` path. Loading a session asks before activating it, because OCIO can also read LUTs from its search paths. Declining keeps color transforms disabled for that session and preserves the original config and assignments. Open **Sessions → Session OCIO settings…** to review and allow it later. Automatic session recovery never activates an external config until you approve it during that run. Raw samples and analysis remain available.

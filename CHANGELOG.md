@@ -1,5 +1,15 @@
 # What’s new
 
+## 0.10.1 — 2026-10-25
+
+- External session OCIO configs must use an absolute .ocio path and require explicit permission before loading their config/LUTs. Automatic recovery defers them; the requested settings are preserved for later approval.
+- Bounded JSON reads for workflow recipes, conversion manifests, session files and production payloads; malformed manifest file lists are ignored.
+- Spreadsheet-safe CSV exports neutralize formula-like text while retaining numeric statistics.
+- Production workers validate options and TX filter/wrap/storage values before starting native tools; Pillow has an explicit 16K pixel ceiling with decompression warnings treated as errors.
+- Cache locks reject symbolic links/reparse points on the opened handle.
+- UPX disabled in both build specifications; hash-locked dependencies include build dependencies. Build environments and artifacts live outside the source tree.
+- Optional Authenticode and detached checksum signature workflow is prepared. This local build remains unsigned because no publisher certificate is configured.
+
 ## 0.10.0 — 2026-10-25
 
 - Adaptive PBR orbit uses a UV-preserving simplified mesh and smaller display buffers, then restores full geometry after release or a brief pause. Object-space displacement and HDRI backgrounds are cached.

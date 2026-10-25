@@ -1,6 +1,6 @@
 # Contact / support
 
-UDIM Forge 0.10.0 is developed under Forge-Plugins. The GitHub repository is the public documentation, changelog and support hub. This is a commercial application. Application source, binaries and license delivery are not published in this Git repository.
+UDIM Forge 0.10.1 is developed under Forge-Plugins. The GitHub repository is the public documentation, changelog and support hub. This is a commercial application. Application source, binaries and license delivery are not published in this Git repository.
 
 - [Report a problem](https://github.com/Forge-Plugins/UDIM-forge/issues/new?template=bug_report.yml)
 - [Request a feature](https://github.com/Forge-Plugins/UDIM-forge/issues/new?template=feature_request.yml)
@@ -40,3 +40,9 @@ Application branding is now UDIM Forge. Existing settings, profiles, cache owner
 ## Earlier WinError 17 conversion failures
 
 Versions before 0.3.0 could prepare files in queue-work on C: and fail when renaming them to a different output drive. The fixed queue writes final staging on the destination drive. After updating, **Retry failed** requeues failures and resumes unfinished work. Existing prepared outputs are reused only after source/output hashes and settings match; other files are recalculated. Queue history and verified completed outputs are preserved. The updated Cancel current work button pauses processing, including native TX, rather than cancelling only plan preparation.
+
+## Local logs and diagnostic privacy
+
+Rotating local logs may contain full file paths needed for troubleshooting. They stay on the computer. Use the diagnostic export preview and its path redaction before sharing; the raw log is not an anonymized report. No diagnostics are submitted automatically.
+
+This build is unsigned. Hash checks detect changed files but do not establish a publisher identity without a trusted signature. Signed releases require a publisher Code Signing certificate; Authenticode is optional for local testing. A valid signature does not certify that a program or its input files are malware-free.
