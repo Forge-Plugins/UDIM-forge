@@ -1,5 +1,16 @@
 # What’s new
 
+## 0.14.0
+
+- Added full `.udimforge` workspace projects, atomic save, bounded crash recovery, project relink, paused durable queues and revision-checked comparison results.
+- Added resumable main conversion with source/output hash verification and idempotent final publishing.
+- Extended Undo/Redo to conversion preferences, profiles and grading/packing/resize settings.
+- Added isolated OpenGL GPU PBR preview with managed VRAM budget, vertex displacement, whole-set UDIMs, cutout Opacity and CPU fallback.
+- Added headless plan/run/resume workflows and opt-in local synthetic benchmarks.
+- Added a per-user Windows MSI installer and offline signed-license/private-update mechanisms. Store integration and license enforcement remain unconfigured in this internal build; Authenticode remains deferred.
+- Added project/automation guides and beta acceptance checklist. Real hardware checks include RTX 3090, Smaug and the user's EXR/HDRI dataset; independent AMD/Intel beta testing remains outstanding.
+
+
 ## 0.13.0 — 2026-10-25
 
 - Main-preview Undo / Redo covers map-type assignments and their output names, channel rename/reset, manual texture-set grouping and export inclusion. Entire-series edits form one atomic history step; no-op actions do not clutter history.

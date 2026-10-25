@@ -135,3 +135,7 @@ See the [production guide](docs/production.md), [relink/support instructions](do
 [Report a problem](https://github.com/Forge-Plugins/UDIM-forge/issues/new?template=bug_report.yml) or [request a feature](https://github.com/Forge-Plugins/UDIM-forge/issues/new?template=feature_request.yml). Search [existing issues](https://github.com/Forge-Plugins/UDIM-forge/issues) first. Use **Help & Support → Export diagnostics…** to review/export logs, or Copy diagnostics for version basics. Include the reviewed diagnostics and reproduction steps. Review attachments before posting publicly.
 
 UDIM Forge was previously named UDIM Studio. Existing settings, profiles, reports, caches and comparison sessions remain compatible. Settings intentionally stay under `%APPDATA%\UDIM Studio`.
+
+## Projects, recovery and automation
+
+See [Projects and crash recovery](docs/projects.md) and [CLI, benchmarks and beta acceptance](docs/automation.md). Version 0.14 adds workspace projects, resumable conversion, extended settings Undo/Redo, GPU preview and a per-user installer. Store integration remains unconfigured.

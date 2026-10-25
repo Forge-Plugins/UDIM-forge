@@ -91,7 +91,7 @@ Import runs in a cancellable child process with a 2 GiB memory budget on Windows
 
 Model preparation and rendering run off the UI thread. UV/geometry work checks cancellation in chunks; off-screen/subpixel triangles are rejected before allocating expanded shading attributes. A bounded 64 MiB geometry cache uses weak ownership so closed/replaced model and texture data can be released. Whole-set texture proxies share a roughly 96 MiB preparation target (64–512px per source, chosen from set size); full-resolution textures are not loaded together. Large models can take several seconds for import, full-quality refinement and displacement changes; cached lighting changes reuse visibility. This is a preview, not a production renderer. It has no shadow maps, animation playback, model export, multiple UV-set selection or imported material-slot editor.
 
-**Save preview PNG…** protects the current model file as well as textures and HDRI. Model paths/settings live in this window; import again after restarting or changing source geometry. Profiles/comparison sessions do not embed the mesh.
+**Save preview PNG…** protects the current model file as well as textures and HDRI. Full .udimforge projects retain model/HDRI references and settings; the files themselves are not embedded. Profiles/comparison sessions do not embed the mesh.
 
 ## Adaptive orbit and subdivision
 
@@ -104,3 +104,11 @@ Object-space deformation/tangents use a bounded 192 MiB cache; projected model v
 Primitive Subdivision 0–4 changes tessellation for sphere and plane. Model refinement inserts shared edge midpoints, preserves UV seams and applies displacement afterward. This is linear refinement, not a smoothing algorithm: a flat undisplaced plane retains its shape. Smaug's 2,051,888 source triangles support level 1 (8,207,552 triangles); higher levels exceed the render cap.
 
 Selecting HDRI without a loaded environment, or after an environment decoding error, uses **Unlit** so the material stays visible. The frame status identifies this fallback. Unlit displays base color without Studio or HDRI illumination; geometry, UVs and displacement remain active.
+
+## GPU preview (0.14)
+
+Renderer **Auto** uses OpenGL 3.3 or newer in an isolated, RAM-capped worker and falls back to CPU on initialization/render failure. Explicit CPU/GPU selections are also available. **GPU MiB** limits estimated managed geometry/texture/framebuffer allocation; driver/context overhead is additional. Map proxies shrink to fit the budget, preserving UDIM assignments. At most 128 used tiles are supported by this preview backend.
+
+Cached orbit/light/exposure/displacement scale and neutral-level changes reuse GPU resources. Vertex displacement deforms actual geometry; tessellation/subdivision preparation still takes time on large meshes. Adaptive movement uses its lighter mesh and full refinement follows stopping. **Opacity cutout** uses the assigned Alpha/Opacity map and cutoff; blended transparency is not implemented.
+
+On the user's 2.05-million-triangle Smaug, cached backend frames measured roughly 5–7 ms on RTX 3090 at 512px. These timings exclude the complete UI cycle and are not an FPS guarantee. The supplied displacement UVs do not match that model, so the test validates performance, tile handling and deformation rather than intended artistic appearance. Original files remain unchanged.
