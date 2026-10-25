@@ -1,5 +1,13 @@
 # What’s new
 
+## 0.10.0 — 2026-10-25
+
+- Adaptive PBR orbit uses a UV-preserving simplified mesh and smaller display buffers, then restores full geometry after release or a brief pause. Object-space displacement and HDRI backgrounds are cached.
+- Subdivision now changes primitive tessellation; imported models use indexed midpoint refinement, with selectable levels constrained by a 12 million triangle render cap.
+- HDRI mode falls back to Unlit when no environment is available; Unlit is also selectable directly.
+- Batch Texture Tools presets retain the map filter, selection and preview. Main Selected type choices immediately update classification and output names for selected rows.
+- Editing Output keeps Start conversion available without rescanning. Missing destination folders are created when conversion starts.
+
 ## 0.9.0 — 2026-10-25
 
 - Static OBJ/FBX import with transformed geometry and UV0 in the PBR viewport.

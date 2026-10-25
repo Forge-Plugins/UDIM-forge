@@ -27,7 +27,12 @@ The application includes these guides offline in **Help & Support**. Its UI and 
 
 ![UDIM Forge offline Help and Support](docs/images/help-center.png)
 
-## New in 0.9.0
+## New in 0.10.0
+
+- Adaptive orbit for heavy models, full-quality refinement after stopping, working subdivision and Unlit fallback for missing HDRI.
+- Preserved Batch Texture Tools selection, immediate Selected type/name updates, and editable output destinations without rescanning.
+
+## Added in 0.9.0
 
 - Import static OBJ/FBX models and preview the entire selected UDIM set on UV0, with geometric displacement and custom HDRI.
 - Subdivision, missing-tile display, cancellable import and bounded large-model processing. [Guide](docs/pbr.md#imported-obj--fbx-with-the-whole-udim-set).

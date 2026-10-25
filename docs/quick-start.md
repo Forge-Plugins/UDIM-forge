@@ -73,3 +73,11 @@ In **PBR preview…**, click **Load HDRI…** for a local 2:1 HDR/EXR panorama. 
 For geometric height preview, open **PBR preview…**, check the **Displacement** assignment and enable **Geometry displacement** above the viewport. Adjust **Scale** and **Neutral** (default 0.5); choose Sphere or Plane and rotate to inspect the changed surface. See the [displacement guide](pbr.md#geometric-displacement).
 
 For the whole UDIM set on a model, use **PBR preview… → Import OBJ / FBX…**. Model mode assigns channels/tiles from the selected set via UV0. Choose Subdivision, adjust displacement Scale/Neutral and load your HDRI. Missing UDIMs are magenta. See [model import](pbr.md#imported-obj--fbx-with-the-whole-udim-set).
+
+### Destination and selected map names
+
+After scanning, type or browse a different **Output** folder and click **Start conversion** directly. Missing folders are created at conversion time; typing does not write to disk. Changing the source folder or scan scope still requires Scan files.
+
+Select one or more table rows, then choose a **Selected** map type to apply it immediately. Typed custom names use Enter or Apply type. Entire series extends the change to matching map tiles. Enable Rename files with Apply type in Selection to update output filenames together with the map type. Originals are preserved.
+
+Batch Texture Tools presets change operation settings while keeping your chosen map filter and file selection.
