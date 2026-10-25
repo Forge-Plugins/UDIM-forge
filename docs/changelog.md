@@ -1,5 +1,13 @@
 # What’s new
 
+## 0.6.0 — 2026-10-25
+
+- PBR material preview: sphere/plane, texture-set and UDIM selection, automatic Albedo/Normal/Roughness/Metallic/AO/ORM/RMA assignment and explicit conflict/manual choices.
+- Separate-mask precedence with packed fallback, ORM/RMA/custom channel layouts and explicit packed precedence.
+- Cached 512px proxies, background GGX studio shading, orbit/zoom, lighting/exposure, UV repeat, normal convention/strength and display PNG snapshots.
+- Explicit Albedo sRGB/linear/ACEScg/OCIO input handling; data maps bypass color transforms and original files remain unchanged.
+- Commercial distribution: public GitHub application releases/assets and download links removed. Public update fetching and publishing are disabled; GitHub remains documentation/changelog/issues only.
+
 ## 0.5.0 — 2026-10-25
 
 - Added Tools → UDIM boundary validator and a shortcut from the set validator.

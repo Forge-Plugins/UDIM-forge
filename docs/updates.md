@@ -14,7 +14,7 @@ Obtain an updated build through the same authorized channel. Close UDIM Forge be
 
 **Help & Support → Licensing & updates…** explains the distribution policy and links only to documentation/support. The legacy public update checker has been removed: opening this window makes no update-network request and offers no public binary download.
 
-The current change does not introduce an activation system or validate a purchase. License enforcement and a private delivery service are separate product work. Purchase and licensing terms are managed by the publisher.
+Purchase and licensing terms are managed by Forge-Plugins.
 
 ## Support
 

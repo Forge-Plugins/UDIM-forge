@@ -13,6 +13,7 @@ UDIM Forge is commercial software. GitHub hosts documentation, changelog and iss
 - [Production workflows](docs/production.md) — image formats, queues, recipes, displacement, HTML and .tx.
 - [Quick start](docs/quick-start.md) — first conversion, inspection and comparison.
 - [User guide](docs/user-guide.md) — complete workflows, controls and limitations.
+- [PBR material preview](docs/pbr.md) — sphere/plane, automatic UDIM assignment and packed-mask inspection.
 - [UDIM boundary validator](docs/boundaries.md) — native border statistics, previews and CSV/JSON reports.
 - [OCIO and input assignments](docs/ocio.md) — color spaces per set/type and session-local policies.
 - [Naming reference](docs/naming.md) — UDIM, UV coordinates, templates and channel naming.
@@ -26,7 +27,13 @@ The application includes these guides offline in **Help & Support**. Its UI and 
 
 ![UDIM Forge offline Help and Support](docs/images/help-center.png)
 
-## New in 0.5.0
+## New in 0.6.0
+
+- PBR sphere/plane material preview with automatic map assignment per set/UDIM, manual choices and ORM/RMA/custom layouts.
+- Cached texture proxies, lighting/exposure, orbit/zoom, normal-map controls and display snapshots. [Guide](docs/pbr.md).
+- GitHub is documentation, changelog and issue tracking only. Public application distribution and the legacy updater have been removed.
+
+## Added in 0.5.0
 
 - Native U/V boundary checks for observed neighboring UDIMs, grouped by set and map type.
 - Threshold statistics, pixel counts/percentages, A/B border strips, peak markers, native hover values and CSV/JSON reports.

@@ -413,3 +413,7 @@ Use the visible **Pack ORM / RMA…** button in the main header to open channel 
 ## Inspect UDIM boundaries
 
 Use **Tools → UDIM boundary validator…** or **UDIM boundaries…** in the set validator. Choose a map type, stored channel and threshold in native units, then **Analyze boundaries**. Inspect the A/B border strips, highlighted differences, largest-difference marker and exact pixel counts; **Export CSV / JSON…** includes all connections. This compares stored neighboring image borders and cannot infer mesh/UV continuity or tangent frames. See [boundary validation](boundaries.md) for units, orientation, streaming limits and interpretation.
+
+## Preview a PBR material
+
+Click **PBR preview…** in the main header, choose a texture set and UDIM, then Sphere or Plane. Map slots assign unique matches automatically. Separate masks take precedence, with ORM/RMA fallback. Inspect the resolved assignments, choose normal orientation and Albedo encoding, and drag to rotate. Light/exposure changes reuse cached proxies. See [PBR material preview](pbr.md) for channel layouts, color handling and renderer limits.
