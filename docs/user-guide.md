@@ -10,7 +10,7 @@ The rename preserves settings, profiles, caches and saved sessions. The settings
 
 [Quick start](quick-start.md) · [OCIO guide](ocio.md) · [Naming reference](naming.md) · [Troubleshooting](troubleshooting.md) · [Support](support.md)
 
-Download Windows x64 portable releases from https://github.com/Forge-Plugins/UDIM-forge/releases/latest. Use **Help & Support → Check for updates…** for a manual background check and portable download. See [update instructions](updates.md).
+UDIM Forge is commercial software. GitHub hosts documentation, changelog and issue tracking only. Application binaries and updates are distributed by Forge-Plugins through its authorized purchase channel; no public application downloads are provided here. See the licensing and updates guide.
 
 ## Quick start
 

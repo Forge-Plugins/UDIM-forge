@@ -2,13 +2,11 @@
 
 A Windows desktop toolkit for UDIM texture sets: organize names and folders, inspect native pixels, compare A/B/C/D versions, validate assets and export processed copies.
 
-This Git repository contains documentation, changelog and issue templates. Application source and EXE files are not committed to Git. Portable binaries are attached to **GitHub Releases**.
+This Git repository contains documentation, changelog and issue templates. Application source and EXE files are not committed to Git. UDIM Forge is commercial software; application binaries are not distributed through this repository.
 
-## Download
+## Commercial application
 
-[Download UDIM Forge 0.5.0 — Windows x64 portable](https://github.com/Forge-Plugins/UDIM-forge/releases/download/v0.5.0/UDIM_Forge_v0.5.0_Windows_x64_Portable.zip) · [Latest release](https://github.com/Forge-Plugins/UDIM-forge/releases/latest) · [Changelog](CHANGELOG.md)
-
-Extract the ZIP and run **UDIM Forge.exe**. No Python installation is required. GitHub’s automatic source archives contain documentation only. The release includes SHA256SUMS.txt. Inside the app, use **Help & Support → Check for updates…** to check the stable channel and open the portable download.
+UDIM Forge is commercial software. GitHub hosts documentation, changelog and issue tracking only. Application binaries and updates are distributed by Forge-Plugins through its authorized purchase channel; no public application downloads are provided here.
 
 ## Documentation
 
@@ -21,7 +19,7 @@ Extract the ZIP and run **UDIM Forge.exe**. No Python installation is required. 
 - [Troubleshooting](docs/troubleshooting.md) — previews, large files, cache, colors and recovery.
 - [External references](docs/references.md) — official format and pipeline documentation.
 - [Contact / support](docs/support.md) — reporting problems and copying diagnostics.
-- [Downloads and updates](docs/updates.md) — portable installation and manual update checks.
+- [Licensing and updates](docs/updates.md) — commercial distribution and local update instructions.
 - [Changelog](CHANGELOG.md) — released changes and included workflows.
 
 The application includes these guides offline in **Help & Support**. Its UI and documentation are in English.

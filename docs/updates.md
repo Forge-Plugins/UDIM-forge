@@ -1,29 +1,21 @@
-# Downloads and updates
+# Licensing and updates
 
-## Download the portable app
+UDIM Forge is commercial software developed by Forge-Plugins. This GitHub repository provides documentation, changelog and issue tracking. It does not distribute the application, activation keys or public application downloads.
 
-Use [GitHub Releases](https://github.com/Forge-Plugins/UDIM-forge/releases/latest) and download the Windows x64 portable ZIP, for example UDIM_Forge_v0.5.0_Windows_x64_Portable.zip. Extract the whole archive to a writable folder and run UDIM Forge.exe. Python is not required.
+## Obtain the application
 
-The Git repository contains documentation, changelog and issue templates. The portable program is a Release asset, not a file committed to Git. GitHub's automatically generated source archives contain the documentation repository, not the application. Choose the named Portable.zip asset.
+Use the build supplied by Forge-Plugins through your authorized purchase channel. No store or download URL is configured in this documentation. GitHub source archives contain documentation only; they are not the application.
 
-## Check for a newer version
+## Update a local copy
 
-Open Help & Support → Check for updates…. The check runs in a background thread and uses GitHub's public latest-stable-release metadata. A GitHub account is not required. It runs only when requested, not automatically at startup.
+Obtain an updated build through the same authorized channel. Close UDIM Forge before replacing the local executable and accompanying resources. Existing settings, profiles and comparison sessions remain under their established locations. Keep your external OCIO configs, LUTs and texture folders available.
 
-The dialog shows the installed/latest version and release notes. Download portable opens the exact project's ZIP asset in your browser. Open Releases is available if a check fails or a matching Windows x64 ZIP is missing. No automatic installation or restart occurs.
+## In the application
 
-A connection error, GitHub rate limit or missing release is reported separately; these states are never presented as an up-to-date result. Use Check again to retry. Draft and prerelease builds are not part of the stable update channel.
+**Help & Support → Licensing & updates…** explains the distribution policy and links only to documentation/support. The legacy public update checker has been removed: opening this window makes no update-network request and offers no public binary download.
 
-## Replace your portable copy
+The current change does not introduce an activation system or validate a purchase. License enforcement and a private delivery service are separate product work. Purchase and licensing terms are managed by the publisher.
 
-1. Finish or cancel active exports and close the old application.
-2. Extract the new ZIP to a new folder or replace the old portable files while the app is closed.
-3. Run the new UDIM Forge.exe. Update any shortcut if you changed the installation folder.
+## Support
 
-User settings, profiles and recovery storage remain in %APPDATA%\UDIM Studio for compatibility. OCIO config/LUT paths and texture/cache paths remain your own external resources. Updating the application does not replace original textures.
-
-Each release includes SHA256SUMS.txt. On Windows, use Get-FileHash on the downloaded ZIP with Algorithm SHA256 and compare the result with that file. The checksum verifies the downloaded bytes against the published package; it is not a publisher signature.
-
-- [Quick start](quick-start.md)
-- [Troubleshooting](troubleshooting.md)
-- [Contact / support](support.md)
+Use the [support guide](support.md) to report a problem. Do not put purchase credentials, keys or private project data into public issue attachments. Diagnostic export remains local until you choose to share it.

@@ -1,6 +1,6 @@
 # UDIM Forge — Quick start
 
-UDIM Forge is a Windows desktop tool for organizing, inspecting, comparing and processing UDIM texture sets. Download the Windows x64 Portable.zip asset from [GitHub Releases](https://github.com/Forge-Plugins/UDIM-forge/releases/latest), extract it and run UDIM Forge.exe. Python is not required. [Download/update instructions](updates.md) explain how to replace an existing portable copy.
+UDIM Forge is a commercial Windows desktop tool for organizing, inspecting, comparing and processing UDIM texture sets. Use the application build provided through your authorized purchase channel, extract it and run UDIM Forge.exe. Python is not required. [Licensing and updates](updates.md) explains distribution and replacing a local copy.
 
 ## Convert Mudbox names to UDIM names
 

@@ -93,10 +93,10 @@ See [production workflows](production.md) and [support/relink instructions](supp
 
 ## 0.1.0 — 2026-10-24
 
-First public Windows x64 portable release. Download UDIM_Forge_v0.1.0_Windows_x64_Portable.zip and SHA256SUMS.txt from [GitHub Releases](https://github.com/Forge-Plugins/UDIM-forge/releases/tag/v0.1.0).
+Initial portable build. Public binary distribution has since been withdrawn; the application is distributed commercially.
 
-- Help & Support → Check for updates… checks the latest stable release in the background, shows release notes and opens the correct portable download in your browser.
-- Manual checks only; network errors/rate limits/missing releases are explicit. No automatic installation, restart or texture uploads.
+- Introduced the legacy update dialog, now retired for commercial distribution.
+- The legacy public update mechanism has since been disabled.
 - A versioned portable package and SHA-256 checksum are attached to the release. Git stores documentation/changelog and support templates; the application source and EXE are not committed.
 
 ## Original preview functionality
