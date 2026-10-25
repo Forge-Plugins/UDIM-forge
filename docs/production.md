@@ -140,3 +140,9 @@ Use the visible **Pack ORM / RMA…** button in the main header to open channel 
 ## Inspect UDIM boundaries
 
 Use **Tools → UDIM boundary validator…** or **UDIM boundaries…** in the set validator. Choose a map type, stored channel and threshold in native units, then **Analyze boundaries**. Inspect the A/B border strips, highlighted differences, largest-difference marker and exact pixel counts; **Export CSV / JSON…** includes all connections. This compares stored neighboring image borders and cannot infer mesh/UV continuity or tangent frames. See [boundary validation](boundaries.md) for units, orientation, streaming limits and interpretation.
+
+## TX from the main window
+
+Choose **TX / mipmaps** in the main output-format selector, review `.tx` destinations and click **Start conversion**. Naming, folder layout and per-map resolution rules apply together. TX can also be assigned to individual map types and saved in profiles. Right-click one or more rows and choose **Convert selected to TX (mipmaps)** to export just that selection without replacing the global format setting.
+
+This shortcut uses 64×64 tiles, Lanczos3 mipmaps, clamp wrap, ZIP compression and retained Alpha/native values, without an implicit OCIO/gamma transform. TIFF-backed TX stores half sources as float32; the main preview shows that promotion. Keep mode accepts uniform uint8, uint16, half and float32 inputs; mixed/higher precision channels require an explicit intermediate conversion. Normal-map resizing uses the existing normal-aware path. Each main-window TX export runs in an isolated 2 GiB worker with a 300-second deadline and cancellable child processes. Files publish only after completion/verification; originals remain unchanged. For explicit storage/filter/wrap/thread choices use **Production Workflows → TX / mipmaps**.

@@ -1,5 +1,15 @@
 # What’s new
 
+## 0.11.0 — 2026-10-25
+
+- EXR metadata, previews and native block reads move into a pool of at most two disposable processes, each capped at 768 MiB on Windows with a 60-second request deadline. Crashes, cancellation and timeouts discard the process; subsequent files can open in a fresh worker.
+- Explicit EXR limits cover parts, channels, dimensions, tiles, compression chunks and IPC buffers. Native precision and source-revision checks are retained; files are not locked between decoder calls.
+- PSD/PSB parsing adds metadata deadlines, section-boundary checks, block/composite ceilings, strict bounded PackBits decoding and cancellation inside ZIP loops. ZIP cache preparation has a 300-second deadline and removes partial output on failure.
+- OBJ/FBX parsing starts only after the 2 GiB Windows memory budget is assigned. Imports have a 120-second end-to-end deadline, bounded diagnostics, validated transfer arrays and index/coordinate checks. OBJ material-library directives are omitted from the private import copy.
+- TX is available in the main output format selection, per-map rules and profiles, plus Convert selected to TX in the table context menu. Start conversion combines UDIM names and TX mipmaps, using an isolated 2 GiB/300-second worker.
+- TIFF-backed TX promotes half input to float32 without precision loss. Keep mode rejects mixed/higher precision channels that cannot be preserved safely; Alpha is retained. Advanced TX settings remain in Production Workflows.
+- Regression coverage includes real process timeout/crash/cancellation/memory tests, corrupt inputs, forged array headers and streamed 16K EXR/PSB fixtures.
+
 ## 0.10.1 — 2026-10-25
 
 - External session OCIO configs must use an absolute .ocio path and require explicit permission before loading their config/LUTs. Automatic recovery defers them; the requested settings are preserved for later approval.

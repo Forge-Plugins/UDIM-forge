@@ -34,3 +34,13 @@ Open Help & Support → Copy diagnostics, then Report a problem. Include steps, 
 
 - [Contact / support](support.md)
 - [Quick start](quick-start.md)
+
+## Decoder resource limits
+
+EXR headers and pixels use at most two native worker processes, each with a **768 MiB Windows Job Object limit**. Each request has a **60 second deadline**, including waiting for a worker; cancellation terminates the affected process. A crash or exceeded limit reports an error and the next file can start a new worker. IPC metadata is limited to 1 MiB and each pixel response to 64 MiB. Native EXR limits are 32 parts, 64 channels, 65,536 pixels per dimension, 4,096 per tile dimension, and a 64 MiB compression/block working estimate. Display proxies and block caches have separate bounded budgets. Small native pixel snapshots are limited to 32 MiB; 8K/16K sources remain streamed.
+
+PSD/PSB uses the saved composite, never a document-layer renderer. Reads are limited to 64 MiB, RLE indices to 32 MiB and declared composites to 64 GiB. Metadata inspection has a 10-second deadline and at most 65,536 resource/global-tag records. ZIP preparation checks cancellation within compressed-input loops, stops after 300 seconds and removes its partial cache. Persistent disk-cache quota and free-space checks also apply. These are bounded buffers and cooperative deadlines, rather than a separate OS memory job for the pure Python PSD reader.
+
+OBJ/FBX imports use a **2 GiB Windows job limit**, **120-second total deadline**, 256 MiB input ceiling, 6 million vertices and 4 million source triangles. The child waits for its memory budget before parsing. Transfers are checked for shape, type, indices and byte counts before loading into the UI; decoded array data is limited to 384 MiB. Logs are limited to 4 MiB. OBJ records above 1 MiB are rejected; material-library directives are removed only from the temporary import copy because this viewport uses the assigned UDIM set. Originals are unchanged.
+
+Resource containment limits memory and hangs and keeps a native crash out of the UI process. It is **not a filesystem/network permission sandbox** or a guarantee against vulnerabilities in third-party libraries. Native buffers can coexist with application caches and a model import; per-worker limits are not a total application RAM limit.
