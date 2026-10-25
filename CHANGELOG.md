@@ -1,5 +1,15 @@
 # What’s new
 
+## 0.12.0 — 2026-10-25
+
+- One application-wide Windows memory budget includes the GUI, portable launcher, production workers, EXR decoders, model importers and native subprocesses. Existing individual worker caps remain in effect.
+- A live Memory button in the main footer shows total committed usage and the configured limit. Open it for peak usage, admitted/waiting tasks and a persistent limit in MiB. The default is half physical RAM, between 2 and 16 GiB; manual limits range from 2 to 256 GiB.
+- Production concurrency adapts to committed usage and conservative task reservations. New work waits for 512 MiB of headroom plus its estimate; admitted files continue. Waiting jobs remain cancellable/pausable and resume automatically as memory becomes available.
+- Grading, resizing, channel packing, model loading, PBR rendering, PSD ZIP preparation and EXR decoder admission cooperate with the shared budget. Nested operations share their parent task reservation.
+- Under memory pressure, disposable image/geometry caches and idle EXR processes are retired in a background thread. Persistent PSD disk caches and completed analysis results are retained.
+- A limit cannot be lowered below current committed usage plus 512 MiB. Committed memory differs from physically resident RAM; large previews can require a higher limit. If an allocation exceeds the hard OS budget it can fail; active work is not forcibly interrupted to meet a smaller soft target.
+- Regression checks include aggregate allocations in real sibling/nested processes, concurrency recovery, cancellation and queue pause/resume, settings persistence and frozen executable UI checks.
+
 ## 0.11.0 — 2026-10-25
 
 - EXR metadata, previews and native block reads move into a pool of at most two disposable processes, each capped at 768 MiB on Windows with a 60-second request deadline. Crashes, cancellation and timeouts discard the process; subsequent files can open in a fresh worker.
