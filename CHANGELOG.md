@@ -1,5 +1,12 @@
 # What’s new
 
+## 0.15.1
+
+- Added a local Ctrl+K command palette for tools, workspace actions, projects, exports and support.
+- Added keyword/alias search, keyboard navigation, session-only recent commands and live availability explanations.
+- Preserve Entry/Text contents when invoking Ctrl+K; active modal dialogs retain control. Commands recheck availability and use existing export/preflight guards.
+
+
 ## 0.15.0
 
 - Added export preflight for main conversion, batch tools, queued workflows and CLI: disk space, permission probes, names, missing inputs/tiles and floating-point conversion risk.

@@ -81,3 +81,7 @@ After scanning, type or browse a different **Output** folder and click **Start c
 Select one or more table rows, then choose a **Selected** map type to apply it immediately. Typed custom names use Enter or Apply type. Entire series extends the change to matching map tiles. Enable Rename files with Apply type in Selection to update output filenames together with the map type. Originals are preserved.
 
 Batch Texture Tools presets change operation settings while keeping your chosen map filter and file selection.
+
+## Find commands quickly
+
+Press **Ctrl+K**, type a tool name or keyword, select with Up/Down and press Enter. Escape closes the palette. Unavailable actions show their requirements. See [Command palette](commands.md).

@@ -141,3 +141,5 @@ UDIM Forge was previously named UDIM Studio. Existing settings, profiles, report
 See [Projects and crash recovery](docs/projects.md) and [CLI, benchmarks and beta acceptance](docs/automation.md). Version 0.14 adds workspace projects, resumable conversion, extended settings Undo/Redo, GPU preview and a per-user installer. Gumroad is selected; the product and Product ID are not created/configured yet.
 
 Use **Check export…** for the [export preflight](docs/preflight.md): disk capacity, write permissions, output names, missing maps and float conversion warnings before export.
+
+Press **Ctrl+K** to find tools and actions through the [command palette](docs/commands.md).
