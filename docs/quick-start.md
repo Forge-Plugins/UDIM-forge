@@ -85,3 +85,5 @@ Batch Texture Tools presets change operation settings while keeping your chosen 
 ## Find commands quickly
 
 Press **Ctrl+K**, type a tool name or keyword, select with Up/Down and press Enter. Escape closes the palette. Star favorites, use Favorites only, or open Shortcuts / preferences to assign custom keys. Favorites and eight recent commands persist between runs. Unavailable actions show their requirements. See [Command palette](commands.md).
+
+For a complete material recipe, open **Target presets / recipe…**, apply a target preset, then **Preview export plan**. Select an output and choose **Before / after…** to inspect an exact representative result before **Start queued workflow**. **Color / data details…** explains the selected output transforms.

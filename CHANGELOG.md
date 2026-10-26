@@ -1,5 +1,13 @@
 # What’s new
 
+## 0.16.0
+
+- Added target delivery presets for PBR 4K/2K and float EXR archives, plus reusable custom presets.
+- Added exact representative recipe before/after previews using the real capped export workers and the shared A/B/Wipe/difference viewer.
+- Added explicit color/data export summaries, guarded material data-map processing and OCIO assignment change detection.
+- Added shared queue progress/ETA, verification phases, colored states, clearer cancellation and automatic stale-plan invalidation.
+
+
 ## 0.15.2
 
 - Added starred favorite commands and a Favorites only filter to Ctrl+K.

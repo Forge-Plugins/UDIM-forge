@@ -2,6 +2,35 @@
 
 UDIM Forge 0.2.0 adds one persistent queue for preparing whole texture sets. Open **Tools → Convert image format…** or **Tools → Production workflows / task queue…** in the main header. Right-click selected main-table rows to convert only those images. All processing exports new files; original textures remain unchanged.
 
+## Target presets and exact recipe preview
+
+Open **Target presets / recipe…** in the main Output section, or search `target presets` in Ctrl+K. In Production Workflows, choose a **Target preset** and click **Apply preset**. Presets switch to Whole-set recipe mode and retain source basenames and UDIM tokens in folders grouped by detected set and map type. The main Start conversion settings remain a separate workflow: use Start queued workflow for the applied delivery recipe.
+
+Built-in choices:
+
+- **PBR 4K / OpenGL / separate maps**: Color PNG8, Normal PNG16 with normalization, other maps PNG16, longest edge 4096; Displacement EXR float32 at original resolution. No normal Y flip.
+- **PBR 4K / DirectX / ORM**: the same map policies plus an explicit normal Y flip and ORM packing. This assumes source normals use OpenGL convention; orientation cannot be inferred from pixels.
+- **PBR 2K / OpenGL / ORM**: longest edge 2048 and ORM packing, with displacement retaining original resolution and EXR float32.
+- **Archive / EXR float32 / original resolution**: no resizing, packing, grading or implicit normal orientation conversion.
+
+Preset resolution limits only reduce size. PBR recipes use Automatic compression and Keep Alpha. ORM outputs use the existing RGB PNG16 pipeline with R=AO, G=Roughness and B=Metallic; missing/ambiguous inputs block planning unless missing-input defaults are explicitly enabled. Color grading, sRGB filtering and OCIO baking are OFF in these presets: existing samples are preserved through format conversion unless a rule explicitly requests another operation. A preset does not infer or assign a new color space.
+
+**Save current as…** saves a validated local custom target preset, including format/depth, compression, Alpha, filter, per-map resolution/point rules, normal Y flip, packing, missing-input policy, sRGB resize and OCIO bake switches. Reusing a name replaces that custom preset. Presets are independent of texture paths and stored in `%APPDATA%\UDIM Studio\target-presets.json`. Save/load workflow JSON remains available for exchanging recipes. OCIO bake uses the currently trusted application configuration and input assignments, rather than embedding an arbitrary config path in a target preset.
+
+After **Preview export plan**, select a row and choose **Before / after…** (also in its right-click menu). The preview runs the actual full-resolution export and its dependencies in a separate capped worker queue, within the global RAM budget. It writes into owned temporary storage, runs preflight and leaves the production queue and originals untouched. This is an exact representative output, not an instant low-resolution approximation; large images and shared displacement statistics can take time and temporary disk space. Preview one output at a time.
+
+The completed sample opens the shared A/B viewer: side by side, Wipe, difference view, synchronized zoom/pan and native pixel inspection. Color/Normal/packed outputs start in RGB. OCIO display and automatic contrast start OFF to avoid double-applying a baked transform. Both remain viewer-only controls. Native difference metrics use stored sample units: PNG8 and PNG16 numeric codes differ even for visually equivalent normalized values. For packed outputs, A is the first original input and B is the packed output, not a same-channel identity test. Closing the preview stops its workers and removes its temporary files; it also closes its associated comparison window.
+
+**Color / data details…** describes the selected output's actual point operations, resize transfer, format, Alpha, compression and OCIO bake/input assignment. The main Tools menu offers **Selected export color / data details…**, and Batch Texture Tools has an equivalent details button. An OCIO display transform only changes exported RGB when Bake is explicitly enabled. Material recipes block exposure/gamma/saturation and OCIO/sRGB transforms on data maps, including unknown EXRs; explicit numeric multiply/offset remain available. Batch map utilities still accept intentional numeric edits, which are shown in their details. Integer output clamps to 0–1 and quantizes; float preserves signed/HDR ranges subject to output precision.
+
+Changing common format/resize/packing controls or per-map rules disables the old plan. A changed OCIO configuration/input assignment is also detected before starting or previewing it. Prepare a new plan after any such change.
+
+## Operation status and cancellation
+
+The queue shows **Preparing**, **Running**, **Cancelling**, **Waiting for RAM**, **Paused**, **Needs attention** and **Completed** states as appropriate. A shared progress bar reports completed jobs plus current worker progress, alongside active/pending/error counts. Rows distinguish input verification, processing and output verification; completed/error/blocked rows use different text colors. ETA is approximate and varies with image size, compression and job complexity; it is not a completion guarantee. Main conversion and batch tools also show progress and an ETA once enough progress is available.
+
+Cancel/Pause requests stop active workers safely and retain completed production outputs for Resume queue. Cancelling is displayed until workers have stopped. Recipe-preview cancellation removes its temporary output. Preparing a plan is distinct from exporting it; the export Start control becomes available after a valid plan.
+
 ## Which Start button?
 
 **Start conversion** in the main window applies UDIM naming, folder layout and the selected **Output image format / bit depth** in one operation. Choose EXR, PNG or TIFF (or JPEG), compression and Alpha directly beneath the naming controls. The preview shows final extensions and collisions before starting. With resizing disabled, **Keep original format** copies bytes unchanged and disables compression/Alpha controls. Image-encoding settings persist in normal settings and saved profiles; legacy profiles default to Keep original format.

@@ -143,3 +143,5 @@ See [Projects and crash recovery](docs/projects.md) and [CLI, benchmarks and bet
 Use **Check export…** for the [export preflight](docs/preflight.md): disk capacity, write permissions, output names, missing maps and float conversion warnings before export.
 
 Press **Ctrl+K** to find tools and actions through the [command palette](docs/commands.md), star favorites, revisit persistent recent commands and assign custom application shortcuts.
+
+Target delivery presets and exact recipe before/after preview are available from **Target presets / recipe…** in the main Output section. See [Production workflows](docs/production.md) for color/data handling and progress states.
