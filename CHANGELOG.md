@@ -1,5 +1,13 @@
 # What’s new
 
+## 0.15.0
+
+- Added export preflight for main conversion, batch tools, queued workflows and CLI: disk space, permission probes, names, missing inputs/tiles and floating-point conversion risk.
+- Added a review dialog with blocking errors, explicit warning acknowledgement, input location and JSON reporting. Estimates include resize, TX and PSD cache requirements without decoding all pixels.
+- Corrected MSI shortcut naming, project-association removal and shortcut cleanup. Added a real isolated install/upgrade/launch/uninstall test with user-file preservation checks.
+- Wait for capped worker processes to exit before deleting their temporary files, fixing an intermittent cancellation cleanup race.
+
+
 ## 0.14.1
 
 - Prepared Gumroad purchase verification and a License / Gumroad dialog; the product is not created and activation remains disabled pending its real Product ID.
