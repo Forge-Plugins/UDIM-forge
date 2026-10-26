@@ -1,5 +1,13 @@
 # What’s new
 
+## 0.15.2
+
+- Added starred favorite commands and a Favorites only filter to Ctrl+K.
+- Persist the eight most recently run commands, favorites and custom shortcuts across application restarts.
+- Added a shortcut editor with conflict detection, protected editing keys and application-only bindings that respect modal dialogs and unavailable actions.
+- Save command preferences atomically with bounded validation, multi-instance edit merging and explicit reset with a backup.
+
+
 ## 0.15.1
 
 - Added a local Ctrl+K command palette for tools, workspace actions, projects, exports and support.

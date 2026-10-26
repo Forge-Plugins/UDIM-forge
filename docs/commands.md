@@ -10,4 +10,12 @@ Unavailable commands remain visible with a reason, such as a required scan, miss
 
 The catalog includes workspace scanning, source/output folders, export preflight, main and selected-file conversion, selected TX export, batch grading/resize/packing, task queue, image inspection, A/B and A/B/C/D comparisons, validators, PBR preview, OCIO, cache and RAM settings, projects, profiles, Undo/Redo, diagnostics, licensing, private updates and offline help. Export commands still pass through the existing preflight and export safeguards. Opening a tool does not itself start its export.
 
-The empty search shows recently selected commands first, up to eight entries for the current application run. Queries and recent selections are not written to projects, profiles or a remote service. The palette does not open over modal preflight, trust or confirmation dialogs: finish or cancel that dialog first. No system-wide keyboard hook is installed.
+Click the star column or **Add favorite** to pin a command. Empty search lists favorites first, followed by your eight most recently run commands. **Favorites only** narrows the list to starred actions; keyword search still ranks relevance first.
+
+Favorites, recent commands and custom shortcuts persist between application runs in `%APPDATA%\UDIM Studio\command-preferences.json`. Settings are saved atomically, separately from projects and profiles. Queries are not saved or sent to a remote service.
+
+Open **Shortcuts / preferences…**, select a command, type a shortcut and choose **Assign**. **Clear** removes its binding. Supported combinations are Ctrl+Shift+letter, Ctrl+F1–F12, Ctrl+Shift+F1–F12, and standalone F7/F8/F9/F12. For example, assign Ctrl+Shift+R to Resize UDIM sets. Duplicate assignments are rejected with the name of the existing command; clear that assignment first. Reserved editing and application shortcuts, Ctrl+K, Alt/Win and AltGr combinations cannot be overridden.
+
+Custom shortcuts work inside UDIM Forge, including nonmodal tools, and check the same availability and export safeguards as the palette. They do not run while a modal dialog is active. **Reset command preferences** resets favorites, recents and shortcuts and keeps the previous file as a uniquely named backup. A damaged or unsupported preferences file is preserved until you explicitly reset it.
+
+ The palette does not open over modal preflight, trust or confirmation dialogs: finish or cancel that dialog first. No system-wide keyboard hook is installed.

@@ -84,4 +84,4 @@ Batch Texture Tools presets change operation settings while keeping your chosen 
 
 ## Find commands quickly
 
-Press **Ctrl+K**, type a tool name or keyword, select with Up/Down and press Enter. Escape closes the palette. Unavailable actions show their requirements. See [Command palette](commands.md).
+Press **Ctrl+K**, type a tool name or keyword, select with Up/Down and press Enter. Escape closes the palette. Star favorites, use Favorites only, or open Shortcuts / preferences to assign custom keys. Favorites and eight recent commands persist between runs. Unavailable actions show their requirements. See [Command palette](commands.md).
