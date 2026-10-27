@@ -9,7 +9,7 @@ Use **Project → Collect project dependencies…** or search **Collect** with *
 5. Click **Collect project**. Copying and SHA-256 verification run in the background with progress and Cancel. A failed or cancelled collection removes its temporary folder and leaves originals unchanged.
 6. Move the **entire resulting folder** to the other Windows computer, then open **Project.udimforge** in UDIM Forge 0.18.0 or later.
 
-The collection includes loaded textures (including excluded files), texture inputs retained by open tools, comparison version textures, the selected PBR model and HDRI, referenced external OCIO configs and LUTs, and existing files referenced by the production queue. Files with the same basename from different roots keep separate locations. The source workspace and original project remain open and unchanged.
+The collection includes loaded textures (including excluded files), texture inputs retained by open tools, comparison version textures (honoring the saved subfolder setting), source scan metadata sidecars, the selected PBR model and HDRI, referenced external OCIO configs and LUTs, and existing files referenced by the production queue. Files with the same basename from different roots keep separate locations. The source workspace and original project remain open and unchanged.
 
 The project stores paths relative to its own folder and resolves them when opened. Save project preserves this form. **Save as does not copy assets**; use Collect again when moving to a different directory or after adding dependencies outside the collected folder. The Files directory mirrors the original directory hierarchy beneath a drive identifier. Keep its structure intact.
 
