@@ -1,5 +1,14 @@
 # What’s new
 
+## 0.19.0 — Surface tools and UV inspection
+
+- Batch multi-channel unpack/remap with explicit RGB/Alpha routing and output names.
+- Normal X/Y/Z, Z reconstruction, normalization and RNM detail blending; neighbor-aware Height → Normal.
+- UDIM-aware resize, blur and sharpen with bounded streaming row caches.
+- Mask/range-based grading and .cube LUT strength, explicit preview versus baked copy export.
+- UV0 overlays/checker, tile navigation and CPU/GPU model tile highlighting.
+- Contact sheets with source metadata; typed presets, projects, real worker previews and resumable queue exports with final checks.
+
 ## 0.18.0 — Portable project collection
 
 - Review and collect the current project, textures, model, HDRI, comparison versions and OCIO LUTs into one new folder.

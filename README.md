@@ -149,3 +149,5 @@ Target delivery presets and exact recipe before/after preview are available from
 **Export…** now provides an explicit file scope and review-before-start flow. Material recipes use a typed map-rule table and navigable UDIM before/after previews. Final output verification produces a per-file report. See [Export workflow and final checks](docs/exporting.md).
 
 Portable project handoff: [Collect project dependencies](docs/collect.md).
+
+Texture processing: [Surface tools and UV inspection](docs/surface-tools.md).
