@@ -1,5 +1,13 @@
 # What’s new
 
+## 0.18.0 — Portable project collection
+
+- Review and collect the current project, textures, model, HDRI, comparison versions and OCIO LUTs into one new folder.
+- Relative project paths survive relocation; comparison hashes and queue input guards are verified before reuse.
+- Background copy, progress, cancellation, SHA-256 manifest and safe failure cleanup.
+- Project menu and Ctrl+K entry; original workspace stays unchanged.
+- Explicit OBJ/MTL and FBX external-media boundaries; external OCIO trust remains required.
+
 ## 0.17.0
 
 - Added an export center with explicit Included / Selected / Whole loaded set scopes and a review-before-start flow.

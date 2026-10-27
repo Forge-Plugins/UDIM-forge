@@ -15,3 +15,7 @@ The main **Export… → Review output plan → Check & start export** also reco
 External OCIO configurations remain deferred when opening/recovering projects. Use **Review external OCIO** to explicitly trust the configuration and its referenced LUTs. Built-in configurations are safe to restore automatically. Displacement/normal analysis still uses original values.
 
 Open tools restore their recipes and source selection. Pending UI work, an uncommitted image edit, in-flight GPU frames and temporary proxy caches are rebuilt rather than embedded. Completed comparison results are revision-checked and reused; changed sources are reanalyzed on request. Keep recovery/project files private: they contain local paths and metadata.
+
+## Portable handoff
+
+Use **Project → Collect project dependencies…** to create a self-contained copy for another Windows computer. See [Collect project dependencies](collect.md) for steps, verification and boundaries.
