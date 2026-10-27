@@ -1,5 +1,14 @@
 # What’s new
 
+## 0.17.0
+
+- Added an export center with explicit Included / Selected / Whole loaded set scopes and a review-before-start flow.
+- Replaced per-map JSON editing with a validated rule table and typed editor; retained preset/project compatibility.
+- Added recipe map/UDIM navigation with shared view state, two-result caching, stale detection and reviewed-plan refresh.
+- Added final output verification for main and batch exports and dependent queue/CLI checks, including encoded pixel scans and TX mip checks.
+- Added per-file verification reports and non-overwriting batch rechecks; failures remain visible in queue status.
+
+
 ## 0.16.0
 
 - Added target delivery presets for PBR 4K/2K and float EXR archives, plus reusable custom presets.

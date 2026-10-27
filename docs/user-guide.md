@@ -1,6 +1,6 @@
 # UDIM Forge
 
-For the new **Start conversion**, **Convert image format…**, durable production queue, recipes, displacement tools, quality findings, HTML and .tx export, see [Production workflows](production.md). For moved-project relinking and reviewed error logs see [Support](support.md).
+For the new **Export… → Review output plan → Check & start export**, **Convert image format…**, durable production queue, recipes, displacement tools, quality findings, HTML and .tx export, see [Production workflows](production.md). For moved-project relinking and reviewed error logs see [Support](support.md).
 
 A small, portable Windows application for converting **UV/UDIM texture filenames and folder layouts**. It works locally and does not upload textures. Run **UDIM Forge.exe** — no Python installation is needed.
 
@@ -18,7 +18,7 @@ UDIM Forge is commercial software. GitHub hosts documentation, changelog and iss
 2. Select the source format, target format and folder layout.
 3. Click **Scan files** and review the proposed filenames and map types.
 4. Correct a map type for selected files or an entire series. Click ✓ to exclude a file. Use Ctrl or Shift for multiple selection.
-5. Click **Start conversion**, then **Open output**.
+5. Click **Export… → Review output plan → Check & start export**, then **Open output**.
 
 Each conversion creates a new `UDIM_date_id` subfolder in the output location. Originals remain unchanged. Filename collisions block copying until you change the layout or exclude duplicates. Cancellation removes only the current operation's temporary copies.
 
@@ -185,7 +185,7 @@ The report lists dimensions, sample types, NaN/+Inf/-Inf counts and per-file rea
 - **Replace literal text** replaces a supplied case-insensitive substring, e.g. `body_weirdToken` → `body_Albedo` by replacing `weirdToken`. It requires that text to exist in every selected source/pending basename.
 - **Set full basename** assigns an exact basename, e.g. `Smaug_Albedo` or simply `Color`, to the selected series. Tile tokens and extensions are added by current formatting settings. Do not include them in this field.
 
-The dialog previews paths/collisions before **Apply to preview**. **Reset to source names** clears pending edits and restores filename-based classification. **Start conversion** writes the renamed maps into a new result folder; Apply never renames originals in place. Reports preserve the effective output basename and gain so a copied set scans correctly on its next conversion. Pending edits are session-only until copies are created.
+The dialog previews paths/collisions before **Apply to preview**. **Reset to source names** clears pending edits and restores filename-based classification. **Export… → Review output plan → Check & start export** writes the renamed maps into a new result folder; Apply never renames originals in place. Reports preserve the effective output basename and gain so a copied set scans correctly on its next conversion. Pending edits are session-only until copies are created.
 
 ## Convert only selected files
 
@@ -406,7 +406,7 @@ Muted section colors help separate the main controls: blue for source/output fol
 
 **Folders** contains the source/output locations and Scan files. **Conversion → Output** contains UDIM naming, the global image format/depth and folder layout. **By map type** groups per-map formats and resolutions; **Advanced** holds source naming, templates, compression, Alpha, verification and map detection rules. The tab height follows its controls, leaving more room for the preview table.
 
-Open **Filters** above the preview for source/output resolution, format and depth filters; an active count remains visible when collapsed. **Selection** groups row actions and the Rename files with Apply type toggle. **Compare** and **Tools** group version comparison, production workflows, grading, resizing, OCIO, validation and cache tools. **Start conversion** remains at the bottom.
+Open **Filters** above the preview for source/output resolution, format and depth filters; an active count remains visible when collapsed. **Selection** groups row actions and the Rename files with Apply type toggle. **Compare** and **Tools** group version comparison, production workflows, grading, resizing, OCIO, validation and cache tools. **Export… → Review output plan → Check & start export** remains at the bottom.
 
 Use the visible **Pack ORM / RMA…** button in the main header to open channel packing. The tool is also available in Tools and the file-list context menu.
 

@@ -46,9 +46,9 @@ The main-header **Tools** menu offers batch grading/map utilities, ORM/RMA packi
 
 ## Different resolutions in one set
 
-In the main window open **By map type** and enable **Resolutions by map type**, then choose **8K / 4K / 2K preset** (Displacement / Normal / Color) or enter your own longest-edge limits. Choose per-map formats above, review the preview and press **Start conversion** once. Save these settings through **Profile → Save as…**. Smaller images are never enlarged; **Keep original resolution** leaves a type at its source dimensions. See [resolution rules](production.md#resolutions-by-map-type-in-the-main-window) for custom types, filters and format limits.
+In the main window open **By map type** and enable **Resolutions by map type**, then choose **8K / 4K / 2K preset** (Displacement / Normal / Color) or enter your own longest-edge limits. Choose per-map formats above, review the preview and press **Export… → Review output plan → Check & start export** once. Save these settings through **Profile → Save as…**. Smaller images are never enlarged; **Keep original resolution** leaves a type at its source dimensions. See [resolution rules](production.md#resolutions-by-map-type-in-the-main-window) for custom types, filters and format limits.
 
-Before **Start conversion**, check **Source size → Output size**, **Source format / depth** and **Output format / depth** in the main table. Values update when settings change. Headers load in the background; Unknown indicates an inspection warning, not an assumed size. The same fields are included in **Export visible CSV…**. See [preview columns](production.md#source-and-output-columns-before-start).
+Before **Export… → Review output plan → Check & start export**, check **Source size → Output size**, **Source format / depth** and **Output format / depth** in the main table. Values update when settings change. Headers load in the background; Unknown indicates an inspection warning, not an assumed size. The same fields are included in **Export visible CSV…**. See [preview columns](production.md#source-and-output-columns-before-start).
 
 ## Find mismatched settings
 
@@ -76,7 +76,7 @@ For the whole UDIM set on a model, use **PBR preview… → Import OBJ / FBX…*
 
 ### Destination and selected map names
 
-After scanning, type or browse a different **Output** folder and click **Start conversion** directly. Missing folders are created at conversion time; typing does not write to disk. Changing the source folder or scan scope still requires Scan files.
+After scanning, type or browse a different **Output** folder and click **Export… → Review output plan → Check & start export** directly. Missing folders are created at conversion time; typing does not write to disk. Changing the source folder or scan scope still requires Scan files.
 
 Select one or more table rows, then choose a **Selected** map type to apply it immediately. Typed custom names use Enter or Apply type. Entire series extends the change to matching map tiles. Enable Rename files with Apply type in Selection to update output filenames together with the map type. Originals are preserved.
 
@@ -86,4 +86,4 @@ Batch Texture Tools presets change operation settings while keeping your chosen 
 
 Press **Ctrl+K**, type a tool name or keyword, select with Up/Down and press Enter. Escape closes the palette. Star favorites, use Favorites only, or open Shortcuts / preferences to assign custom keys. Favorites and eight recent commands persist between runs. Unavailable actions show their requirements. See [Command palette](commands.md).
 
-For a complete material recipe, open **Target presets / recipe…**, apply a target preset, then **Preview export plan**. Select an output and choose **Before / after…** to inspect an exact representative result before **Start queued workflow**. **Color / data details…** explains the selected output transforms.
+For a complete material recipe, open **Target presets / recipe…**, apply a target preset, then **2. Review output plan**. Select an output and choose **Before / after…** to inspect an exact representative result before **3. Check & export**. **Color / data details…** explains the selected output transforms.

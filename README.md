@@ -145,3 +145,5 @@ Use **Check export…** for the [export preflight](docs/preflight.md): disk capa
 Press **Ctrl+K** to find tools and actions through the [command palette](docs/commands.md), star favorites, revisit persistent recent commands and assign custom application shortcuts.
 
 Target delivery presets and exact recipe before/after preview are available from **Target presets / recipe…** in the main Output section. See [Production workflows](docs/production.md) for color/data handling and progress states.
+
+**Export…** now provides an explicit file scope and review-before-start flow. Material recipes use a typed map-rule table and navigable UDIM before/after previews. Final output verification produces a per-file report. See [Export workflow and final checks](docs/exporting.md).
