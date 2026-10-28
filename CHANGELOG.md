@@ -1,5 +1,13 @@
 # What’s new
 
+## 0.23.0 — Local compatibility checks and beta preparation
+
+- Opt-in System check in Help and Ctrl+K, with native PNG16/EXR32/TIFF32 Unicode round trips, RAM/display/settings checks and optional isolated GPU preview.
+- Cancellable/time-limited 1.5 GiB probe, local path-free JSON results and explicit Pass/Warning/Fail/Skipped states.
+- Scrollable Help navigation at minimum window size; updated first-export instructions and a compatibility/beta verification matrix.
+- Portable runtime smoke with an empty profile and Python-free PATH, plus real GUI/CLI export/resume and preserved source hashes. This is not a clean Windows VM test.
+- Verified with 690 unit tests and 18 frozen application acceptance groups; unsupported hardware/DPI/VM scenarios remain explicitly pending.
+
 ## 0.22.1 — Offline PBR A/B HTML reports
 
 - One self-contained HTML file with A/B frames, heatmap, difference, region overlays, current shared detail and statistics.

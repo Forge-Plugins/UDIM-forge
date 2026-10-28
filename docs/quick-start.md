@@ -2,6 +2,8 @@
 
 UDIM Forge is a commercial Windows desktop tool for organizing, inspecting, comparing and processing UDIM texture sets. Use the application build provided through your authorized purchase channel, extract it and run UDIM Forge.exe. Python is not required. [Licensing and updates](updates.md) explains distribution and replacing a local copy.
 
+Before the first export, run **Help & Support → System check** and read the [compatibility matrix](compatibility.md). A local pass is not certification of every machine.
+
 ## Convert Mudbox names to UDIM names
 
 1. Drop your source folder into the main window, or browse to it. Enable Include subfolders when needed.
@@ -9,15 +11,15 @@ UDIM Forge is a commercial Windows desktop tool for organizing, inspecting, comp
 3. Choose the target naming format and folder layout. A common Mari / Toolbag pattern is {name}.{udim}{ext}.
 4. Click Scan files. Review map types, tile numbers, target names and collisions.
 5. Correct map types with Apply type or use Rename channel. Apply type can update the output channel token for the whole series.
-6. Choose Output image format / bit depth (Keep original format or EXR/PNG/TIFF/JPEG), compression and Alpha, then an output location and click Start conversion. Each run creates its own output subfolder. Source texture files remain unchanged.
+6. Choose Output image format / bit depth (Keep original format or EXR/PNG/TIFF/JPEG), compression and Alpha, then an output location, then **Export… → Review output plan → Check & start export**. Each run creates its own output subfolder. Source texture files remain unchanged.
 
-For example, one-based body_color_u1_v1.exr becomes body_color.1001.exr. The equivalent zero-based source is body_color_u0_v0.exr. Filename conversion copies pixel data unchanged; it does not bake color transforms or displacement gain.
+For example, one-based body_color_u1_v1.exr becomes body_color.1001.exr. The equivalent zero-based source is body_color_u0_v0.exr. With Keep original format and original dimensions, filename conversion copies pixel data unchanged. Image-format, resize and processing options intentionally change exported pixels.
 
 Enable **Use formats by map type** for a mixed set: Displacement EXR float32, Normal PNG16, Color PNG8. The inline preset and All map types editor configure these rules; save a profile to reuse them.
 
 ## Inspect a texture
 
-To change actual image encoding, use **Convert image format…**, choose **Output format / bit depth** (EXR/PNG/TIFF/JPEG), then **Preview export plan → Start format conversion**. You can also choose Output image format / bit depth directly in the main window and press Start conversion to combine naming and encoding in one pass. See [production workflows](production.md) for compression, Alpha, durable queues, recipes and displacement processing.
+To change actual image encoding, use **Convert image format…**, choose **Output format / bit depth** (EXR/PNG/TIFF/JPEG), then **Preview export plan → Start format conversion**. You can also choose Output image format / bit depth directly in the main window and use **Export… → Review output plan → Check & start export** to combine naming and encoding in one pass. See [production workflows](production.md) for compression, Alpha, durable queues, recipes and displacement processing.
 
 Double-click a row to open Image Viewer. Select RGB or an actual stored channel, adjust EXR exposure/gamma, and inspect native RGBA values under the cursor. Histogram, min/max and selected-area statistics use original pixel values. Raw 0–1 bypasses display color processing.
 
