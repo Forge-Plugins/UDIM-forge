@@ -1,5 +1,26 @@
 # Surface tools, normals and UDIM filters
 
+## Contextual controls and ordered recipes (0.20.0)
+
+The operation editor now shows only the controls used by the selected operation. Enable **Use a mask** to reveal optional mask controls. Hidden values from another operation are ignored. Contact sheets show their fixed PNG format when used alone.
+
+To build a recipe:
+
+1. Choose an operation, its settings and **Apply to** map type, then click **Add step**.
+2. Click **New step**, choose the next operation and add it. Repeat for up to 16 steps.
+3. Select an existing step to edit it; **Update step** stores edits. Review also commits valid edits to the selected step. A new draft must be added before preview/export.
+4. Use **Move up / Move down**, **Duplicate**, **Remove** or **Enabled** to manage the order. Disabled steps are skipped. A map-type scope applies to the current stage input: Height to Normal changes its output type to Normal, and channel unpacking branches into the named output types.
+5. Choose **Final output format** and **Review plan**. The plan shows all stage jobs, final files and the final verification job. The final format applies to every final texture, including maps passed through scoped stages. Use the main input map-type filter for a single family; inspect float-to-integer warnings for mixed sets.
+6. **Preview full chain** compares the original map with its final export and includes all upstream steps and neighboring-tile dependencies. **Preview selected step** evaluates the prefix through that row. The preview supports the existing tile navigation, shared zoom and Wipe; native differences require compatible sizes/channels.
+7. **Open export queue** opens the reviewed graph in Production Workflows. Review preflight and start there. Queue status includes stage names.
+
+Examples: Displacement → Height to Normal → Normal tools (flip Y) → resize → PNG 16-bit; Color → masked exposure → LUT → resize → PNG 16-bit. Give color operations a Color-only scope in mixed sets. Color/LUT/sRGB transformations remain blocked for data maps.
+
+Recipes retain EXR float32 intermediates under `.steps` in the new batch folder, and apply the selected output format once at the end. This requires disk space but supports per-stage resume and prevents repeated integer quantization. Finished textures are under `Output`. A terminal Contact sheet step adds a PNG report there alongside the final textures; it must be the last enabled step. Steps without matching map types are skipped; a recipe with no effective operation is rejected. Original files stay unchanged. Intermediates remain available for Resume and can be removed with their batch when no longer needed.
+
+**Save recipe / preset** writes version-2 recipes; **Load** also accepts existing version-1 single-operation presets. Projects/autosave preserve ordered steps, scopes, enabled state, selected stage and editor values. Changed settings invalidate reviewed plans and previews; restoring a stale plan does not make it exportable. Older projects without a saved review-state marker require Review plan once. Collect project dependencies includes masks, detail maps and LUTs from all enabled recipe steps.
+
+
 Open **Tools → Surface / UDIM utilities…**, or search **Surface** in Ctrl+K. Choose All included files or Main selection, and optionally a map type. Review the output plan before exporting. Presets save/load typed settings without editing JSON. Open .udimforge projects preserve this window's settings and reviewed plans.
 
 ## Preview versus exported pixels

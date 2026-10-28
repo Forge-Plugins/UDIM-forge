@@ -1,5 +1,14 @@
 # What’s new
 
+## 0.20.0 — Contextual Surface Tools and ordered recipes
+
+- Operation-specific controls with optional mask sections; hidden fields cannot affect other operations.
+- Ordered, scoped, enabled/disabled recipe steps with move, duplicate and remove controls.
+- Full-chain and selected-prefix previews from originals, with complete UDIM dependencies.
+- Float32 intermediates and one final format conversion; stage-aware resumable queues and final-output verification.
+- Recipe presets, project/autosave persistence, stale-plan restoration guards and dependency collection across steps.
+- Retry transient Windows progress-file sharing conflicts without weakening atomic writes; dispose nested Tcl variables on the UI thread.
+
 ## 0.19.0 — Surface tools and UV inspection
 
 - Batch multi-channel unpack/remap with explicit RGB/Alpha routing and output names.
