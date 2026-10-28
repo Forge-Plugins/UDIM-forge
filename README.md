@@ -8,6 +8,10 @@ This Git repository contains documentation, changelog and issue templates. Appli
 
 UDIM Forge is commercial software. GitHub hosts documentation, changelog and issue tracking only. Application binaries and updates are distributed by Forge-Plugins through its authorized purchase channel; no public application downloads are provided here.
 
+## New in 0.21.1
+
+PBR A/B Difference and Heatmap views with cached threshold and gain controls, changed-pixel statistics, project persistence and PNG snapshots. [Guide](docs/pbr-ab.md#difference-and-heatmap).
+
 ## New in 0.21.0
 
 Linked PBR material A/B comparison with a shared camera, zoom, model and HDRI, side-by-side and cached Wipe views, missing-tile navigation and project recovery. [Guide](docs/pbr-ab.md).

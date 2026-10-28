@@ -27,3 +27,17 @@ Adaptive quality uses a smaller frame and simplified geometry during movement, t
 ## Projects and portability
 
 Projects and autosave retain both folders, set selections, tile, camera, Wipe position, input modes, shared model/HDRI paths and view controls. Reopening prepares fresh bounded proxies. **Collect project dependencies** includes both catalogs, including unopened tiles, plus the model, HDRI and applicable OCIO dependencies. Source files are never modified by this preview.
+
+## Difference and Heatmap
+
+Choose **Difference** to view absolute RGB changes or **Heatmap** to show their magnitude from blue through cyan and yellow to red. Both use the last completed, synchronized A/B frame pair. Camera, zoom, model and HDRI remain shared.
+
+**Threshold (0–1)** filters by the largest absolute R/G/B channel difference for each rendered pixel, divided by 255. A pixel is counted only when its difference is strictly greater than the threshold. Pixels at or below the threshold are black. A threshold of zero includes every visible change; one excludes all changes. The initial threshold is 0.02.
+
+**Display gain ×** amplifies visible differences from 1× to 32×. It does not affect the threshold, changed-pixel count, percentage or reported maximum. Heatmap colors use a fixed absolute scale multiplied by gain, so colors do not rescale automatically for each tile. High differences saturate red. The status displays the count, percentage and maximum difference across all viewport pixels, including background.
+
+Threshold, gain and display-mode changes use cached RGB differences without re-rendering, decoding textures or uploading GPU maps. A new completed frame pair replaces this cache. Adaptive and full-quality frames can have different counts because their viewport resolutions differ. A missing side has an explicit unavailable message rather than statistics comparing a placeholder to a material. In whole-model view, missing UDIM markers remain part of the rendered image and the coverage summary identifies missing tiles.
+
+These differences measure the **8-bit displayed PBR image after lighting, exposure and display encoding**, including its silhouettes and background. They are not linear-radiance, native-EXR, height or UV-space differences. Clipped highlights or changes invisible from the current view may not appear. Use native set analysis to measure source texture values. Disable the shared UDIM highlight when measuring material changes alone.
+
+**Save preview** exports the current Difference or Heatmap image as PNG. Projects and autosave retain the selected mode, threshold and gain along with the linked camera and lighting; old projects default to threshold 0.02 and gain 4×.

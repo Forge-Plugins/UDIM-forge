@@ -1,5 +1,13 @@
 # What’s new
 
+## 0.21.1 — PBR difference and heatmap
+
+- Absolute RGB Difference and fixed-scale Heatmap views of synchronized PBR A/B frames.
+- Adjustable threshold, display gain, changed viewport-pixel count/percentage and maximum difference.
+- Cached threshold/gain updates without rendering or GPU uploads; black pixels at or below threshold and an explicit missing-side guard.
+- Current difference/heatmap PNG snapshots and project/autosave persistence, with defaults for older projects.
+- Verified with 665 unit tests and 17 frozen application acceptance groups, including shared camera/HDRI and cached difference controls.
+
 ## 0.21.0 — Linked PBR material A/B comparison
 
 - Compare two UDIM material versions side by side or with a cached Wipe divider.
