@@ -1,5 +1,14 @@
 # What’s new
 
+## 0.22.1 — Offline PBR A/B HTML reports
+
+- One self-contained HTML file with A/B frames, heatmap, difference, region overlays, current shared detail and statistics.
+- Snapshot camera/HDRI/shading, version/routing/OCIO settings, active tile and source revisions; pending/missing-side guards.
+- Selected-region markers, severity table and complete numeric region metadata with explicit annotation limits.
+- Escaped inert HTML, embedded PNGs, no remote assets/scripts, bounded output, cancellable background export and atomic replacement.
+- Retry transient Windows model-import cleanup locks while preserving cancellation and the original decoder error.
+- Verified with 681 unit tests, 17 frozen application checks, offline browser rendering and the large-model/EXR/HDRI dataset.
+
 ## 0.22.0 — PBR change-region navigation
 
 - Eight-connected threshold regions, exact counts/bounds and deterministic peak/area ordering.
