@@ -1,5 +1,13 @@
 # What’s new
 
+## 0.24.0 — Saved cameras and multi-view PBR reports
+
+- Named camera/detail poses with include/order, apply/update/remove and standard four-view controls.
+- Project/autosave persistence and reusable bounded JSON camera presets.
+- Sequential 512-pixel A/B rendering into one offline HTML with a view index, per-view images/heatmaps/regions/statistics and shared HDRI/threshold.
+- Reused GPU caches, consistent whole-batch Auto fallback, progress/cancel and atomic bounded output; active preview camera remains unchanged.
+- Verified with 701 unit tests, 18 frozen application groups, isolated portable runtime, offline browser rendering and the large-model/EXR/HDRI dataset.
+
 ## 0.23.0 — Local compatibility checks and beta preparation
 
 - Opt-in System check in Help and Ctrl+K, with native PNG16/EXR32/TIFF32 Unicode round trips, RAM/display/settings checks and optional isolated GPU preview.
