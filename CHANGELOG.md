@@ -1,5 +1,13 @@
 # What’s new
 
+## 0.26.0 — Whole-set UDIM PBR reports
+
+- Export the union of A/B UDIM tiles with included/ordered saved camera views and shared Preview/1K/2K/4K resolution and RAM budget.
+- Per-tile multi-view HTML and an offline coverage/statistics index, with explicit missing-A/B findings and no fabricated placeholder differences.
+- Sphere/plane inspection of individual tile materials; active preview tile, model, pose and HDRI remain unchanged.
+- Sequential rendering, tile/view/phase progress, cancellation and atomic publication into a new report directory.
+- Whole-batch renderer consistency, bounded output and staging cleanup on cancellation/failure.
+
 ## 0.25.0 — High-resolution PBR A/B reports
 
 - Preview/1K/2K/4K output selection for single reports and every included saved camera view, persisted in projects/autosave.
