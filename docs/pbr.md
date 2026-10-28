@@ -112,3 +112,7 @@ Renderer **Auto** uses OpenGL 3.3 or newer in an isolated, RAM-capped worker and
 Cached orbit/light/exposure/displacement scale and neutral-level changes reuse GPU resources. Vertex displacement deforms actual geometry; tessellation/subdivision preparation still takes time on large meshes. Adaptive movement uses its lighter mesh and full refinement follows stopping. **Opacity cutout** uses the assigned Alpha/Opacity map and cutoff; blended transparency is not implemented.
 
 On the user's 2.05-million-triangle Smaug, cached backend frames measured roughly 5–7 ms on RTX 3090 at 512px. These timings exclude the complete UI cycle and are not an FPS guarantee. The supplied displacement UVs do not match that model, so the test validates performance, tile handling and deformation rather than intended artistic appearance. Original files remain unchanged.
+
+## Compare two material versions
+
+Use the linked [PBR material A/B comparison](pbr-ab.md) for shared camera, zoom, model and HDRI, side-by-side viewing and cached Wipe.

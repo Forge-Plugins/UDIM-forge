@@ -1,5 +1,14 @@
 # What’s new
 
+## 0.21.0 — Linked PBR material A/B comparison
+
+- Compare two UDIM material versions side by side or with a cached Wipe divider.
+- Shared camera, zoom, exposure, lighting, HDRI, model and displacement controls; independent input encoding and packed-map layouts.
+- Independent persistent GPU caches, combined A+B GPU budget, adaptive movement and consistent CPU fallback for both sides.
+- Union tile navigation, explicit missing-side placeholders, whole-set UV0 model viewing and PNG display snapshots.
+- Project/autosave recovery and dependency collection for both complete version folders, including unopened tiles.
+- Verified with 659 unit tests, linked-view acceptance, and a 2.05-million-triangle model with 16 displacement EXRs and HDRI. Source assets remain unchanged.
+
 ## 0.20.0 — Contextual Surface Tools and ordered recipes
 
 - Operation-specific controls with optional mask sections; hidden fields cannot affect other operations.
