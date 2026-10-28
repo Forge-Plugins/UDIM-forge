@@ -8,6 +8,10 @@ This Git repository contains documentation, changelog and issue templates. Appli
 
 UDIM Forge is commercial software. GitHub hosts documentation, changelog and issue tracking only. Application binaries and updates are distributed by Forge-Plugins through its authorized purchase channel; no public application downloads are provided here.
 
+## New in 0.22.0
+
+PBR change-region detection, Previous/Next navigation and shared detail focus on the strongest difference, preserving the linked camera and HDRI. [Guide](docs/pbr-ab.md#change-regions-and-linked-detail-navigation).
+
 ## New in 0.21.1
 
 PBR A/B Difference and Heatmap views with cached threshold and gain controls, changed-pixel statistics, project persistence and PNG snapshots. [Guide](docs/pbr-ab.md#difference-and-heatmap).

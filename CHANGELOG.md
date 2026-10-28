@@ -1,5 +1,13 @@
 # What’s new
 
+## 0.22.0 — PBR change-region navigation
+
+- Eight-connected threshold regions, exact counts/bounds and deterministic peak/area ordering.
+- Previous/Next navigation and Max difference focus with linked cached detail crops in A/B, Wipe, Difference and Heatmap.
+- Region outlines, strongest-pixel markers, original viewport coordinates and full-frame reset; camera/HDRI stay shared.
+- Cached region metadata, missing-side/empty-result guards and project/autosave persistence of the detail center and magnification.
+- Verified with 671 unit tests, 17 frozen application checks and the large-model/EXR/HDRI dataset without modifying sources.
+
 ## 0.21.1 — PBR difference and heatmap
 
 - Absolute RGB Difference and fixed-scale Heatmap views of synchronized PBR A/B frames.
