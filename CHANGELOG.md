@@ -1,5 +1,13 @@
 # What’s new
 
+## 0.25.0 — High-resolution PBR A/B reports
+
+- Preview/1K/2K/4K output selection for single reports and every included saved camera view, persisted in projects/autosave.
+- Fresh high-resolution synchronized GPU renders, with CPU support through 1K and explicit GPU requirement for 2K/4K.
+- Report workspace admission, process-tree memory-growth monitoring, block-based difference analysis and sequential view processing under the global RAM cap.
+- Visible progress/phase and cancellation through render, analysis, PNG encoding and assembly; atomic output preserves previous reports.
+- Framebuffer budget reservation and explicit bounds for HTML size/change-region count.
+
 ## 0.24.0 — Saved cameras and multi-view PBR reports
 
 - Named camera/detail poses with include/order, apply/update/remove and standard four-view controls.

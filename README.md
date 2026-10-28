@@ -8,6 +8,10 @@ This Git repository contains documentation, changelog and issue templates. Appli
 
 UDIM Forge is commercial software. GitHub hosts documentation, changelog and issue tracking only. Application binaries and updates are distributed by Forge-Plugins through its authorized purchase channel; no public application downloads are provided here.
 
+## New in 0.25.0
+
+1K/2K/4K PBR A/B HTML reports, also across saved camera views, with workspace RAM budgets, phase/view progress and cancellation. 2K/4K require GPU; CPU supports 1K. [Guide](docs/pbr-ab.md#report-resolution-and-memory).
+
 ## New in 0.24.0
 
 Saved PBR camera views and one offline multi-view A/B HTML report with common HDRI/threshold, per-view heatmaps and region statistics. [Guide](docs/pbr-ab.md#saved-camera-views-and-multi-view-html).
