@@ -1,5 +1,13 @@
 # What’s new
 
+## 0.34.0 — Exact-setting selected retries for batch texture tools
+
+- Grading, resize and ORM/RMA/channel packing now save durable validated parameter and per-input outcome snapshots before export.
+- Retry selected failed/interrupted files after restart with the original grading recipe, resize filter/normal settings, or RGBA/source-sample map pairing and naming rules.
+- Saved settings are shown in task details; selected export preflight remains mandatory and each retry writes a new output folder without changing completed results.
+- Per-batch process locking, metadata integrity and size bounds, cancellation, shutdown cleanup and project-switch guards.
+- Pixel/reference checks and real desktop restart checks cover all three operations, changed current UI controls, selected-only scope and protected prior results.
+
 ## 0.33.0 — Persistent task history and selected retries
 
 - Local bounded SQLite task history survives restart, with start timestamps, previous-run filtering and detached Interrupted entries after an incomplete run. No automatic historical execution.
