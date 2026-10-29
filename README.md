@@ -8,6 +8,10 @@ This Git repository contains documentation, changelog and issue templates. Appli
 
 UDIM Forge is commercial software. GitHub hosts documentation, changelog and issue tracking only. Application binaries and updates are distributed by Forge-Plugins through its authorized purchase channel; no public application downloads are provided here.
 
+## New in 0.27.0
+
+Resume cancelled or interrupted PBR exports using durable per-view A/B render checkpoints, with selective input validation and reused/new render progress. [Guide](docs/pbr-ab.md#resume-cancelled-or-interrupted-report-exports).
+
 ## New in 0.26.0
 
 All-UDIM PBR A/B report export with included saved views, resolution/RAM selection, missing-tile coverage, per-tile HTML and one offline index. Sequential, cancellable export preserves the active preview. [Guide](docs/pbr-ab.md#export-every-udim-tile-and-selected-camera-views).

@@ -1,5 +1,13 @@
 # What’s new
 
+## 0.27.0 — Durable PBR report resume
+
+- Automatic `.pbrresume` checkpoints for all-UDIM, multi-view and high-resolution single-view PBR exports; Resume report restores saved views and export settings with current prepared scene inputs.
+- Transactional lossless A/B frame pairs survive cancellation and process failure, with content-based input/camera/resolution keys and selective reuse.
+- Rebuild analysis/HTML after threshold, name or crop changes without rendering again; damaged frame entries are recomputed.
+- Exclusive checkpoint locks, frame integrity/size checks, 8 GiB checkpoint bounds and stale-source preparation guards.
+- Reused/new render progress, project/autosave checkpoint path and preserved atomic final reports.
+
 ## 0.26.0 — Whole-set UDIM PBR reports
 
 - Export the union of A/B UDIM tiles with included/ordered saved camera views and shared Preview/1K/2K/4K resolution and RAM budget.
