@@ -1,5 +1,13 @@
 # What’s new
 
+## 0.31.0 — Report input readiness review
+
+- Check inputs from the report task list before restoring or rendering: saved A/B files, model, HDRI and external OCIO availability, empty/unreadable sources and changed texture metadata.
+- Show stored cache pairs, output disk free space and output conflicts, with a clear distinction between available cache and content-validated reuse.
+- Background cancellable checks without image/model decoding or OCIO parsing; bounded input inventory and a problem-first table.
+- Export complete input diagnostics to JSON, then explicitly Resume from the review when required inputs are available.
+- Verified moved-project review, diagnostics export and reuse of all completed renders in the desktop recovery workflow.
+
 ## 0.30.0 — Relink moved report inputs
 
 - Relink inputs from the interrupted-report task list by choosing a new project root, reviewing A/B, model, HDRI and OCIO replacements, then applying or resuming.

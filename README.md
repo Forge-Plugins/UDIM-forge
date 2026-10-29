@@ -8,6 +8,10 @@ This Git repository contains documentation, changelog and issue templates. Appli
 
 UDIM Forge is commercial software. GitHub hosts documentation, changelog and issue tracking only. Application binaries and updates are distributed by Forge-Plugins through its authorized purchase channel; no public application downloads are provided here.
 
+## New in 0.31.0
+
+Check saved report inputs before Resume: missing files, changed texture metadata, model/HDRI/OCIO availability, disk space and cached pair count, with JSON diagnostics. [Guide](docs/pbr-ab.md#check-report-inputs-before-resume).
+
 ## New in 0.30.0
 
 Relink moved report inputs from the task list: choose a new project root, review A/B, model and HDRI matches, then resume with completed renders preserved. [Guide](docs/pbr-ab.md#relink-moved-report-inputs).
