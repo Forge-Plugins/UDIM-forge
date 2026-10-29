@@ -1,5 +1,13 @@
 # What’s new
 
+## 0.29.0 — Restore report project and inputs on Resume
+
+- New report checkpoints atomically include the validated project snapshot and report settings before rendering, including unsaved project state.
+- Resume restores A/B folders/sets, model, HDRI, routing, lighting and scene settings, prepares inputs and continues without manual pickers.
+- Associated-project/matching-autosave fallback for older checkpoints, while source files remain external dependencies.
+- Resource preflight, preparation failure guards, idle-work waiting and safe cancellation; unrelated production work remains paused.
+- Explicit external OCIO approval before parsing and project replacement, with effective report transforms captured rather than unapproved requests.
+
 ## 0.28.0 — Startup PBR export recovery
 
 - Durable local index registers PBR report jobs before execution; background startup discovery opens a non-modal list of interrupted/unavailable exports.

@@ -8,6 +8,10 @@ This Git repository contains documentation, changelog and issue templates. Appli
 
 UDIM Forge is commercial software. GitHub hosts documentation, changelog and issue tracking only. Application binaries and updates are distributed by Forge-Plugins through its authorized purchase channel; no public application downloads are provided here.
 
+## New in 0.29.0
+
+Resume restores the saved report project, A/B folders, model and HDRI before continuing automatically, using an atomic input snapshot inside the checkpoint. [Guide](docs/pbr-ab.md#restore-project-and-inputs-with-one-resume-action).
+
 ## New in 0.28.0
 
 Automatic startup detection of interrupted PBR report exports, a persistent task list and Resume without searching for checkpoint files. Compatible 0.27 renders can be reused. [Guide](docs/pbr-ab.md#automatic-startup-report-recovery).
