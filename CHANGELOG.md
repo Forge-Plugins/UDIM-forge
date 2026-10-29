@@ -1,5 +1,13 @@
 # What’s new
 
+## 0.33.0 — Persistent task history and selected retries
+
+- Local bounded SQLite task history survives restart, with start timestamps, previous-run filtering and detached Interrupted entries after an incomplete run. No automatic historical execution.
+- New task details show full errors, actionable guidance and failed-file rows; open output folders and preview bounded logs/worker diagnostics inside the app.
+- Retry selected production/TX or cache files without starting other queued files or folder scans, with prerequisite checks, preflight, RAM controls and output protection.
+- Main conversion histories reconnect to the matching project's existing Resume conversion flow; batch-tool histories retain failure/output details.
+- Verified real selected-copy retry, untouched unrelated/completed files, selected cache isolation, desktop restart and abrupt-process history recovery.
+
 ## 0.32.0 — Shared task panel
 
 - New Tasks panel consolidates conversion, TX/production queues, PSD/PSB cache, analysis, preparation and PBR reports with actual progress/stages, elapsed time, filters and owner-tool details.

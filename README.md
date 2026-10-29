@@ -8,6 +8,10 @@ This Git repository contains documentation, changelog and issue templates. Appli
 
 UDIM Forge is commercial software. GitHub hosts documentation, changelog and issue tracking only. Application binaries and updates are distributed by Forge-Plugins through its authorized purchase channel; no public application downloads are provided here.
 
+## New in 0.33.0
+
+Persistent Tasks history, readable error details, in-app log previews, output-folder navigation and selected failed-file retry for production/TX and cache queues. [Guide](docs/tasks.md#errors-logs-and-selected-retry).
+
 ## New in 0.32.0
 
 A shared Tasks panel for conversion, TX, cache, analysis and reports: progress, current stage, cancellation, details and queue/report recovery in one place. [Guide](docs/tasks.md).
