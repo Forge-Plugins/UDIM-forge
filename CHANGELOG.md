@@ -1,5 +1,13 @@
 # What’s new
 
+## 0.30.0 — Relink moved report inputs
+
+- Relink inputs from the interrupted-report task list by choosing a new project root, reviewing A/B, model, HDRI and OCIO replacements, then applying or resuming.
+- Bounded cancellable search, relative-layout and filename matching, explicit selection for ambiguous candidates, and optional relinking of existing paths to another copy.
+- Locate a moved checkpoint by its unique filename and update the persistent task index.
+- Atomic metadata updates under the checkpoint lock; concurrent changes and published reports are protected, and completed frame records remain unchanged.
+- Verified relocation and restart with all cached pairs reused, plus cancellation, ambiguity, validation and OCIO assignment checks.
+
 ## 0.29.0 — Restore report project and inputs on Resume
 
 - New report checkpoints atomically include the validated project snapshot and report settings before rendering, including unsaved project state.

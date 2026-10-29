@@ -151,4 +151,14 @@ The snapshot uses the **effective OCIO settings of the prepared report**, rather
 
 For **older checkpoints without an embedded project snapshot**, Resume uses the associated saved project when available, or a matching current project autosave. If no trustworthy input context exists, it explains that the original project must be opened once. It cannot reconstruct source paths that older checkpoints never stored. New exports and successful manual resumes attach the full context automatically.
 
-The checkpoint stores project metadata and rendered pairs, **not copies of textures, models, HDRI or LUT files**. Those dependencies must still be available at their saved paths; use the project's existing collection/relink tools when moving assets. Keep the full `.pbrresume` file for recovery. Project metadata retains its existing 128 MiB validation bound and shares the checkpoint's disk budget. Startup discovery still reads only small task metadata and does not load full projects until explicit Resume.
+The checkpoint stores project metadata and rendered pairs, **not copies of textures, models, HDRI or LUT files**. Those dependencies must still be available at their saved paths; use **Relink inputs…** in the task list when moving assets. Keep the full `.pbrresume` file for recovery. Project metadata retains its existing 128 MiB validation bound and shares the checkpoint's disk budget. Startup discovery still reads only small task metadata and does not load full projects until explicit Resume.
+
+## Relink moved report inputs
+
+From **0.30**, select an unfinished task in **Interrupted PBR report exports**, click **Relink inputs…** and choose the new project directory. The background search proposes A/B folders, the model, HDRI and an external OCIO configuration. Review the saved and replacement paths; ambiguous matches require a choice or **Browse…**. **Apply links** saves the replacements; **Apply & Resume** also restores and continues the report.
+
+Matching uses relative directory layout, trailing path components and recorded texture filenames. Existing inputs are kept by default; enable **Relink all inputs** when switching to another copy. If the checkpoint moved too, a unique file with the same name under the chosen root can be found automatically. For multiple matching checkpoints, use **Add report folder** first to select the intended task.
+
+Relinking changes checkpoint metadata only and retains cached frame records byte-for-byte. Resume checks actual prepared pixels, geometry and lighting: unchanged inputs reuse completed renders, while changed inputs render again. Existing published reports are protected. Original project files and source assets are not overwritten. OCIO folder assignments are remapped, but configuration contents and absolute LUT references inside them are not edited; normal external-config approval still applies on Resume.
+
+Search is cancellable and bounded to 200,000 entries, 20,000 directories and 90 seconds; symlinks and junctions are skipped. Choose a narrower root if a limit is reached. No texture, model or OCIO decoding occurs during search.
