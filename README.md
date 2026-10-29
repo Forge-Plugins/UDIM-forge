@@ -8,6 +8,10 @@ This Git repository contains documentation, changelog and issue templates. Appli
 
 UDIM Forge is commercial software. GitHub hosts documentation, changelog and issue tracking only. Application binaries and updates are distributed by Forge-Plugins through its authorized purchase channel; no public application downloads are provided here.
 
+## New in 0.32.0
+
+A shared Tasks panel for conversion, TX, cache, analysis and reports: progress, current stage, cancellation, details and queue/report recovery in one place. [Guide](docs/tasks.md).
+
 ## New in 0.31.0
 
 Check saved report inputs before Resume: missing files, changed texture metadata, model/HDRI/OCIO availability, disk space and cached pair count, with JSON diagnostics. [Guide](docs/pbr-ab.md#check-report-inputs-before-resume).

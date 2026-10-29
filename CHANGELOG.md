@@ -1,5 +1,14 @@
 # What’s new
 
+## 0.32.0 — Shared task panel
+
+- New Tasks panel consolidates conversion, TX/production queues, PSD/PSB cache, analysis, preparation and PBR reports with actual progress/stages, elapsed time, filters and owner-tool details.
+- Cancel selected routes to the existing operation; production/cache rows clearly stop their whole queue and retain completed work. Resume/Retry uses existing queue preflight/recovery behavior.
+- Known interrupted reports appear with explicit Resume through the trusted project/input restoration path.
+- Simplified main footer replaces separate cache controls with Tasks status and RAM usage; Tasks remains accessible during main conversion, while independent tool windows stay interactive.
+- Bounded session task history, clear-finished behavior and project-switch guards preserve existing durable queue and report recovery.
+- Desktop checks cover main-worker cancellation isolation, real cache visibility, native TX cancellation and PBR report cancellation through the shared task actions.
+
 ## 0.31.0 — Report input readiness review
 
 - Check inputs from the report task list before restoring or rendering: saved A/B files, model, HDRI and external OCIO availability, empty/unreadable sources and changed texture metadata.
