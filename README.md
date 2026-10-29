@@ -8,6 +8,10 @@ This Git repository contains documentation, changelog and issue templates. Appli
 
 UDIM Forge is commercial software. GitHub hosts documentation, changelog and issue tracking only. Application binaries and updates are distributed by Forge-Plugins through its authorized purchase channel; no public application downloads are provided here.
 
+## New in 0.28.0
+
+Automatic startup detection of interrupted PBR report exports, a persistent task list and Resume without searching for checkpoint files. Compatible 0.27 renders can be reused. [Guide](docs/pbr-ab.md#automatic-startup-report-recovery).
+
 ## New in 0.27.0
 
 Resume cancelled or interrupted PBR exports using durable per-view A/B render checkpoints, with selective input validation and reused/new render progress. [Guide](docs/pbr-ab.md#resume-cancelled-or-interrupted-report-exports).

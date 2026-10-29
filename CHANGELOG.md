@@ -1,5 +1,13 @@
 # What’s new
 
+## 0.28.0 — Startup PBR export recovery
+
+- Durable local index registers PBR report jobs before execution; background startup discovery opens a non-modal list of interrupted/unavailable exports.
+- Resume directly from the task list without a checkpoint picker, with preparation waiting, project opening, refresh, folder discovery and non-destructive hiding.
+- State, report type, resolution, selected views, cached-pair counts and output paths; completed exports hidden by default and active exports protected.
+- Metadata-only bounded discovery includes known/recovered-project locations and legacy sibling checkpoints.
+- Compatible 0.27 render reuse through an explicit renderer cache revision; interrupted SQLite transactions are safely recovered under the checkpoint lock.
+
 ## 0.27.0 — Durable PBR report resume
 
 - Automatic `.pbrresume` checkpoints for all-UDIM, multi-view and high-resolution single-view PBR exports; Resume report restores saved views and export settings with current prepared scene inputs.
