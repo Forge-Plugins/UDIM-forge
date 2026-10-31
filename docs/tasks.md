@@ -51,3 +51,8 @@ Snapshots are bounded to 100,000 inputs, 64 MiB input metadata, 64 KiB settings 
 ## Moved inputs and disk usage
 
 Version 0.35 adds **Relink inputs…** and **Storage / cleanup…** directly to Tasks. See [Storage and task relinking](storage.md) for operation-specific recovery, protected data, retention limits and original-project requirements.
+
+
+## Complete task copies
+
+Version 0.36 adds **Copy whole task…** and **Open transferred task…** for paused conversion/batch/production tasks. Copies include inputs, verified results, staging and native worker recovery. See [Task transfer](task-transfer.md) and [Controlled fault testing](resilience.md).

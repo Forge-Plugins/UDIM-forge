@@ -42,3 +42,8 @@ Right-click an exported batch in the queue and choose **Recheck exported batch**
 Version 0.35 measures per-channel min/max and percentages exactly equal to 0 or 1 during the existing full-pixel check of encoded exports. The report exposes these statistics when a file is selected. Normal outputs additionally report the proportion of RGB vectors whose reconstructed length differs from one by more than 0.05. These are advisories; RGB is assumed to encode tangent-space normals in 0–1. Unchanged copies retain their SHA-256/header check and do not claim a pixel scan. No extra full-image allocation is introduced. Source/output range equality is not asserted after intentional grading or resampling.
 
 Grading and image encoding also accumulate their input-channel ranges during the processing pass. The final report shows them beside decoded output ranges and the actual clipped-sample count. Integer inputs are normalized to 0–1. An encoding input may already be a resized intermediate; it is labelled accordingly and is not claimed to be a scan of the full original-resolution file.
+
+
+## One-screen conversion export (0.36)
+
+The Export window now combines scope, destination, global format, selected-map-type format/resolution rules, output plan, disk estimates and warnings/errors. Choose **Refresh plan / checks**, review the two tabs, acknowledge warnings when needed and choose **Start export**. There is no second preflight confirmation dialog for that checked plan. Any changed files/settings invalidate approval. Errors block Start; the final output check still runs after export. Rules update the same settings used by the main window and conversion profiles. Material recipes and grading still route to their operation-specific editors.

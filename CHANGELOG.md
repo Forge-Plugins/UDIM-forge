@@ -1,5 +1,14 @@
 # What’s new
 
+## 0.36.0 — Whole-task copies, unified export and controlled recovery tests
+
+- Copy paused conversion, grading, resize, ORM and production/TX tasks with inputs, results, owned staging and commit metadata into a verified portable task folder. Originals are preserved.
+- Explicit Task.udimtask opening checks file hashes, rebases copied paths and restores paused work; completed outputs and native committed staging are reused.
+- Export now combines settings, per-map type rules, the output plan, space checks and warnings/errors in one window, with one final Start export and stale-plan approval protection.
+- Controlled fault tests cover deletion of copied fixture inputs, injected disk-full/access failures, real child-process exit before publication, directory relocation and exact-setting resume. No drive or power operations are performed.
+- Displacement range validation recognizes unchanged content after path relocation.
+
+
 ## 0.35.0 — Reconnect tasks, manage storage and review exports
 
 - Reviewed root substitution for unfinished grading/resize/ORM inputs with original settings, production/TX/surface jobs, cache failures and interrupted main conversions; existing PBR/project-analysis relink flows are accessible from Tasks.

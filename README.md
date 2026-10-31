@@ -8,6 +8,10 @@ This Git repository contains documentation, changelog and issue templates. Appli
 
 UDIM Forge is commercial software. GitHub hosts documentation, changelog and issue tracking only. Application binaries and updates are distributed by Forge-Plugins through its authorized purchase channel; no public application downloads are provided here.
 
+## New in 0.36.0
+
+Verified whole-task copies include inputs, results and staging. Export settings, plan and preflight share one screen. Controlled resilience checks exercise fixture failures and real worker restart without disk operations. [Transfer guide](docs/task-transfer.md) · [Recovery checks](docs/resilience.md).
+
 ## New in 0.35.0
 
 Reconnect moved task inputs with reviewed root mappings, manage protected recipe/log/history storage, and inspect the full output plan before conversion. Final output checks now include ranges and normal-vector advisories. [Guide](docs/storage.md) · [Launch checklist](docs/release-readiness.md).
