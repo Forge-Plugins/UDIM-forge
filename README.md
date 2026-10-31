@@ -8,6 +8,10 @@ This Git repository contains documentation, changelog and issue templates. Appli
 
 UDIM Forge is commercial software. GitHub hosts documentation, changelog and issue tracking only. Application binaries and updates are distributed by Forge-Plugins through its authorized purchase channel; no public application downloads are provided here.
 
+## New in 0.37.0
+
+Copy PBR A/B report tasks with textures, model, HDRI, finished reports and cached renders. Move the folder, open Task.udimtask and resume without rerendering unchanged pairs. [Transfer guide](docs/task-transfer.md).
+
 ## New in 0.36.0
 
 Verified whole-task copies include inputs, results and staging. Export settings, plan and preflight share one screen. Controlled resilience checks exercise fixture failures and real worker restart without disk operations. [Transfer guide](docs/task-transfer.md) · [Recovery checks](docs/resilience.md).

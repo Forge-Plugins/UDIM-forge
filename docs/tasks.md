@@ -56,3 +56,7 @@ Version 0.35 adds **Relink inputs…** and **Storage / cleanup…** directly to 
 ## Complete task copies
 
 Version 0.36 adds **Copy whole task…** and **Open transferred task…** for paused conversion/batch/production tasks. Copies include inputs, verified results, staging and native worker recovery. See [Task transfer](task-transfer.md) and [Controlled fault testing](resilience.md).
+
+## Whole PBR report task transfer
+
+Copy report textures, model, HDRI, finished HTML and cached render pairs together. Opening creates a separate working checkpoint; explicit Resume reuses unchanged renders. See the [transfer guide](task-transfer.md#copy-complete-pbr-ab-report-tasks).

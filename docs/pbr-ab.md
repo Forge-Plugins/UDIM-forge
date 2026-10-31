@@ -170,3 +170,7 @@ From **0.31**, select a report and click **Check inputs…**. A background, read
 **Stored pairs are candidates, not a reuse guarantee.** Exact reuse is determined on Resume from prepared pixel, geometry, lighting and rendering inputs. The check reads file metadata and one byte per file, without decoding images/models or parsing OCIO/LUTs. It cannot diagnose codec corruption; normal preparation/decoder validation still runs on Resume. Folder availability is not a complete dependency inventory when an older snapshot has no texture list; a warning explains this limitation. New, unrecorded files are rescanned during normal preparation.
 
 Use **Export diagnostics JSON…** for the complete results (including full local paths). The table shows up to 5,000 rows with problems first, while JSON includes all checked rows. Checks are cancellable, limited to 100,000 saved texture records and a cooperative 90-second deadline between filesystem operations. An offline filesystem operation itself can take longer to return. Published reports/output conflicts remain protected. Checking does not restore a project or render; **Resume** remains an explicit action and revalidates resources.
+
+## Whole PBR report task transfer
+
+Copy report textures, model, HDRI, finished HTML and cached render pairs together. Opening creates a separate working checkpoint; explicit Resume reuses unchanged renders. See the [transfer guide](task-transfer.md#copy-complete-pbr-ab-report-tasks).

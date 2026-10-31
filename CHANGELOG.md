@@ -1,5 +1,13 @@
 # What’s new
 
+## 0.37.0 — Portable PBR A/B report tasks
+
+- Copy complete paused PBR A/B report tasks with A/B textures, model, HDRI, published HTML and every committed render pair.
+- SHA-256 checks protect copied files and checkpoint frames. Relative bundle paths survive moving the whole task folder.
+- Opening creates a separate working checkpoint and restored project; the verified archive remains unchanged. Explicit Resume reuses unchanged renders for single-view, multi-view and all-UDIM reports.
+- Background progress/cancellation, active-export locking and bounded corruption checks protect source tasks.
+- Full/partial checkpoint and real Tasks/recovery checks cover relocated inputs and frame reuse. No disk configuration changes are used in testing.
+
 ## 0.36.0 — Whole-task copies, unified export and controlled recovery tests
 
 - Copy paused conversion, grading, resize, ORM and production/TX tasks with inputs, results, owned staging and commit metadata into a verified portable task folder. Originals are preserved.
