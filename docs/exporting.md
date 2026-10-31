@@ -35,3 +35,10 @@ Main naming conversion and the grading/resize/packing batch tools also create **
 Open **4. Final check…** in Production Workflows, open the queue's final-check row, or use **Final check report…** in the export center for the latest main conversion. Batch tools have their own Final check button. Reports list each file's status, size, type/depth, channels and error. They describe the completed check, not ongoing monitoring.
 
 Right-click an exported batch in the queue and choose **Recheck exported batch** to verify its current files again. The queue must be paused/idle. This creates a new report without overwriting the initial one. Completed production results remain protected; a recheck does not modify textures.
+
+
+## Output range and normal advisories
+
+Version 0.35 measures per-channel min/max and percentages exactly equal to 0 or 1 during the existing full-pixel check of encoded exports. The report exposes these statistics when a file is selected. Normal outputs additionally report the proportion of RGB vectors whose reconstructed length differs from one by more than 0.05. These are advisories; RGB is assumed to encode tangent-space normals in 0–1. Unchanged copies retain their SHA-256/header check and do not claim a pixel scan. No extra full-image allocation is introduced. Source/output range equality is not asserted after intentional grading or resampling.
+
+Grading and image encoding also accumulate their input-channel ranges during the processing pass. The final report shows them beside decoded output ranges and the actual clipped-sample count. Integer inputs are normalized to 0–1. An encoding input may already be a resized intermediate; it is labelled accordingly and is not claimed to be a scan of the full original-resolution file.

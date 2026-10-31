@@ -8,6 +8,10 @@ This Git repository contains documentation, changelog and issue templates. Appli
 
 UDIM Forge is commercial software. GitHub hosts documentation, changelog and issue tracking only. Application binaries and updates are distributed by Forge-Plugins through its authorized purchase channel; no public application downloads are provided here.
 
+## New in 0.35.0
+
+Reconnect moved task inputs with reviewed root mappings, manage protected recipe/log/history storage, and inspect the full output plan before conversion. Final output checks now include ranges and normal-vector advisories. [Guide](docs/storage.md) · [Launch checklist](docs/release-readiness.md).
+
 ## New in 0.34.0
 
 Retry selected grading, resize and channel-packing failures after restart with their original saved settings, map pairings and output names. [Guide](docs/tasks.md#exact-setting-retry-for-grading-resize-and-orm-packing).

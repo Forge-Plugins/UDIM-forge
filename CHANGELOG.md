@@ -1,5 +1,15 @@
 # What’s new
 
+## 0.35.0 — Reconnect tasks, manage storage and review exports
+
+- Reviewed root substitution for unfinished grading/resize/ORM inputs with original settings, production/TX/surface jobs, cache failures and interrupted main conversions; existing PBR/project-analysis relink flows are accessible from Tasks.
+- Main conversion input aliases preserve recovery plan identity; completed source/output hashes remain protected.
+- Storage panel reports cache/history/recipe/log usage and supports reviewed retention by age and budget, with unfinished snapshots, live logs and retained history protected.
+- Main conversion always shows a per-file output summary, separate warning/error findings and explicit Start conversion.
+- Streamed final checks include channel ranges, boundary counts and tangent-space normal-length advisories without another decode pass.
+- Expanded exact-pixel, moved-input, restart, stale-review, lease, retention and real desktop checks; commercial launch checklist distinguishes local-host QA from clean-machine certification.
+
+
 ## 0.34.0 — Exact-setting selected retries for batch texture tools
 
 - Grading, resize and ORM/RMA/channel packing now save durable validated parameter and per-input outcome snapshots before export.

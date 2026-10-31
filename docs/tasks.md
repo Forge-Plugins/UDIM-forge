@@ -46,3 +46,8 @@ Saved grading includes the full recipe, format/depth and folder layout. Resize i
 Sources must remain available at their recorded paths. A repaired source is processed with the original parameters; the snapshot does not preserve an old copy of its pixel data or discover new map files. Missing snapshots, corrupt metadata, unsupported processing revisions and already-completed selections are rejected clearly. A batch lock prevents concurrent processing of the same snapshot. App shutdown cancels active retries and waits for cleanup; project switching is blocked while a retry runs.
 
 Snapshots are bounded to 100,000 inputs, 64 MiB input metadata, 64 KiB settings and a 128 MiB database. Failure lists expose up to 1,000 unfinished inputs at a time; successful selected retries reveal the next remaining entries on Refresh. Clearing history does not delete source/results or batch snapshot files. No image data is embedded and no historical operation starts automatically.
+
+
+## Moved inputs and disk usage
+
+Version 0.35 adds **Relink inputs…** and **Storage / cleanup…** directly to Tasks. See [Storage and task relinking](storage.md) for operation-specific recovery, protected data, retention limits and original-project requirements.

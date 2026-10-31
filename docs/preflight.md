@@ -27,3 +27,8 @@ Preflight reads headers, not all image pixels. A warning identifies a risky conv
 ## CLI
 
 Headless run/resume performs the same preflight. Errors stop the command. Warnings also stop it unless **--accept-preflight-warnings** was explicitly supplied. A rejected command writes the findings to its JSON report and returns exit code 2. This flag never bypasses blocking errors.
+
+
+## Review before Start conversion
+
+The main conversion now always presents an Output plan tab before work starts, including map type, operation, source dimensions/depth, output dimensions, format/depth and filename. Selecting a row shows full input/output paths and Alpha/compression handling. The second tab contains warnings and blocking errors. Errors block Start; warnings require acknowledgment. Cancel writes no output images. Save report includes the full plan; the table displays up to 2,000 files. Generated batch folder names in preflight are planning placeholders; the actual export creates its own unique folder.
