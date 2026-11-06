@@ -1,0 +1,38 @@
+# Import, settings, preview and export
+
+From 0.38 the main workspace follows **1. Import → 2. Settings → 3. Preview → 4. Export**. **Import / refresh** scans filenames and **Review export…** opens the existing reviewed export plan before Start. Subimage extraction and advanced tools are available in **Tools** and Ctrl+K. On narrow windows the PBR/packing toolbar shortcuts move into Tools. Below 760 client pixels in height, Settings starts collapsed; choose **Show settings…** to edit and **Hide settings** to return space to Preview. The supported compact main layout is 960×640 client pixels at 100% scale.
+
+**Settings → Advanced → Interface scale** offers 80–150%. Font sizes, table rows and common controls change without reprocessing textures. The setting is saved locally and in project variables. On small screens a lower scale leaves more room. **Show technical source columns** exposes source container/depth; output format/depth and sizes stay available in the ordinary table. Wide tables retain horizontal scrolling. Dialogs are constrained to the available screen on initial mapping; this does not certify every window/content combination at every DPI.
+
+## Watch folders
+
+Open **Tools → Watch folders…** or the status-row Watch button. Enable watching the current Import roots; the Import subfolder option controls recursion. A background metadata scan runs about every two seconds. Initial observations establish a baseline, so enabling Watch does not treat all existing files as new work. A change requires at least three quiet seconds and two matching observations. Growing/replaced files restart the wait; added, modified and removed files have separate states. The status button shows the number of stable changes.
+
+Select changes or leave the list unselected to act on all listed rows:
+
+- **Update changed preview** rechecks source revisions, refreshes filename metadata and applies only listed changes. Manual map types, output names, groups and inclusion choices are retained. A directory filename rescan supplies correct UV naming inference; unchanged maps are not converted.
+- **Refresh analysis inputs…** refreshes open set-comparison catalogs, or opens set comparison. Run Analyze explicitly there; existing native comparison caching reuses unchanged pairs. Model/PBR rerendering is not launched automatically.
+- **Approve current recipe** snapshots the current Production Whole-set recipe. **Preview changed recipe…** refreshes changes and builds a normal reviewable queue plan with those settings. Start remains explicit and uses export preflight. ORM/RMA includes unchanged companion maps for affected set/tile keys; other tiles are excluded. Plans publish into fresh result folders.
+- **Dismiss selected** accepts the observed revisions without processing them.
+
+Monitoring skips the configured output subtree, generated result manifests, dot/staging directories and directory links. Inventories stop after 100,000 entries or a cooperative 30-second deadline; unavailable roots are reported instead of interpreted as mass deletions. A blocked filesystem operation can take longer to return. Stable metadata is not a guarantee of a valid codec: normal decode/integrity checks still apply. No export starts just because a file changed. Active work and interrupted main conversion must be resolved before applying input changes.
+
+Approved recipe settings and the watch toggle are project variables. The watch baseline/pending notice list is per run; reopening establishes a new baseline. Watch is off for a fresh unsaved workspace. For changes that happened while the app was closed, use Import / refresh. Local preferences retain the last approved recipe.
+
+## EXR subimages, layers and channel recipes
+
+Open **Tools → EXR parts / channels…**. Load included or selected EXR files, choose a file and inspect its available parts/subimages. Choose a part, then full stored channel names in output R/G/B/Alpha order. Use contiguous slots from R/scalar onward; trailing slots can be None. One selected channel is exported as scalar Y. Each rule has its own output map name/type; several rules can extract Displacement, Color or other maps from every UDIM input.
+
+**Preview channels** reads a bounded sampled proxy. Its display auto-range and sampled min/max do not modify exported values. **Add / replace rule** stores the part index, exact part name, named channel order and map label. Rules can be saved/loaded as bounded JSON recipes and are retained in project/local settings. A new part defaults to one scalar channel, avoiding automatic mixing of unrelated layers. Choose RGB explicitly when extracting color.
+
+**Preview export plan…** validates the rules against every included input and opens Production with explicit output filenames. Start runs through ordinary preflight and the durable capped-process queue, including final encoded-set validation. Outputs are ordinary single-part ZIP-compressed **EXR float32** maps in distinct source-set folders; originals are protected. Channels are copied without OCIO, exposure, grading, integer normalization or normal-vector normalization. Negative/HDR float32 values are retained. Float64 and 32/64-bit integer selections may lose precision in float32; preflight warns. Missing/mismatched part names or channels, duplicate tile targets and NaN/Inf are rejected. Deep/unsupported EXR encodings retain the native reader's limits. This tool extracts stored channels, not a PSD-style compositing graph.
+
+## Model UV seam validation
+
+Select the maps belonging to one texture set (or leave selection empty when only one set is loaded), then open **Tools → Model UV seams…**. Choose an OBJ/FBX with matching UV0, map type, scalar stored channel, native-unit threshold and 2–256 samples per seam. **Analyze selected set** imports the mesh through the existing bounded native importer and compares both UV sides of each shared geometric edge whose UV coordinates differ. This includes seams inside one UDIM and between nonadjacent UDIM numbers.
+
+Geometric welding uses exact coincident positions, with no proximity tolerance that might connect nearby independent surfaces. Open edges have no second side; non-manifold edges with more than two incidences are excluded and counted. Samples lie along the common geometric edge in consistent orientation, with a tiny inward UV bias to select the appropriate tile at integer borders. Nearest stored texels are read through the bounded image reader; no color transform or interpolation is applied. Different tile resolutions are sampled in their own pixel grids.
+
+The table reports native maximum difference, samples above threshold, missing/unchecked inputs and nonfinite values. Selecting a seam shows triangle IDs, both UV edges and sample values. CSV/JSON export retains results, UV locations, settings and source/model revisions; changed sources mark exports stale. CSV cells use the shared formula-neutralization policy. Progress and cancellation appear in Tasks. At most 100,000 seams are retained, the table shows 10,000, topology accepts the importer's four-million-triangle limit, and sampling has a cooperative five-minute deadline under the global RAM budget.
+
+These are inspection warnings, not automatic repairs. Disconnected coincident shells, intentional breaks and tangent-space normal changes need human interpretation. Sampling does not establish derivative continuity, test every texel, evaluate tangent bases or prove that a displaced surface is watertight. Multipart/layered scalar maps should first be extracted with an explicit EXR rule. Missing maps and unsupported channels remain Not checked; they are never clean results.

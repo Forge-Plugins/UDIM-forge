@@ -7,11 +7,11 @@ Before the first export, run **Help & Support → System check** and read the [c
 ## Convert Mudbox names to UDIM names
 
 1. Drop your source folder into the main window, or browse to it. Enable Include subfolders when needed.
-2. Choose the correct source naming under **Conversion → Advanced**. Auto detects common UDIM and UV names; explicitly choose UV 0-based if an incomplete set has no u0/v0 tile.
+2. Choose the correct source naming under **Settings → Advanced**. Auto detects common UDIM and UV names; explicitly choose UV 0-based if an incomplete set has no u0/v0 tile.
 3. Choose the target naming format and folder layout. A common Mari / Toolbag pattern is {name}.{udim}{ext}.
-4. Click Scan files. Review map types, tile numbers, target names and collisions.
+4. Click Import / refresh. Review map types, tile numbers, target names and collisions.
 5. Correct map types with Apply type or use Rename channel. Apply type can update the output channel token for the whole series.
-6. Choose Output image format / bit depth (Keep original format or EXR/PNG/TIFF/JPEG), compression and Alpha, then an output location, then **Export… → Review output plan → Check & start export**. Each run creates its own output subfolder. Source texture files remain unchanged.
+6. Choose Output image format / bit depth (Keep original format or EXR/PNG/TIFF/JPEG), compression and Alpha, then an output location, then **Review export… → Review output plan → Check & start export**. Each run creates its own output subfolder. Source texture files remain unchanged.
 
 For example, one-based body_color_u1_v1.exr becomes body_color.1001.exr. The equivalent zero-based source is body_color_u0_v0.exr. With Keep original format and original dimensions, filename conversion copies pixel data unchanged. Image-format, resize and processing options intentionally change exported pixels.
 
@@ -19,7 +19,7 @@ Enable **Use formats by map type** for a mixed set: Displacement EXR float32, No
 
 ## Inspect a texture
 
-To change actual image encoding, use **Convert image format…**, choose **Output format / bit depth** (EXR/PNG/TIFF/JPEG), then **Preview export plan → Start format conversion**. You can also choose Output image format / bit depth directly in the main window and use **Export… → Review output plan → Check & start export** to combine naming and encoding in one pass. See [production workflows](production.md) for compression, Alpha, durable queues, recipes and displacement processing.
+To change actual image encoding, use **Convert image format…**, choose **Output format / bit depth** (EXR/PNG/TIFF/JPEG), then **Preview export plan → Start format conversion**. You can also choose Output image format / bit depth directly in the main window and use **Review export… → Review output plan → Check & start export** to combine naming and encoding in one pass. See [production workflows](production.md) for compression, Alpha, durable queues, recipes and displacement processing.
 
 Double-click a row to open Image Viewer. Select RGB or an actual stored channel, adjust EXR exposure/gamma, and inspect native RGBA values under the cursor. Histogram, min/max and selected-area statistics use original pixel values. Raw 0–1 bypasses display color processing.
 
@@ -48,9 +48,9 @@ The main-header **Tools** menu offers batch grading/map utilities, ORM/RMA packi
 
 ## Different resolutions in one set
 
-In the main window open **By map type** and enable **Resolutions by map type**, then choose **8K / 4K / 2K preset** (Displacement / Normal / Color) or enter your own longest-edge limits. Choose per-map formats above, review the preview and press **Export… → Review output plan → Check & start export** once. Save these settings through **Profile → Save as…**. Smaller images are never enlarged; **Keep original resolution** leaves a type at its source dimensions. See [resolution rules](production.md#resolutions-by-map-type-in-the-main-window) for custom types, filters and format limits.
+In the main window open **By map type** and enable **Resolutions by map type**, then choose **8K / 4K / 2K preset** (Displacement / Normal / Color) or enter your own longest-edge limits. Choose per-map formats above, review the preview and press **Review export… → Review output plan → Check & start export** once. Save these settings through **Profile → Save as…**. Smaller images are never enlarged; **Keep original resolution** leaves a type at its source dimensions. See [resolution rules](production.md#resolutions-by-map-type-in-the-main-window) for custom types, filters and format limits.
 
-Before **Export… → Review output plan → Check & start export**, check **Source size → Output size**, **Source format / depth** and **Output format / depth** in the main table. Values update when settings change. Headers load in the background; Unknown indicates an inspection warning, not an assumed size. The same fields are included in **Export visible CSV…**. See [preview columns](production.md#source-and-output-columns-before-start).
+Before **Review export… → Review output plan → Check & start export**, check **Source size → Output size**, **Source format / depth** and **Output format / depth** in the main table. Values update when settings change. Headers load in the background; Unknown indicates an inspection warning, not an assumed size. The same fields are included in **Export visible CSV…**. See [preview columns](production.md#source-and-output-columns-before-start).
 
 ## Find mismatched settings
 
@@ -78,7 +78,7 @@ For the whole UDIM set on a model, use **PBR preview… → Import OBJ / FBX…*
 
 ### Destination and selected map names
 
-After scanning, type or browse a different **Output** folder and click **Export… → Review output plan → Check & start export** directly. Missing folders are created at conversion time; typing does not write to disk. Changing the source folder or scan scope still requires Scan files.
+After scanning, type or browse a different **Output** folder and click **Review export… → Review output plan → Check & start export** directly. Missing folders are created at conversion time; typing does not write to disk. Changing the source folder or scan scope still requires Scan files.
 
 Select one or more table rows, then choose a **Selected** map type to apply it immediately. Typed custom names use Enter or Apply type. Entire series extends the change to matching map tiles. Enable Rename files with Apply type in Selection to update output filenames together with the map type. Originals are preserved.
 
@@ -93,3 +93,7 @@ For a complete material recipe, open **Target presets / recipe…**, apply a tar
 ## Monitor background work
 
 Use **Tasks…** in the main window to monitor conversion, TX, cache, analysis and reports, inspect their current stage and cancel selected work. Hiding the panel keeps tasks running. [Tasks guide](tasks.md).
+
+## Compact workflow and advanced input tools
+
+Use Import → Settings → Preview → Review export. On small windows Show settings expands the settings panel; interface scaling and technical columns are in Advanced. Watch folders, EXR parts/channel recipes and model UV seam validation are available in Tools and Ctrl+K. See the [workspace tools guide](workspace-tools.md).

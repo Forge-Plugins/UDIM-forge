@@ -1,5 +1,13 @@
 # What’s new
 
+## 0.38.0 — Compact workspace, watch folders, EXR channel recipes and model UV seams
+
+- Four-step Import / Settings / Preview / Export layout, collapsed settings on compact windows, technical column toggle and persistent 80–150% interface scale.
+- Watch folders detects stable added/changed/removed inputs, retains manual assignments and previews approved recipes for changed tiles; packing reads required same-tile companion maps.
+- Explicit EXR part identity and named channel routing, sampled preview, saved recipes and float32 extraction through capped durable production workers with final output validation.
+- Model UV seam analysis checks native scalar samples on both UV sides of shared geometric edges, including intra-tile seams, with progress, cancellation and CSV/JSON export.
+- New deterministic and real desktop acceptance checks cover 960×640 layout, channel values, multipart extraction, watch debounce, incremental plans and UV seam differences.
+
 ## 0.37.0 — Portable PBR A/B report tasks
 
 - Copy complete paused PBR A/B report tasks with A/B textures, model, HDRI, published HTML and every committed render pair.

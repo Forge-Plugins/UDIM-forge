@@ -39,3 +39,7 @@ Red bins exceed the analysis threshold. Magenta bins contain invalid samples. At
 Analysis reads native boundary samples through the bounded scanline/tile reader, never a complete image array. Some scanline encodings must still decode intervening rows; edge-only output does not guarantee low I/O. Persistent PSD/PSB composites may need preparation first. Existing streaming format and native-block size limits still apply. The compact retained results use memory proportional to connection count, not total image area.
 
 A development benchmark used three generated 16384×16384 float32 tiled TIFFs (3 GiB decoded), two neighboring connections and isolated one-pixel changes. It retained both peaks and stayed under 100 MiB peak process working set on the test machine. This synthetic uniform-data benchmark is not a speed or memory guarantee for arbitrary codecs, channel counts or sets.
+
+## Model-aware checks
+
+For actual shared mesh edges, including seams inside a single tile, use Tools → Model UV seams. This separate inspection uses OBJ/FBX UV0 and scalar native samples. See the [model UV seam guide](workspace-tools.md#model-uv-seam-validation).
